@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VMP SaaS — Sistema de Gestão para Vending Machines</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+    body { background: #0f172a; color: #fff; line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 20px 0; border-bottom: 1px solid #1e293b; }
+    .logo { font-size: 24px; font-weight: bold; color: #3b82f6; }
+    .hero { padding: 80px 0; text-align: center; }
+    .hero h1 { font-size: 48px; margin-bottom: 20px; background: linear-gradient(135deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { font-size: 20px; color: #94a3b8; max-width: 600px; margin: 0 auto 40px; }
+    .cta { display: inline-block; padding: 16px 40px; background: #3b82f6; color: #fff; text-decoration: none; border-radius: 8px; font-size: 18px; font-weight: 600; transition: all 0.3s; }
+    .cta:hover { background: #2563eb; transform: translateY(-2px); }
+    .features { padding: 80px 0; background: #1e293b; }
+    .features h2 { text-align: center; font-size: 36px; margin-bottom: 60px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
+    .feature { padding: 32px; background: #0f172a; border-radius: 12px; border: 1px solid #334155; }
+    .feature h3 { font-size: 20px; margin-bottom: 12px; color: #3b82f6; }
+    .feature p { color: #94a3b8; }
+    .pricing { padding: 80px 0; }
+    .pricing h2 { text-align: center; font-size: 36px; margin-bottom: 60px; }
+    .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .plan { padding: 40px 32px; background: #1e293b; border-radius: 16px; text-align: center; border: 2px solid transparent; transition: all 0.3s; }
+    .plan:hover { border-color: #3b82f6; }
+    .plan.popular { border-color: #3b82f6; position: relative; }
+    .badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #3b82f6; padding: 4px 16px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+    .plan h3 { font-size: 24px; margin-bottom: 8px; }
+    .price { font-size: 48px; font-weight: bold; margin: 20px 0; }
+    .price span { font-size: 16px; color: #94a3b8; }
+    .plan ul { list-style: none; margin: 24px 0; text-align: left; }
+    .plan ul li { padding: 8px 0; color: #94a3b8; }
+    .plan ul li::before { content: "✓ "; color: #22c55e; font-weight: bold; }
+    .contact { padding: 80px 0; background: #1e293b; text-align: center; }
+    .contact h2 { font-size: 36px; margin-bottom: 20px; }
+    .whatsapp { display: inline-flex; align-items: center; gap: 12px; padding: 16px 32px; background: #22c55e; color: #fff; text-decoration: none; border-radius: 8px; font-size: 18px; font-weight: 600; margin-top: 20px; }
+    footer { padding: 40px 0; text-align: center; color: #64748b; border-top: 1px solid #1e293b; }
+    @media (max-width: 768px) { .hero h1 { font-size: 32px; } .price { font-size: 36px; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">VMP SaaS</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Gestão Inteligente para Vending Machines</h1>
+    <p>Sistema completo de POS, stock, relatórios e licenciamento SaaS. Controle o seu negócio de qualquer lugar.</p>
+    <a href="#pricing" class="cta">Ver Planos</a>
+    <a href="https://wa.me/258846166104" class="cta" style="background: #22c55e; margin-left: 16px;">Falar no WhatsApp</a>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <h2>Por que escolher o VMP?</h2>
+    <div class="grid">
+      <div class="feature">
+        <h3>📊 Gestão Centralizada</h3>
+        <p>Controle múltiplas máquinas de vending a partir de um único painel. Dashboard em tempo real.</p>
+      </div>
+      <div class="feature">
+        <h3>💳 Pagamentos Integrados</h3>
+        <p>Suporte para eMola, M-Pesa, cartão e transferência bancária. Automatize a cobrança.</p>
+      </div>
+      <div class="feature">
+        <h3>🔒 Licenciamento SaaS</h3>
+        <p>Ativação remota, trial de 7 dias, renovação automática. Segurança total para o seu software.</p>
+      </div>
+      <div class="feature">
+        <h3>📱 Acesso Multi-dispositivo</h3>
+        <p>Desktop, tablet ou mobile. O seu negócio acompanha-o para onde for.</p>
+      </div>
+      <div class="feature">
+        <h3>📈 Relatórios Detalhados</h3>
+        <p>Vendas por período, produtos mais vendidos, lucratividade. Toma decisões com dados.</p>
+      </div>
+      <div class="feature">
+        <h3>🚀 Suporte Rápido</h3>
+        <p>Atendimento por WhatsApp e email. Resposta em até 24 horas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="container">
+    <h2>Planos e Preços</h2>
+    <div class="plans">
+      <div class="plan">
+        <h3>Basic</h3>
+        <p>Para pequenos negócios</p>
+        <div class="price">5.000 <span>MZN/mês</span></div>
+        <ul>
+          <li>1 máquina de vending</li>
+          <li>POS básico</li>
+          <li>Relatórios mensais</li>
+          <li>Suporte por email</li>
+          <li>Licença mensal</li>
+        </ul>
+        <a href="https://wa.me/258846166104?text=Quero%20o%20plano%20Basic%20do%20VMP" class="cta" style="padding: 12px 32px; font-size: 16px;">Solicitar</a>
+      </div>
+      <div class="plan popular">
+        <div class="badge">MAIS POPULAR</div>
+        <h3>Pro</h3>
+        <p>Para negócios em crescimento</p>
+        <div class="price">12.000 <span>MZN/mês</span></div>
+        <ul>
+          <li>Até 5 máquinas</li>
+          <li>POS completo</li>
+          <li>Relatórios em tempo real</li>
+          <li>Suporte WhatsApp</li>
+          <li>Licença trimestral</li>
+        </ul>
+        <a href="https://wa.me/258846166104?text=Quero%20o%20plano%20Pro%20do%20VMP" class="cta" style="padding: 12px 32px; font-size: 16px;">Solicitar</a>
+      </div>
+      <div class="plan">
+        <h3>Enterprise</h3>
+        <p>Para grandes operações</p>
+        <div class="price">25.000 <span>MZN/mês</span></div>
+        <ul>
+          <li>Máquinas ilimitadas</li>
+          <li>Personalização total</li>
+          <li>API dedicada</li>
+          <li>Suporte prioritário 24/7</li>
+          <li>Licença anual</li>
+        </ul>
+        <a href="https://wa.me/258846166104?text=Quero%20o%20plano%20Enterprise%20do%20VMP" class="cta" style="padding: 12px 32px; font-size: 16px;">Solicitar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="container">
+    <h2>Pronto para começar?</h2>
+    <p style="color: #94a3b8; font-size: 18px; max-width: 500px; margin: 0 auto;">Fale connosco no WhatsApp ou envie um email. Respondemos em até 24 horas.</p>
+    <a href="https://wa.me/258846166104" class="whatsapp">📱 WhatsApp: 84 616 6104</a>
+    <p style="margin-top: 24px; color: #64748b;">Email: freelancer.adamgy@gmail.com</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 VMP SaaS. Todos os direitos reservados.</p>
+    <p style="margin-top: 8px; font-size: 14px;">
+      <a href="#" style="color: #64748b;">Termos de Uso</a> • 
+      <a href="#" style="color: #64748b;">Política de Privacidade</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
