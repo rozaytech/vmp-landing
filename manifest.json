@@ -1,0 +1,22 @@
+{
+  "name": "VMP SaaS — Sistema de Gestão para Vending Machines",
+  "short_name": "VMP SaaS",
+  "description": "Sistema completo de POS, stock, relatórios e licenciamento SaaS para vending machines em Moçambique.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0e1a",
+  "theme_color": "#1565C0",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

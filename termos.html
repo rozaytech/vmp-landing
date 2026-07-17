@@ -3,189 +3,247 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Termos de Uso do VMP SaaS — Sistema de gestão para vending machines em Moçambique.">
+  <meta name="theme-color" content="#1565C0">
   <title>Termos de Uso — VMP SaaS</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      font-family: 'Segoe UI', Arial, sans-serif; 
-      max-width: 800px; 
-      margin: 40px auto; 
-      padding: 0 20px; 
-      line-height: 1.6; 
-      color: #333;
-    }
-    h1 { color: #0f172a; margin-bottom: 8px; }
-    .date { color: #64748b; margin-bottom: 32px; font-size: 14px; }
-    h2 { color: #1e293b; margin: 32px 0 12px; font-size: 20px; }
-    p { margin-bottom: 16px; color: #475569; }
-    ul { margin: 12px 0 16px 24px; color: #475569; }
-    li { margin-bottom: 8px; }
-    a { color: #3b82f6; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .highlight { 
-      background: #fef3c7; 
-      padding: 16px; 
-      border-radius: 8px; 
-      border-left: 4px solid #f59e0b;
-      margin: 16px 0;
-    }
-    footer { 
-      margin-top: 48px; 
-      padding-top: 24px; 
-      border-top: 1px solid #e2e8f0; 
-      text-align: center; 
-      color: #64748b;
-      font-size: 14px;
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="assets/images/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/images/icon-192.png">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<h1>Termos de Uso</h1>
-<p class="date"><strong>Última atualização:</strong> 10 de julho de 2026</p>
+<!-- Header -->
+<header class="header">
+  <div class="container header-inner">
+    <a href="/" class="logo">
+      <img src="assets/images/logo.png" alt="VMP SaaS" onerror="this.style.display='none'">
+      <span>VMP SaaS</span>
+    </a>
+    <nav class="nav">
+      <a href="/">Início</a>
+      <a href="/termos.html">Termos</a>
+      <a href="/privacidade.html">Privacidade</a>
+      <a href="/#contacto">Contacto</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+</header>
 
-<p>Bem-vindo ao <strong>VMP SaaS</strong>. Ao utilizar o nosso software, serviços e plataforma, você concorda com estes Termos de Uso. Leia atentamente antes de prosseguir.</p>
+<!-- Content -->
+<main class="legal-page">
+  <div class="container">
+    <div class="legal-header">
+      <h1>Termos de Uso</h1>
+      <p class="date"><strong>Última atualização:</strong> 17 de julho de 2026</p>
+    </div>
 
-<div class="highlight">
-  <strong>Resumo:</strong> O VMP SaaS é um sistema de gestão para vending machines licenciado por subscrição. O pagamento é mensal/trimestral/anual conforme o plano escolhido. Não oferecemos reembolso após ativação da licença.
-</div>
+    <div class="legal-content">
+      <div class="legal-highlight">
+        <p><strong>Resumo:</strong> O VMP SaaS é um sistema de gestão para vending machines licenciado por subscrição. O pagamento é mensal ou anual conforme o plano escolhido. Não oferecemos reembolso após ativação da licença.</p>
+      </div>
 
-<h2>1. Definições</h2>
-<ul>
-  <li><strong>"VMP SaaS"</strong>, <strong>"nós"</strong>, <strong>"nos"</strong> — refere-se ao sistema de software e serviços prestados por Adamgy Adamo IT.</li>
-  <li><strong>"Cliente"</strong>, <strong>"você"</strong>, <strong>"utilizador"</strong> — pessoa singular ou coletiva que utiliza o VMP SaaS.</li>
-  <li><strong>"Licença"</strong> — direito de uso do software VMP por período determinado.</li>
-  <li><strong>"Machine ID"</strong> — identificador único do dispositivo onde o software é instalado.</li>
-</ul>
+      <h2>1. Definições</h2>
+      <ul>
+        <li><strong>"VMP SaaS"</strong>, <strong>"nós"</strong>, <strong>"nos"</strong> — refere-se ao sistema de software e serviços prestados por Adamgy Adamo IT.</li>
+        <li><strong>"Cliente"</strong>, <strong>"você"</strong>, <strong>"utilizador"</strong> — pessoa singular ou coletiva que utiliza o VMP SaaS.</li>
+        <li><strong>"Licença"</strong> — direito de uso do software VMP por período determinado.</li>
+        <li><strong>"Machine ID"</strong> — identificador único do dispositivo onde o software é instalado.</li>
+      </ul>
 
-<h2>2. Objeto do Serviço</h2>
-<p>O VMP SaaS é um sistema de ponto de venda (POS) e gestão para máquinas de vending, que inclui:</p>
-<ul>
-  <li>Software desktop (Flutter) para operação das máquinas</li>
-  <li>Painel de administração web para gestão</li>
-  <li>Sistema de licenciamento e subscrição</li>
-  <li>Relatórios de vendas e stock</li>
-  <li>Suporte técnico conforme o plano contratado</li>
-</ul>
+      <h2>2. Objeto do Serviço</h2>
+      <p>O VMP SaaS é um sistema de ponto de venda (POS) e gestão para máquinas de vending, que inclui:</p>
+      <ul>
+        <li>Software desktop (Flutter) para operação das máquinas</li>
+        <li>Painel de administração web para gestão</li>
+        <li>Sistema de licenciamento e subscrição</li>
+        <li>Relatórios de vendas e stock</li>
+        <li>Suporte técnico conforme o plano contratado</li>
+      </ul>
 
-<h2>3. Planos e Pagamento</h2>
+      <h2>3. Planos e Pagamento</h2>
 
-<h3>3.1 Planos disponíveis</h3>
-<ul>
-  <li><strong>Basic:</strong> 5.000 MZN/mês — 1 máquina, POS básico, relatórios mensais</li>
-  <li><strong>Pro:</strong> 12.000 MZN/mês — até 5 máquinas, POS completo, relatórios em tempo real</li>
-  <li><strong>Enterprise:</strong> 25.000 MZN/mês — máquinas ilimitadas, personalização, API dedicada</li>
-</ul>
+      <h3>3.1 Planos disponíveis</h3>
+      <table class="legal-table">
+        <thead>
+          <tr>
+            <th>Plano</th>
+            <th>Preço</th>
+            <th>Utilizadores</th>
+            <th>Produtos</th>
+            <th>Funcionalidades</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Basic</strong></td>
+            <td>3.500 MZN/mês</td>
+            <td>2</td>
+            <td>500</td>
+            <td>POS, stock, caixa, relatórios básicos, Z-report</td>
+          </tr>
+          <tr>
+            <td><strong>Pro</strong></td>
+            <td>7.000 MZN/mês</td>
+            <td>5</td>
+            <td>5.000</td>
+            <td>Tudo do Basic + relatórios avançados, promoções, clientes, multi-armazém, analytics</td>
+          </tr>
+          <tr>
+            <td><strong>Enterprise</strong></td>
+            <td>150.000 MZN/ano</td>
+            <td>999</td>
+            <td>99.999</td>
+            <td>Tudo do Pro + contabilidade, margem de lucro, dashboard remoto, API, backup cloud</td>
+          </tr>
+        </tbody>
+      </table>
 
-<h3>3.2 Formas de pagamento</h3>
-<p>Aceitamos:</p>
-<ul>
-  <li><strong>eMola:</strong> 870018297</li>
-  <li><strong>M-Pesa:</strong> 846166104</li>
-  <li><strong>Transferência bancária:</strong> BCI — NIB 000800002558873010113, IBAN MZ59000800002558873010113</li>
-  <li><strong>Cartão Visa:</strong> Em breve via Stripe</li>
-</ul>
+      <h3>3.2 Formas de pagamento</h3>
+      <p>Aceitamos:</p>
+      <ul>
+        <li><strong>eMola:</strong> 87 001 8297</li>
+        <li><strong>M-Pesa:</strong> 84 616 6104</li>
+        <li><strong>Transferência bancária:</strong> BCI — NIB 000800002558873010113, IBAN MZ59000800002558873010113</li>
+        <li><strong>Cartão Visa:</strong> Em breve via Stripe</li>
+      </ul>
 
-<h3>3.3 Ciclo de faturação</h3>
-<p>O pagamento é <strong>pré-pago</strong>. A licença é ativada após confirmação do pagamento, que pode demorar até 24 horas úteis.</p>
+      <h3>3.3 Ciclo de faturação</h3>
+      <p>O pagamento é <strong>pré-pago</strong>. A licença é ativada após confirmação do pagamento, que pode demorar até 24 horas úteis.</p>
 
-<h3>3.4 Trial gratuito</h3>
-<p>Oferecemos <strong>7 dias de trial</strong> para novos clientes. Durante o trial, todas as funcionalidades do plano Enterprise estão disponíveis. Após o trial, é necessário efetuar pagamento para continuar a usar o software.</p>
+      <h3>3.4 Trial gratuito</h3>
+      <p>Oferecemos <strong>7 dias de trial</strong> para novos clientes. Durante o trial, todas as funcionalidades do plano Enterprise estão disponíveis. Após o trial, é necessário efetuar pagamento para continuar a usar o software.</p>
 
-<h2>4. Licença de Uso</h2>
+      <h2>4. Licença de Uso</h2>
 
-<h3>4.1 Concessão</h3>
-<p>Após pagamento confirmado, concedemos uma licença <strong>não exclusiva, não transferível e revogável</strong> para usar o VMP SaaS no número de máquinas contratado.</p>
+      <h3>4.1 Concessão</h3>
+      <p>Após pagamento confirmado, concedemos uma licença <strong>não exclusiva, não transferível e revogável</strong> para usar o VMP SaaS no número de máquinas contratado.</p>
 
-<h3>4.2 Restrições</h3>
-<p>É expressamente proibido:</p>
-<ul>
-  <li>Copiar, modificar, engenharia reversa ou distribuir o software</li>
-  <li>Usar a licença em mais máquinas do que o permitido pelo plano</li>
-  <li>Partilhar credenciais de acesso com terceiros</li>
-  <li>Tentar contornar o sistema de licenciamento</li>
-  <li>Usar o software para atividades ilegais</li>
-</ul>
+      <h3>4.2 Restrições</h3>
+      <p>É expressamente proibido:</p>
+      <ul>
+        <li>Copiar, modificar, fazer engenharia reversa ou distribuir o software</li>
+        <li>Usar a licença em mais máquinas do que o permitido pelo plano</li>
+        <li>Partilhar credenciais de acesso com terceiros</li>
+        <li>Tentar contornar o sistema de licenciamento</li>
+        <li>Usar o software para atividades ilegais</li>
+      </ul>
 
-<h3>4.3 Ativação e Machine ID</h3>
-<p>Cada licença está vinculada a um <strong>Machine ID</strong> único. Se mudar de computador, contacte o suporte para transferência de licença (sujeito a aprovação).</p>
+      <h3>4.3 Ativação e Machine ID</h3>
+      <p>Cada licença está vinculada a um <strong>Machine ID</strong> único. Se mudar de computador, contacte o suporte para transferência de licença (sujeito a aprovação).</p>
 
-<h2>5. Suspensão e Rescisão</h2>
+      <h2>5. Suspensão e Rescisão</h2>
 
-<h3>5.1 Por incumprimento</h3>
-<p>Podemos suspender ou rescindir a licença imediatamente se:</p>
-<ul>
-  <li>Houver tentativa de fraude ou contorno do licenciamento</li>
-  <li>O pagamento não for efetuado no prazo de 7 dias após vencimento</li>
-  <li>Houver uso indevido ou ilegal do software</li>
-</ul>
+      <h3>5.1 Por incumprimento</h3>
+      <p>Podemos suspender ou rescindir a licença imediatamente se:</p>
+      <ul>
+        <li>Houver tentativa de fraude ou contorno do licenciamento</li>
+        <li>O pagamento não for efetuado no prazo de 7 dias após vencimento</li>
+        <li>Houver uso indevido ou ilegal do software</li>
+      </ul>
 
-<h3>5.2 Por vontade do cliente</h3>
-<p>Pode cancelar a subscrição a qualquer momento, contactando-nos por WhatsApp ou email. <strong>Não há reembolso</strong> de períodos já pagos.</p>
+      <h3>5.2 Por vontade do cliente</h3>
+      <p>Pode cancelar a subscrição a qualquer momento, contactando-nos por WhatsApp ou email. <strong>Não há reembolso</strong> de períodos já pagos.</p>
 
-<h2>6. Suporte Técnico</h2>
+      <h2>6. Suporte Técnico</h2>
+      <table class="legal-table">
+        <thead>
+          <tr>
+            <th>Plano</th>
+            <th>Canais</th>
+            <th>Prazo de Resposta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Basic</td>
+            <td>Email</td>
+            <td>48h úteis</td>
+          </tr>
+          <tr>
+            <td>Pro</td>
+            <td>Email + WhatsApp</td>
+            <td>24h úteis</td>
+          </tr>
+          <tr>
+            <td>Enterprise</td>
+            <td>Email + WhatsApp + Chamada</td>
+            <td>4h úteis</td>
+          </tr>
+        </tbody>
+      </table>
 
-<table style="width:100%; margin:16px 0; border-collapse:collapse;">
-  <tr style="background:#f8fafc;">
-    <th style="padding:12px; text-align:left; border:1px solid #e2e8f0;">Plano</th>
-    <th style="padding:12px; text-align:left; border:1px solid #e2e8f0;">Canais</th>
-    <th style="padding:12px; text-align:left; border:1px solid #e2e8f0;">Prazo</th>
-  </tr>
-  <tr>
-    <td style="padding:12px; border:1px solid #e2e8f0;">Basic</td>
-    <td style="padding:12px; border:1px solid #e2e8f0;">Email</td>
-    <td style="padding:12px; border:1px solid #e2e8f0;">48h úteis</td>
-  </tr>
-  <tr style="background:#f8fafc;">
-    <td style="padding:12px; border:1px solid #e2e8f0;">Pro</td>
-    <td style="padding:12px; border:1px solid #e2e8f0;">Email + WhatsApp</td>
-    <td style="padding:12px; border:1px solid #e2e8f0;">24h úteis</td>
-  </tr>
-  <tr>
-    <td style="padding:12px; border:1px solid #e2e8f0;">Enterprise</td>
-    <td style="padding:12px; border:1px solid #e2e8f0;">Email + WhatsApp + Chamada</td>
-    <td style="padding:12px; border:1px solid #e2e8f0;">4h úteis</td>
-  </tr>
-</table>
+      <h2>7. Limitação de Responsabilidade</h2>
+      <p>O VMP SaaS é fornecido <strong>"tal como está"</strong>. Não nos responsabilizamos por:</p>
+      <ul>
+        <li>Perda de dados por falha do cliente em fazer backups</li>
+        <li>Interrupções de serviço por falhas de internet do cliente</li>
+        <li>Prejuízos comerciais diretos ou indiretos</li>
+        <li>Problemas causados por uso indevido do software</li>
+      </ul>
+      <p>A nossa responsabilidade máxima está limitada ao valor pago pelo cliente nos últimos 3 meses.</p>
 
-<h2>7. Limitação de Responsabilidade</h2>
-<p>O VMP SaaS é fornecido <strong>"tal como está"</strong>. Não nos responsabilizamos por:</p>
-<ul>
-  <li>Perda de dados por falha do cliente em fazer backups</li>
-  <li>Interrupções de serviço por falhas de internet do cliente</li>
-  <li>Prejuízos comerciais diretos ou indiretos</li>
-  <li>Problemas causados por uso indevido do software</li>
-</ul>
-<p>A nossa responsabilidade máxima está limitada ao valor pago pelo cliente nos últimos 3 meses.</p>
+      <h2>8. Propriedade Intelectual</h2>
+      <p>Todos os direitos de propriedade intelectual sobre o VMP SaaS pertencem a Adamgy Adamo IT. A licença não confere propriedade, apenas direito de uso.</p>
 
-<h2>8. Propriedade Intelectual</h2>
-<p>Todos os direitos de propriedade intelectual sobre o VMP SaaS pertencem a Adamgy Adamo IT. A licença não confere propriedade, apenas direito de uso.</p>
+      <h2>9. Alterações aos Termos</h2>
+      <p>Podemos atualizar estes termos a qualquer momento. Alterações significativas serão comunicadas por email com 30 dias de antecedência. O uso continuado após a atualização constitui aceitação.</p>
 
-<h2>9. Alterações aos Termos</h2>
-<p>Podemos atualizar estes termos a qualquer momento. Alterações significativas serão comunicadas por email com 30 dias de antecedência. O uso continuado após a atualização constitui aceitação.</p>
+      <h2>10. Lei Aplicável</h2>
+      <p>Estes termos são regidos pelas leis da <strong>República de Moçambique</strong>. Qualquer litígio será resolvido pelos tribunais da cidade de Maputo.</p>
 
-<h2>10. Lei Aplicável</h2>
-<p>Estes termos são regidos pelas leis da <strong>República de Moçambique</strong>. Qualquer litígio será resolvido pelos tribunais da cidade de Maputo.</p>
+      <h2>11. Contacto</h2>
+      <p>Para questões sobre estes termos, entre em contacto connosco:</p>
 
-<h2>11. Contacto</h2>
-<p>Para questões sobre estes termos:</p>
-<ul>
-  <li><strong>WhatsApp:</strong> <a href="https://wa.me/258846166104">+258 84 616 6104</a></li>
-  <li><strong>Email:</strong> <a href="mailto:freelancer.adamgy@gmail.com">freelancer.adamgy@gmail.com</a></li>
-  <li><strong>Endereço:</strong> Maputo, Moçambique</li>
-</ul>
+      <div class="contact-grid-legal">
+        <div class="contact-card-legal">
+          <div class="icon">📱</div>
+          <h4>WhatsApp</h4>
+          <p><a href="https://wa.me/258846166104" target="_blank" rel="noopener">+258 84 616 6104</a></p>
+        </div>
+        <div class="contact-card-legal">
+          <div class="icon">📞</div>
+          <h4>Telefone / Movitel</h4>
+          <p><a href="tel:+258870018297">+258 87 001 8297</a></p>
+        </div>
+        <div class="contact-card-legal">
+          <div class="icon">✉️</div>
+          <h4>Email</h4>
+          <p><a href="mailto:freelancer.adamgy@gmail.com">freelancer.adamgy@gmail.com</a></p>
+        </div>
+      </div>
 
-<div class="highlight" style="margin-top: 32px;">
-  <strong>Ao clicar em "Aceitar" ou ao usar o VMP SaaS, você confirma que leu, compreendeu e concorda com estes Termos de Uso.</strong>
-</div>
+      <div class="legal-highlight" style="margin-top: 40px;">
+        <p><strong>Ao utilizar o VMP SaaS, você confirma que leu, compreendeu e concorda com estes Termos de Uso.</strong></p>
+      </div>
+    </div>
+  </div>
+</main>
 
-<footer>
-  <p>© 2026 VMP SaaS. Todos os direitos reservados.</p>
-  <p style="margin-top: 8px;">
-    <a href="index.html">Voltar à página inicial</a> • 
-    <a href="privacidade.html">Política de Privacidade</a>
-  </p>
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+      <span>© <span class="current-year">2026</span> VMP SaaS. Todos os direitos reservados.</span>
+      <span>
+        <a href="/">Início</a> • 
+        <a href="privacidade.html">Privacidade</a>
+      </span>
+    </div>
+  </div>
 </footer>
 
+<button class="scroll-top" aria-label="Voltar ao topo">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script src="assets/js/script.js"></script>
 </body>
 </html>
