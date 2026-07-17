@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0a0e1a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>VMP Dashboard — Painel Remoto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="apple-touch-icon" href="assets/images/logo.png">
+  <style>
+    :root {
+      --primary: #1565C0;
+      --primary-light: #42A5F5;
+      --accent: #00C853;
+      --danger: #E53935;
+      --warning: #FFB300;
+      --bg: #0a0e1a;
+      --bg-card: #111827;
+      --bg-elevated: #1a2236;
+      --text: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --border: #1e293b;
+      --radius: 16px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 480px; margin: 0 auto; padding: 0 16px; }
+
+    /* Login */
+    .login-screen {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 24px;
+    }
+    .login-logo {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .login-logo img {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      margin: 0 auto 16px;
+    }
+    .login-logo h1 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary-light), #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .login-logo p {
+      color: var(--text-muted);
+      margin-top: 8px;
+      font-size: 0.875rem;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 14px 16px;
+      background: var(--bg-elevated);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      color: var(--text);
+      font-size: 1rem;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(21,101,192,0.15);
+    }
+    .form-group input::placeholder { color: var(--text-muted); }
+    .btn {
+      width: 100%;
+      padding: 16px;
+      border-radius: 12px;
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #0D47A1);
+      color: #fff;
+    }
+    .btn-primary:hover { transform: translateY(-1px); }
+    .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+    .error-msg {
+      background: rgba(229,57,53,0.1);
+      border: 1px solid rgba(229,57,53,0.3);
+      color: #ef5350;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 0.875rem;
+      margin-bottom: 16px;
+      display: none;
+    }
+    .error-msg.visible { display: block; }
+
+    /* Dashboard */
+    .dashboard { display: none; padding-bottom: 80px; }
+    .dashboard.active { display: block; }
+    .dash-header {
+      position: sticky;
+      top: 0;
+      background: rgba(10,14,26,0.95);
+      backdrop-filter: blur(20px);
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+    .dash-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .dash-header h2 {
+      font-size: 1.125rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    .logout-btn {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.8125rem;
+      cursor: pointer;
+    }
+
+    .section-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      margin: 24px 0 12px;
+    }
+
+    /* Cards */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .kpi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+    }
+    .kpi-card.blue::before { background: linear-gradient(90deg, var(--primary), var(--primary-light)); }
+    .kpi-card.green::before { background: linear-gradient(90deg, var(--accent), #00E676); }
+    .kpi-card.purple::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }
+    .kpi-card.orange::before { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+    .kpi-card.red::before { background: linear-gradient(90deg, var(--danger), #ef5350); }
+    .kpi-label {
+      font-size: 0.6875rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .kpi-value {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1;
+    }
+    .kpi-value.small { font-size: 1.125rem; }
+
+    /* Lists */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .card-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .card-item:last-child { border-bottom: none; }
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.125rem;
+      flex-shrink: 0;
+    }
+    .card-icon.blue { background: rgba(21,101,192,0.15); }
+    .card-icon.green { background: rgba(0,200,83,0.15); }
+    .card-icon.orange { background: rgba(245,158,11,0.15); }
+    .card-icon.red { background: rgba(229,57,53,0.15); }
+    .card-content { flex: 1; min-width: 0; }
+    .card-title {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .card-subtitle {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .card-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .badge-red { background: rgba(229,57,53,0.15); color: #ef5350; }
+    .badge-orange { background: rgba(245,158,11,0.15); color: #f59e0b; }
+    .badge-green { background: rgba(0,200,83,0.15); color: var(--accent); }
+
+    /* Chart */
+    .chart-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      height: 200px;
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      position: relative;
+    }
+    .chart-bar {
+      flex: 1;
+      background: linear-gradient(to top, var(--primary), var(--primary-light));
+      border-radius: 6px 6px 0 0;
+      min-height: 4px;
+      position: relative;
+      transition: all 0.3s;
+    }
+    .chart-bar:hover { opacity: 0.8; }
+    .chart-label {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.625rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .chart-value {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.625rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* Loading */
+    .loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+      gap: 16px;
+    }
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--border);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Last updated */
+    .last-updated {
+      text-align: center;
+      padding: 16px;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+    }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-muted);
+    }
+    .empty-state .icon { font-size: 3rem; margin-bottom: 12px; }
+
+    /* Refresh indicator */
+    .refreshing {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+      z-index: 1000;
+      animation: loading-bar 1.5s ease-in-out infinite;
+      display: none;
+    }
+    .refreshing.active { display: block; }
+    @keyframes loading-bar {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    /* Responsive */
+    @media (min-width: 768px) {
+      .container { max-width: 600px; }
+      .kpi-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="refreshing" id="refreshIndicator"></div>
+
+<!-- LOGIN SCREEN -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-logo">
+    <img src="assets/images/logo.png" alt="VMP" onerror="this.style.display='none'; this.nextElementSibling.style.marginTop='0'">
+    <h1>VMP Dashboard</h1>
+    <p>Painel Remoto para Empresários</p>
+  </div>
+  <div class="container">
+    <div class="error-msg" id="errorMsg"></div>
+    <div class="form-group">
+      <label for="licenseId">License ID</label>
+      <input type="text" id="licenseId" placeholder="Ex: abc123-def456" autocomplete="off">
+    </div>
+    <div class="form-group">
+      <label for="pin">PIN de Acesso</label>
+      <input type="password" id="pin" placeholder="4-6 dígitos" maxlength="6" inputmode="numeric" autocomplete="off">
+    </div>
+    <button class="btn btn-primary" id="loginBtn" onclick="doLogin()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+      Entrar
+    </button>
+    <p style="text-align: center; margin-top: 20px; font-size: 0.8125rem; color: var(--text-muted);">
+      Não tem acesso? <a href="https://wa.me/258846166104" target="_blank" style="color: var(--primary-light);">Fale connosco no WhatsApp</a>
+    </p>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div class="dashboard" id="dashboard">
+  <div class="dash-header">
+    <div class="container dash-header-inner">
+      <h2><span class="status-dot"></span> <span id="businessName">VMP Dashboard</span></h2>
+      <button class="logout-btn" onclick="doLogout()">Sair</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- KPIs Hoje -->
+    <div class="section-title">Hoje</div>
+    <div class="kpi-grid">
+      <div class="kpi-card blue">
+        <div class="kpi-label">Vendas</div>
+        <div class="kpi-value" id="todaySales">—</div>
+      </div>
+      <div class="kpi-card green">
+        <div class="kpi-label">Receita</div>
+        <div class="kpi-value small" id="todayRevenue">—</div>
+      </div>
+      <div class="kpi-card purple">
+        <div class="kpi-label">Vendas Mês</div>
+        <div class="kpi-value" id="monthSales">—</div>
+      </div>
+      <div class="kpi-card orange">
+        <div class="kpi-label">Receita Mês</div>
+        <div class="kpi-value small" id="monthRevenue">—</div>
+      </div>
+    </div>
+
+    <!-- Gráfico -->
+    <div class="section-title">Últimos 7 Dias</div>
+    <div class="chart-container" id="chartContainer">
+      <div class="empty-state">
+        <div class="icon">📊</div>
+        <p>Sem dados de vendas</p>
+      </div>
+    </div>
+
+    <!-- Produtos mais vendidos -->
+    <div class="section-title">Produtos Mais Vendidos</div>
+    <div class="card" id="topProductsCard">
+      <div class="empty-state">
+        <div class="icon">🛒</div>
+        <p>Sem vendas nos últimos 7 dias</p>
+      </div>
+    </div>
+
+    <!-- Alertas -->
+    <div class="section-title">Alertas</div>
+    <div class="card" id="alertsCard">
+      <div class="empty-state">
+        <div class="icon">✅</div>
+        <p>Tudo em ordem! Sem alertas.</p>
+      </div>
+    </div>
+
+    <div class="last-updated" id="lastUpdated"></div>
+  </div>
+</div>
+
+<script>
+// =========================================================
+// CONFIG
+// =========================================================
+const API_BASE = 'https://vmp-server.onrender.com';
+const REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutos
+
+let authToken = localStorage.getItem('vmp_remote_token');
+let refreshTimer = null;
+
+// =========================================================
+// LOGIN
+// =========================================================
+async function doLogin() {
+  const licenseId = document.getElementById('licenseId').value.trim();
+  const pin = document.getElementById('pin').value.trim();
+  const btn = document.getElementById('loginBtn');
+  const errorMsg = document.getElementById('errorMsg');
+
+  if (!licenseId || !pin) {
+    showError('Preencha todos os campos');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.innerHTML = '<div class="spinner" style="width:20px;height:20px;border-width:2px;"></div> A entrar...';
+  errorMsg.classList.remove('visible');
+
+  try {
+    const res = await fetch(`${API_BASE}/api/remote/auth`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ licenseId, pin }),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      authToken = data.token;
+      localStorage.setItem('vmp_remote_token', authToken);
+      localStorage.setItem('vmp_remote_license', licenseId);
+      showDashboard();
+    } else {
+      showError(data.message || 'Erro de autenticação');
+    }
+  } catch (e) {
+    showError('Erro de conexão. Verifique a internet.');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg> Entrar`;
+  }
+}
+
+function showError(msg) {
+  const el = document.getElementById('errorMsg');
+  el.textContent = msg;
+  el.classList.add('visible');
+}
+
+// =========================================================
+// DASHBOARD
+// =========================================================
+async function showDashboard() {
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('dashboard').classList.add('active');
+  await loadDashboard();
+  refreshTimer = setInterval(loadDashboard, REFRESH_INTERVAL);
+}
+
+async function loadDashboard() {
+  const indicator = document.getElementById('refreshIndicator');
+  indicator.classList.add('active');
+
+  try {
+    const res = await fetch(`${API_BASE}/api/remote/dashboard`, {
+      headers: {
+        'Authorization': `Bearer ${authToken}`,
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (res.status === 401) {
+      // Token expirado
+      doLogout();
+      showError('Sessão expirada. Faça login novamente.');
+      return;
+    }
+
+    const data = await res.json();
+
+    if (data.success) {
+      renderDashboard(data);
+    }
+  } catch (e) {
+    console.error('Dashboard error:', e);
+  } finally {
+    indicator.classList.remove('active');
+  }
+}
+
+function renderDashboard(data) {
+  // Business info
+  document.getElementById('businessName').textContent = data.business?.name || 'VMP Dashboard';
+
+  // KPIs
+  document.getElementById('todaySales').textContent = data.today?.sales ?? 0;
+  document.getElementById('todayRevenue').textContent = formatCurrency(data.today?.revenue ?? 0);
+  document.getElementById('monthSales').textContent = data.month?.sales ?? 0;
+  document.getElementById('monthRevenue').textContent = formatCurrency(data.month?.revenue ?? 0);
+
+  // Chart
+  renderChart(data.chart?.salesByDay || []);
+
+  // Top products
+  renderTopProducts(data.topProducts || []);
+
+  // Alerts
+  renderAlerts(data.alerts || {});
+
+  // Last updated
+  const updated = data.lastUpdated ? new Date(data.lastUpdated) : new Date();
+  document.getElementById('lastUpdated').textContent = 
+    `Actualizado: ${updated.toLocaleString('pt-PT')}`;
+}
+
+function formatCurrency(value) {
+  return new Intl.NumberFormat('pt-PT', {
+    style: 'currency',
+    currency: 'MZN',
+    minimumFractionDigits: 0,
+  }).format(value);
+}
+
+// =========================================================
+// CHART
+// =========================================================
+function renderChart(salesByDay) {
+  const container = document.getElementById('chartContainer');
+
+  if (!salesByDay.length) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <div class="icon">📊</div>
+        <p>Sem dados de vendas</p>
+      </div>`;
+    return;
+  }
+
+  const maxVal = Math.max(...salesByDay.map(d => d.total || 0), 1);
+  const days = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+
+  container.innerHTML = salesByDay.map(d => {
+    const date = new Date(d.day + 'T00:00:00');
+    const dayName = days[date.getDay()];
+    const height = Math.max((d.total / maxVal) * 100, 4);
+    return `
+      <div class="chart-bar" style="height: ${height}%">
+        <div class="chart-value">${formatCurrency(d.total)}</div>
+        <div class="chart-label">${dayName}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+// =========================================================
+// TOP PRODUCTS
+// =========================================================
+function renderTopProducts(products) {
+  const card = document.getElementById('topProductsCard');
+
+  if (!products.length) {
+    card.innerHTML = `
+      <div class="empty-state">
+        <div class="icon">🛒</div>
+        <p>Sem vendas nos últimos 7 dias</p>
+      </div>`;
+    return;
+  }
+
+  card.innerHTML = products.map((p, i) => `
+    <div class="card-item">
+      <div class="card-icon blue">${i + 1}</div>
+      <div class="card-content">
+        <div class="card-title">${escapeHtml(p.name)}</div>
+        <div class="card-subtitle">${p.qty} unidades vendidas</div>
+      </div>
+      <div class="card-badge badge-green">${formatCurrency(p.revenue)}</div>
+    </div>
+  `).join('');
+}
+
+// =========================================================
+// ALERTS
+// =========================================================
+function renderAlerts(alerts) {
+  const card = document.getElementById('alertsCard');
+  const items = [];
+
+  // Stock esgotado
+  (alerts.outOfStock || []).forEach(item => {
+    items.push({
+      icon: '🔴',
+      iconClass: 'red',
+      title: escapeHtml(item.name),
+      subtitle: 'Stock: 0 (Min: ' + item.min_stock + ')',
+      badge: 'ESGOTADO',
+      badgeClass: 'badge-red',
+    });
+  });
+
+  // Stock baixo
+  (alerts.lowStock || []).forEach(item => {
+    items.push({
+      icon: '🟠',
+      iconClass: 'orange',
+      title: escapeHtml(item.name),
+      subtitle: 'Stock: ' + item.stock + ' (Min: ' + item.min_stock + ')',
+      badge: 'BAIXO',
+      badgeClass: 'badge-orange',
+    });
+  });
+
+  // Caixas abertos
+  (alerts.openSessions || []).forEach(s => {
+    items.push({
+      icon: '💰',
+      iconClass: 'green',
+      title: 'Caixa aberto: ' + escapeHtml(s.user_name || 'Desconhecido'),
+      subtitle: 'Aberto em: ' + (s.opened_at ? new Date(s.opened_at).toLocaleString('pt-PT') : '-'),
+      badge: 'ABERTO',
+      badgeClass: 'badge-green',
+    });
+  });
+
+  if (!items.length) {
+    card.innerHTML = `
+      <div class="empty-state">
+        <div class="icon">✅</div>
+        <p>Tudo em ordem! Sem alertas.</p>
+      </div>`;
+    return;
+  }
+
+  card.innerHTML = items.map(item => `
+    <div class="card-item">
+      <div class="card-icon ${item.iconClass}">${item.icon}</div>
+      <div class="card-content">
+        <div class="card-title">${item.title}</div>
+        <div class="card-subtitle">${item.subtitle}</div>
+      </div>
+      <div class="card-badge ${item.badgeClass}">${item.badge}</div>
+    </div>
+  `).join('');
+}
+
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+// =========================================================
+// LOGOUT
+// =========================================================
+async function doLogout() {
+  if (refreshTimer) {
+    clearInterval(refreshTimer);
+    refreshTimer = null;
+  }
+
+  try {
+    await fetch(`${API_BASE}/api/remote/logout`, {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${authToken}` },
+    });
+  } catch (e) {}
+
+  authToken = null;
+  localStorage.removeItem('vmp_remote_token');
+  localStorage.removeItem('vmp_remote_license');
+
+  document.getElementById('dashboard').classList.remove('active');
+  document.getElementById('loginScreen').style.display = 'flex';
+  document.getElementById('licenseId').value = '';
+  document.getElementById('pin').value = '';
+}
+
+// =========================================================
+// AUTO-LOGIN (se token guardado)
+// =========================================================
+window.addEventListener('DOMContentLoaded', () => {
+  const savedLicense = localStorage.getItem('vmp_remote_license');
+  if (savedLicense) {
+    document.getElementById('licenseId').value = savedLicense;
+  }
+
+  if (authToken) {
+    showDashboard();
+  }
+
+  // Enter key no PIN
+  document.getElementById('pin').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') doLogin();
+  });
+});
+
+// PWA: prevenir zoom no input
+document.addEventListener('gesturestart', (e) => e.preventDefault());
+</script>
+
+</body>
+</html>
