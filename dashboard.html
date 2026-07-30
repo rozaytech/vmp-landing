@@ -38,7 +38,6 @@
     }
     .container { max-width: 480px; margin: 0 auto; padding: 0 16px; }
 
-    /* Login */
     .login-screen {
       min-height: 100vh;
       display: flex;
@@ -127,7 +126,6 @@
     }
     .error-msg.visible { display: block; }
 
-    /* Dashboard */
     .dashboard { display: none; padding-bottom: 80px; }
     .dashboard.active { display: block; }
     .dash-header {
@@ -177,7 +175,6 @@
       margin: 24px 0 12px;
     }
 
-    /* Cards */
     .kpi-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -219,7 +216,6 @@
     }
     .kpi-value.small { font-size: 1.125rem; }
 
-    /* Lists */
     .card {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -272,7 +268,6 @@
     .badge-orange { background: rgba(245,158,11,0.15); color: #f59e0b; }
     .badge-green { background: rgba(0,200,83,0.15); color: var(--accent); }
 
-    /* Chart */
     .chart-container {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -313,7 +308,6 @@
       white-space: nowrap;
     }
 
-    /* Loading */
     .loading {
       display: flex;
       flex-direction: column;
@@ -332,7 +326,6 @@
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* Last updated */
     .last-updated {
       text-align: center;
       padding: 16px;
@@ -340,7 +333,6 @@
       font-size: 0.75rem;
     }
 
-    /* Empty state */
     .empty-state {
       text-align: center;
       padding: 40px 20px;
@@ -348,7 +340,6 @@
     }
     .empty-state .icon { font-size: 3rem; margin-bottom: 12px; }
 
-    /* Refresh indicator */
     .refreshing {
       position: fixed;
       top: 0;
@@ -366,7 +357,6 @@
       100% { transform: translateX(100%); }
     }
 
-    /* Responsive */
     @media (min-width: 768px) {
       .container { max-width: 600px; }
       .kpi-grid { grid-template-columns: repeat(4, 1fr); }
@@ -377,12 +367,11 @@
 
 <div class="refreshing" id="refreshIndicator"></div>
 
-<!-- LOGIN SCREEN -->
 <div class="login-screen" id="loginScreen">
   <div class="login-logo">
     <img src="assets/images/logo.png" alt="VMP" onerror="this.style.display='none'; this.nextElementSibling.style.marginTop='0'">
     <h1>VMP Dashboard</h1>
-    <p>Painel Remoto para Empresários</p>
+    <p>Painel Remoto para Empresarios</p>
   </div>
   <div class="container">
     <div class="error-msg" id="errorMsg"></div>
@@ -392,19 +381,18 @@
     </div>
     <div class="form-group">
       <label for="pin">PIN de Acesso</label>
-      <input type="password" id="pin" placeholder="4-6 dígitos" maxlength="6" inputmode="numeric" autocomplete="off">
+      <input type="password" id="pin" placeholder="4-6 digitos" maxlength="6" inputmode="numeric" autocomplete="off">
     </div>
     <button class="btn btn-primary" id="loginBtn" onclick="doLogin()">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
       Entrar
     </button>
     <p style="text-align: center; margin-top: 20px; font-size: 0.8125rem; color: var(--text-muted);">
-      Não tem acesso? <a href="https://wa.me/258846166104" target="_blank" style="color: var(--primary-light);">Fale connosco no WhatsApp</a>
+      Nao tem acesso? <a href="https://wa.me/258846166104" target="_blank" style="color: var(--primary-light);">Fale connosco no WhatsApp</a>
     </p>
   </div>
 </div>
 
-<!-- DASHBOARD -->
 <div class="dashboard" id="dashboard">
   <div class="dash-header">
     <div class="container dash-header-inner">
@@ -414,7 +402,6 @@
   </div>
 
   <div class="container">
-    <!-- KPIs Hoje -->
     <div class="section-title">Hoje</div>
     <div class="kpi-grid">
       <div class="kpi-card blue">
@@ -426,38 +413,35 @@
         <div class="kpi-value small" id="todayRevenue">—</div>
       </div>
       <div class="kpi-card purple">
-        <div class="kpi-label">Vendas Mês</div>
+        <div class="kpi-label">Vendas Mes</div>
         <div class="kpi-value" id="monthSales">—</div>
       </div>
       <div class="kpi-card orange">
-        <div class="kpi-label">Receita Mês</div>
+        <div class="kpi-label">Receita Mes</div>
         <div class="kpi-value small" id="monthRevenue">—</div>
       </div>
     </div>
 
-    <!-- Gráfico -->
-    <div class="section-title">Últimos 7 Dias</div>
+    <div class="section-title">Ultimos 7 Dias</div>
     <div class="chart-container" id="chartContainer">
       <div class="empty-state">
-        <div class="icon">📊</div>
+        <div class="icon">&#128202;</div>
         <p>Sem dados de vendas</p>
       </div>
     </div>
 
-    <!-- Produtos mais vendidos -->
     <div class="section-title">Produtos Mais Vendidos</div>
     <div class="card" id="topProductsCard">
       <div class="empty-state">
-        <div class="icon">🛒</div>
-        <p>Sem vendas nos últimos 7 dias</p>
+        <div class="icon">&#128722;</div>
+        <p>Sem vendas nos ultimos 7 dias</p>
       </div>
     </div>
 
-    <!-- Alertas -->
     <div class="section-title">Alertas</div>
     <div class="card" id="alertsCard">
       <div class="empty-state">
-        <div class="icon">✅</div>
+        <div class="icon">&#9989;</div>
         <p>Tudo em ordem! Sem alertas.</p>
       </div>
     </div>
@@ -467,18 +451,12 @@
 </div>
 
 <script>
-// =========================================================
-// CONFIG
-// =========================================================
 const API_BASE = 'https://vmp-server.onrender.com';
-const REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutos
+const REFRESH_INTERVAL = 5 * 60 * 1000;
 
 let authToken = localStorage.getItem('vmp_remote_token');
 let refreshTimer = null;
 
-// =========================================================
-// LOGIN
-// =========================================================
 async function doLogin() {
   const licenseId = document.getElementById('licenseId').value.trim();
   const pin = document.getElementById('pin').value.trim();
@@ -509,10 +487,10 @@ async function doLogin() {
       localStorage.setItem('vmp_remote_license', licenseId);
       showDashboard();
     } else {
-      showError(data.message || 'Erro de autenticação');
+      showError(data.message || 'Erro de autenticacao');
     }
   } catch (e) {
-    showError('Erro de conexão. Verifique a internet.');
+    showError('Erro de conexao. Verifique a internet.');
   } finally {
     btn.disabled = false;
     btn.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg> Entrar`;
@@ -525,9 +503,6 @@ function showError(msg) {
   el.classList.add('visible');
 }
 
-// =========================================================
-// DASHBOARD
-// =========================================================
 async function showDashboard() {
   document.getElementById('loginScreen').style.display = 'none';
   document.getElementById('dashboard').classList.add('active');
@@ -548,9 +523,8 @@ async function loadDashboard() {
     });
 
     if (res.status === 401) {
-      // Token expirado
       doLogout();
-      showError('Sessão expirada. Faça login novamente.');
+      showError('Sessao expirada. Faca login novamente.');
       return;
     }
 
@@ -567,27 +541,19 @@ async function loadDashboard() {
 }
 
 function renderDashboard(data) {
-  // Business info
   document.getElementById('businessName').textContent = data.business?.name || 'VMP Dashboard';
 
-  // KPIs
   document.getElementById('todaySales').textContent = data.today?.sales ?? 0;
   document.getElementById('todayRevenue').textContent = formatCurrency(data.today?.revenue ?? 0);
   document.getElementById('monthSales').textContent = data.month?.sales ?? 0;
   document.getElementById('monthRevenue').textContent = formatCurrency(data.month?.revenue ?? 0);
 
-  // Chart
   renderChart(data.chart?.salesByDay || []);
-
-  // Top products
   renderTopProducts(data.topProducts || []);
-
-  // Alerts
   renderAlerts(data.alerts || {});
 
-  // Last updated
   const updated = data.lastUpdated ? new Date(data.lastUpdated) : new Date();
-  document.getElementById('lastUpdated').textContent = 
+  document.getElementById('lastUpdated').textContent =
     `Actualizado: ${updated.toLocaleString('pt-PT')}`;
 }
 
@@ -599,23 +565,20 @@ function formatCurrency(value) {
   }).format(value);
 }
 
-// =========================================================
-// CHART
-// =========================================================
 function renderChart(salesByDay) {
   const container = document.getElementById('chartContainer');
 
   if (!salesByDay.length) {
     container.innerHTML = `
       <div class="empty-state">
-        <div class="icon">📊</div>
+        <div class="icon">&#128202;</div>
         <p>Sem dados de vendas</p>
       </div>`;
     return;
   }
 
   const maxVal = Math.max(...salesByDay.map(d => d.total || 0), 1);
-  const days = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+  const days = ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'];
 
   container.innerHTML = salesByDay.map(d => {
     const date = new Date(d.day + 'T00:00:00');
@@ -630,17 +593,14 @@ function renderChart(salesByDay) {
   }).join('');
 }
 
-// =========================================================
-// TOP PRODUCTS
-// =========================================================
 function renderTopProducts(products) {
   const card = document.getElementById('topProductsCard');
 
   if (!products.length) {
     card.innerHTML = `
       <div class="empty-state">
-        <div class="icon">🛒</div>
-        <p>Sem vendas nos últimos 7 dias</p>
+        <div class="icon">&#128722;</div>
+        <p>Sem vendas nos ultimos 7 dias</p>
       </div>`;
     return;
   }
@@ -657,17 +617,13 @@ function renderTopProducts(products) {
   `).join('');
 }
 
-// =========================================================
-// ALERTS
-// =========================================================
 function renderAlerts(alerts) {
   const card = document.getElementById('alertsCard');
   const items = [];
 
-  // Stock esgotado
   (alerts.outOfStock || []).forEach(item => {
     items.push({
-      icon: '🔴',
+      icon: '&#128308;',
       iconClass: 'red',
       title: escapeHtml(item.name),
       subtitle: 'Stock: 0 (Min: ' + item.min_stock + ')',
@@ -676,10 +632,9 @@ function renderAlerts(alerts) {
     });
   });
 
-  // Stock baixo
   (alerts.lowStock || []).forEach(item => {
     items.push({
-      icon: '🟠',
+      icon: '&#128992;',
       iconClass: 'orange',
       title: escapeHtml(item.name),
       subtitle: 'Stock: ' + item.stock + ' (Min: ' + item.min_stock + ')',
@@ -688,10 +643,9 @@ function renderAlerts(alerts) {
     });
   });
 
-  // Caixas abertos
   (alerts.openSessions || []).forEach(s => {
     items.push({
-      icon: '💰',
+      icon: '&#128176;',
       iconClass: 'green',
       title: 'Caixa aberto: ' + escapeHtml(s.user_name || 'Desconhecido'),
       subtitle: 'Aberto em: ' + (s.opened_at ? new Date(s.opened_at).toLocaleString('pt-PT') : '-'),
@@ -703,7 +657,7 @@ function renderAlerts(alerts) {
   if (!items.length) {
     card.innerHTML = `
       <div class="empty-state">
-        <div class="icon">✅</div>
+        <div class="icon">&#9989;</div>
         <p>Tudo em ordem! Sem alertas.</p>
       </div>`;
     return;
@@ -727,9 +681,6 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
-// =========================================================
-// LOGOUT
-// =========================================================
 async function doLogout() {
   if (refreshTimer) {
     clearInterval(refreshTimer);
@@ -753,12 +704,14 @@ async function doLogout() {
   document.getElementById('pin').value = '';
 }
 
-// =========================================================
-// AUTO-LOGIN (se token guardado)
-// =========================================================
 window.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlLicense = urlParams.get('license');
   const savedLicense = localStorage.getItem('vmp_remote_license');
-  if (savedLicense) {
+
+  if (urlLicense) {
+    document.getElementById('licenseId').value = urlLicense;
+  } else if (savedLicense) {
     document.getElementById('licenseId').value = savedLicense;
   }
 
@@ -766,13 +719,11 @@ window.addEventListener('DOMContentLoaded', () => {
     showDashboard();
   }
 
-  // Enter key no PIN
   document.getElementById('pin').addEventListener('keypress', (e) => {
     if (e.key === 'Enter') doLogin();
   });
 });
 
-// PWA: prevenir zoom no input
 document.addEventListener('gesturestart', (e) => e.preventDefault());
 </script>
 
