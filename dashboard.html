@@ -166,6 +166,28 @@
       cursor: pointer;
     }
 
+    .backup-banner {
+      background: rgba(0, 200, 83, 0.08);
+      border: 1px solid rgba(0, 200, 83, 0.25);
+      border-radius: 12px;
+      padding: 10px 16px;
+      margin: 16px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8125rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .backup-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s infinite;
+      flex-shrink: 0;
+    }
+
     .section-title {
       font-size: 0.75rem;
       font-weight: 600;
@@ -371,7 +393,7 @@
   <div class="login-logo">
     <img src="assets/images/logo.png" alt="VMP" onerror="this.style.display='none'; this.nextElementSibling.style.marginTop='0'">
     <h1>VMP Dashboard</h1>
-    <p>Painel Remoto para Empresarios</p>
+    <p>Painel Remoto Para Empresários</p>
   </div>
   <div class="container">
     <div class="error-msg" id="errorMsg"></div>
@@ -380,15 +402,15 @@
       <input type="text" id="licenseId" placeholder="Ex: abc123-def456" autocomplete="off">
     </div>
     <div class="form-group">
-      <label for="pin">PIN de Acesso</label>
-      <input type="password" id="pin" placeholder="4-6 digitos" maxlength="6" inputmode="numeric" autocomplete="off">
+      <label for="pin">PIN De Acesso</label>
+      <input type="password" id="pin" placeholder="4-6 Dígitos" maxlength="6" inputmode="numeric" autocomplete="off">
     </div>
     <button class="btn btn-primary" id="loginBtn" onclick="doLogin()">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
       Entrar
     </button>
     <p style="text-align: center; margin-top: 20px; font-size: 0.8125rem; color: var(--text-muted);">
-      Nao tem acesso? <a href="https://wa.me/258846166104" target="_blank" style="color: var(--primary-light);">Fale connosco no WhatsApp</a>
+      Não Tem Acesso? <a href="https://wa.me/258846166104" target="_blank" style="color: var(--primary-light);">Fale Connosco No WhatsApp</a>
     </p>
   </div>
 </div>
@@ -402,6 +424,11 @@
   </div>
 
   <div class="container">
+    <div class="backup-banner">
+      <span class="backup-dot"></span>
+      Backup Automático Ativo — Enviado Para Discord
+    </div>
+
     <div class="section-title">Hoje</div>
     <div class="kpi-grid">
       <div class="kpi-card blue">
@@ -413,20 +440,20 @@
         <div class="kpi-value small" id="todayRevenue">—</div>
       </div>
       <div class="kpi-card purple">
-        <div class="kpi-label">Vendas Mes</div>
+        <div class="kpi-label">Vendas Mês</div>
         <div class="kpi-value" id="monthSales">—</div>
       </div>
       <div class="kpi-card orange">
-        <div class="kpi-label">Receita Mes</div>
+        <div class="kpi-label">Receita Mês</div>
         <div class="kpi-value small" id="monthRevenue">—</div>
       </div>
     </div>
 
-    <div class="section-title">Ultimos 7 Dias</div>
+    <div class="section-title">Últimos 7 Dias</div>
     <div class="chart-container" id="chartContainer">
       <div class="empty-state">
         <div class="icon">&#128202;</div>
-        <p>Sem dados de vendas</p>
+        <p>Sem Dados De Vendas</p>
       </div>
     </div>
 
@@ -434,7 +461,7 @@
     <div class="card" id="topProductsCard">
       <div class="empty-state">
         <div class="icon">&#128722;</div>
-        <p>Sem vendas nos ultimos 7 dias</p>
+        <p>Sem Vendas Nos Últimos 7 Dias</p>
       </div>
     </div>
 
@@ -442,7 +469,7 @@
     <div class="card" id="alertsCard">
       <div class="empty-state">
         <div class="icon">&#9989;</div>
-        <p>Tudo em ordem! Sem alertas.</p>
+        <p>Tudo Em Ordem! Sem Alertas.</p>
       </div>
     </div>
 
@@ -464,12 +491,12 @@ async function doLogin() {
   const errorMsg = document.getElementById('errorMsg');
 
   if (!licenseId || !pin) {
-    showError('Preencha todos os campos');
+    showError('Preencha Todos Os Campos');
     return;
   }
 
   btn.disabled = true;
-  btn.innerHTML = '<div class="spinner" style="width:20px;height:20px;border-width:2px;"></div> A entrar...';
+  btn.innerHTML = '<div class="spinner" style="width:20px;height:20px;border-width:2px;"></div> A Entrar...';
   errorMsg.classList.remove('visible');
 
   try {
@@ -487,10 +514,10 @@ async function doLogin() {
       localStorage.setItem('vmp_remote_license', licenseId);
       showDashboard();
     } else {
-      showError(data.message || 'Erro de autenticacao');
+      showError(data.message || 'Erro De Autenticação');
     }
   } catch (e) {
-    showError('Erro de conexao. Verifique a internet.');
+    showError('Erro De Conexão. Verifique A Internet.');
   } finally {
     btn.disabled = false;
     btn.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg> Entrar`;
@@ -524,7 +551,7 @@ async function loadDashboard() {
 
     if (res.status === 401) {
       doLogout();
-      showError('Sessao expirada. Faca login novamente.');
+      showError('Sessão Expirada. Faça Login Novamente.');
       return;
     }
 
@@ -572,13 +599,13 @@ function renderChart(salesByDay) {
     container.innerHTML = `
       <div class="empty-state">
         <div class="icon">&#128202;</div>
-        <p>Sem dados de vendas</p>
+        <p>Sem Dados De Vendas</p>
       </div>`;
     return;
   }
 
   const maxVal = Math.max(...salesByDay.map(d => d.total || 0), 1);
-  const days = ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'];
+  const days = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
 
   container.innerHTML = salesByDay.map(d => {
     const date = new Date(d.day + 'T00:00:00');
@@ -600,7 +627,7 @@ function renderTopProducts(products) {
     card.innerHTML = `
       <div class="empty-state">
         <div class="icon">&#128722;</div>
-        <p>Sem vendas nos ultimos 7 dias</p>
+        <p>Sem Vendas Nos Últimos 7 Dias</p>
       </div>`;
     return;
   }
@@ -610,7 +637,7 @@ function renderTopProducts(products) {
       <div class="card-icon blue">${i + 1}</div>
       <div class="card-content">
         <div class="card-title">${escapeHtml(p.name)}</div>
-        <div class="card-subtitle">${p.qty} unidades vendidas</div>
+        <div class="card-subtitle">${p.qty} Unidades Vendidas</div>
       </div>
       <div class="card-badge badge-green">${formatCurrency(p.revenue)}</div>
     </div>
@@ -627,7 +654,7 @@ function renderAlerts(alerts) {
       iconClass: 'red',
       title: escapeHtml(item.name),
       subtitle: 'Stock: 0 (Min: ' + item.min_stock + ')',
-      badge: 'ESGOTADO',
+      badge: 'Esgotado',
       badgeClass: 'badge-red',
     });
   });
@@ -638,7 +665,7 @@ function renderAlerts(alerts) {
       iconClass: 'orange',
       title: escapeHtml(item.name),
       subtitle: 'Stock: ' + item.stock + ' (Min: ' + item.min_stock + ')',
-      badge: 'BAIXO',
+      badge: 'Baixo',
       badgeClass: 'badge-orange',
     });
   });
@@ -647,9 +674,9 @@ function renderAlerts(alerts) {
     items.push({
       icon: '&#128176;',
       iconClass: 'green',
-      title: 'Caixa aberto: ' + escapeHtml(s.user_name || 'Desconhecido'),
-      subtitle: 'Aberto em: ' + (s.opened_at ? new Date(s.opened_at).toLocaleString('pt-PT') : '-'),
-      badge: 'ABERTO',
+      title: 'Caixa Aberto: ' + escapeHtml(s.user_name || 'Desconhecido'),
+      subtitle: 'Aberto Em: ' + (s.opened_at ? new Date(s.opened_at).toLocaleString('pt-PT') : '-'),
+      badge: 'Aberto',
       badgeClass: 'badge-green',
     });
   });
@@ -658,7 +685,7 @@ function renderAlerts(alerts) {
     card.innerHTML = `
       <div class="empty-state">
         <div class="icon">&#9989;</div>
-        <p>Tudo em ordem! Sem alertas.</p>
+        <p>Tudo Em Ordem! Sem Alertas.</p>
       </div>`;
     return;
   }
