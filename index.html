@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="VMP SaaS v2.3.6 — ERP Completo Para Lojas, Bancas e Vending Machines em Mocambique. POS, Stock, Contabilidade, IRPS, SAF-T, Faturacao e Licenciamento SaaS.">
-  <meta name="keywords" content="ERP, POS, Mocambique, gestao, stock, contabilidade, SaaS, VMP, faturacao, SAF-T">
+  <meta name="description" content="VMP SaaS v2.3.6 — ERP Completo Para Empresas, Lojas, Bancas E Vending Machines Em Moçambique. POS, Stock, Contabilidade, IRPS, SAF-T, Faturação E Licenciamento SaaS.">
+  <meta name="keywords" content="ERP, POS, Moçambique, gestão, stock, contabilidade, SAF-T, IRPS, faturação, SaaS, VMP">
   <meta name="author" content="Adamgy Adamo Tembe">
   <meta name="theme-color" content="#0B1120">
-  <meta property="og:title" content="VMP SaaS v2.3.6 — ERP Completo Para Lojas e Vending Machines">
-  <meta property="og:description" content="ERP Completo Para Lojas, Bancas e Vending Machines em Mocambique. POS, Stock, Contabilidade, IRPS e Faturacao.">
+  <meta property="og:title" content="VMP SaaS v2.3.6 — ERP Completo Para Empresas, Lojas, Bancas E Vending Machines">
+  <meta property="og:description" content="ERP Completo Para Moçambique. POS, Stock, Contabilidade, IRPS, SAF-T, Faturação E Licenciamento SaaS.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://vmp-landing.vercel.app">
-  <title>VMP SaaS v2.3.6 — ERP Completo Para Lojas e Vending Machines</title>
+  <title>VMP SaaS v2.3.6 — ERP Completo Para Empresas, Lojas, Bancas e Vending Machines em Moçambique. POS, Stock, Contabilidade, IRPS, SAF-T, Faturação e Licenciamento SaaS.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -38,11 +38,8 @@
       --radius-lg: 16px;
       --max-width: 1200px;
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg);
@@ -50,13 +47,11 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-
     .container {
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 0 24px;
     }
-
     .header {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -65,14 +60,12 @@
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
-
     .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: 64px;
     }
-
     .logo {
       display: flex;
       align-items: center;
@@ -83,18 +76,15 @@
       font-size: 1.1rem;
       letter-spacing: -0.3px;
     }
-
     .logo img {
       width: 32px;
       height: 32px;
       border-radius: 8px;
     }
-
     .nav {
       display: flex;
       gap: 28px;
     }
-
     .nav a {
       color: var(--text-secondary);
       text-decoration: none;
@@ -102,9 +92,7 @@
       font-weight: 500;
       transition: color 0.2s;
     }
-
     .nav a:hover { color: var(--text); }
-
     .nav-toggle {
       display: none;
       background: none;
@@ -112,13 +100,11 @@
       color: var(--text);
       cursor: pointer;
     }
-
     .hero {
       position: relative;
       padding: 140px 0 100px;
       overflow: hidden;
     }
-
     .hero::before {
       content: '';
       position: absolute;
@@ -127,7 +113,6 @@
       background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.04) 0%, transparent 50%);
       pointer-events: none;
     }
-
     .hero-inner {
       position: relative;
       display: grid;
@@ -135,14 +120,12 @@
       gap: 60px;
       align-items: center;
     }
-
     .hero-badges {
       display: flex;
       gap: 10px;
       margin-bottom: 24px;
       flex-wrap: wrap;
     }
-
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -155,19 +138,16 @@
       font-weight: 600;
       color: var(--accent);
     }
-
     .dot {
       width: 6px; height: 6px;
       background: var(--success);
       border-radius: 50%;
       animation: pulse 2s infinite;
     }
-
     @keyframes pulse {
       0%, 100% { opacity: 1; }
       50% { opacity: 0.5; }
     }
-
     .hero h1 {
       font-size: 3.2rem;
       font-weight: 800;
@@ -175,27 +155,23 @@
       letter-spacing: -1.5px;
       margin-bottom: 20px;
     }
-
     .text-gradient {
       background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-
     .hero p {
       font-size: 1.1rem;
       color: var(--text-secondary);
       max-width: 480px;
       margin-bottom: 32px;
     }
-
     .hero-actions {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
     }
-
     .btn {
       display: inline-flex;
       align-items: center;
@@ -211,49 +187,40 @@
       transition: all 0.2s;
       white-space: nowrap;
     }
-
     .btn-lg {
       padding: 14px 28px;
       font-size: 1rem;
     }
-
     .btn-primary {
       background: var(--accent);
       color: #fff;
     }
-
     .btn-primary:hover {
       background: var(--accent-hover);
       transform: translateY(-1px);
     }
-
     .btn-accent {
       background: var(--bg-elevated);
       color: var(--text);
       border: 1px solid var(--border);
     }
-
     .btn-accent:hover {
       border-color: var(--border-hover);
       background: #1E293B;
     }
-
     .btn-outline {
       background: transparent;
       color: var(--text);
       border: 1px solid var(--border);
       width: 100%;
     }
-
     .btn-outline:hover {
       border-color: var(--accent);
       color: var(--accent);
     }
-
     .hero-visual {
       position: relative;
     }
-
     .hero-visual-inner {
       background: var(--bg-elevated);
       border: 1px solid var(--border);
@@ -261,7 +228,6 @@
       padding: 20px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
     }
-
     .mock-header {
       display: flex;
       align-items: center;
@@ -270,44 +236,37 @@
       padding-bottom: 12px;
       border-bottom: 1px solid var(--border);
     }
-
     .mock-dot { width: 10px; height: 10px; border-radius: 50%; }
     .mock-dot.red { background: #EF4444; }
     .mock-dot.yellow { background: #F59E0B; }
     .mock-dot.green { background: #10B981; }
-
     .mock-title {
       margin-left: auto;
       font-size: 0.75rem;
       color: var(--text-muted);
       font-weight: 500;
     }
-
     .mock-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
     }
-
     .mock-card {
       background: rgba(255,255,255,0.02);
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 14px;
     }
-
     .mock-card-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 8px;
     }
-
     .mock-label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
     .mock-value { font-size: 1.3rem; font-weight: 700; }
     .mock-value.up { color: var(--success); font-size: 0.8rem; }
     .mock-value.down { color: var(--warning); font-size: 0.8rem; }
-
     .mock-bar {
       height: 4px;
       background: var(--border);
@@ -315,13 +274,11 @@
       overflow: hidden;
       margin-top: 8px;
     }
-
     .mock-bar-fill {
       height: 100%;
       background: var(--accent);
       border-radius: 2px;
     }
-
     .mock-chart {
       grid-column: 1 / -1;
       display: flex;
@@ -333,7 +290,6 @@
       border: 1px solid var(--border);
       border-radius: 10px;
     }
-
     .mock-bar-chart {
       flex: 1;
       background: var(--accent);
@@ -342,71 +298,59 @@
       animation: grow 1.5s ease-out forwards;
       transform-origin: bottom;
     }
-
     @keyframes grow {
       from { transform: scaleY(0); }
       to { transform: scaleY(1); }
     }
-
     .stats-bar {
       background: var(--bg-elevated);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       padding: 48px 0;
     }
-
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 40px;
       text-align: center;
     }
-
     .stat-number {
       font-size: 2rem;
       font-weight: 800;
       color: var(--text);
       letter-spacing: -1px;
     }
-
     .stat-label {
       font-size: 0.85rem;
       color: var(--text-muted);
       margin-top: 4px;
       font-weight: 500;
     }
-
     .section {
       padding: 100px 0;
     }
-
     .section-header {
       text-align: center;
       max-width: 640px;
       margin: 0 auto 64px;
     }
-
     .section-header h2 {
       font-size: 2.2rem;
       font-weight: 800;
       letter-spacing: -1px;
       margin-bottom: 16px;
     }
-
     .section-header p {
       color: var(--text-secondary);
       font-size: 1.05rem;
     }
-
     .grid {
       display: grid;
       gap: 20px;
     }
-
     .grid-3 {
       grid-template-columns: repeat(3, 1fr);
     }
-
     .card {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -414,37 +358,31 @@
       padding: 28px;
       transition: border-color 0.3s, transform 0.3s;
     }
-
     .card:hover {
       border-color: var(--border-hover);
       transform: translateY(-2px);
     }
-
     .card-icon {
       font-size: 1.8rem;
       margin-bottom: 16px;
     }
-
     .card h3 {
       font-size: 1.1rem;
       font-weight: 700;
       margin-bottom: 10px;
       color: var(--text);
     }
-
     .card p {
       font-size: 0.9rem;
       color: var(--text-secondary);
       line-height: 1.6;
     }
-
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       align-items: start;
     }
-
     .pricing-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -452,12 +390,10 @@
       padding: 32px;
       position: relative;
     }
-
     .pricing-card.popular {
       border-color: var(--accent);
       box-shadow: 0 0 0 1px var(--accent);
     }
-
     .badge-popular {
       position: absolute;
       top: -12px;
@@ -471,43 +407,36 @@
       font-weight: 700;
       letter-spacing: 0.5px;
     }
-
     .pricing-card h3 {
       font-size: 1.3rem;
       font-weight: 700;
       margin-bottom: 4px;
     }
-
     .pricing-card .desc {
       font-size: 0.85rem;
       color: var(--text-muted);
       margin-bottom: 20px;
     }
-
     .price {
       font-size: 2.4rem;
       font-weight: 800;
       letter-spacing: -1px;
       margin-bottom: 4px;
     }
-
     .price span {
       font-size: 1rem;
       color: var(--text-muted);
       font-weight: 500;
     }
-
     .price-note {
       font-size: 0.8rem;
       color: var(--text-muted);
       margin-bottom: 24px;
     }
-
     .pricing-card ul {
       list-style: none;
       margin-bottom: 28px;
     }
-
     .pricing-card ul li {
       padding: 8px 0;
       font-size: 0.88rem;
@@ -517,7 +446,6 @@
       align-items: center;
       gap: 8px;
     }
-
     .pricing-card ul li::before {
       content: '';
       width: 16px; height: 16px;
@@ -525,19 +453,15 @@
       background-size: contain;
       flex-shrink: 0;
     }
-
     .pricing-card ul li.missing {
       color: var(--text-muted);
       text-decoration: line-through;
       opacity: 0.5;
     }
-
     .pricing-card ul li.missing::before {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='3'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/svg%3E");
     }
-
     .download-section { padding-bottom: 100px; }
-
     .download-card {
       background: var(--bg-elevated);
       border: 1px solid var(--border);
@@ -547,19 +471,16 @@
       max-width: 560px;
       margin: 0 auto;
     }
-
     .download-card h3 {
       font-size: 1.4rem;
       font-weight: 700;
       margin-bottom: 8px;
     }
-
     .download-card > p {
       color: var(--text-secondary);
       font-size: 0.95rem;
       margin-bottom: 28px;
     }
-
     .download-meta {
       display: flex;
       justify-content: center;
@@ -567,7 +488,6 @@
       margin-bottom: 28px;
       flex-wrap: wrap;
     }
-
     .download-meta-item {
       display: flex;
       align-items: center;
@@ -576,51 +496,41 @@
       font-size: 0.85rem;
       font-weight: 500;
     }
-
     .download-meta-item svg {
       width: 18px; height: 18px;
     }
-
     .download-btn-wrap {
       display: flex;
       justify-content: center;
     }
-
     .download-btn-wrap .btn {
       min-width: 300px;
     }
-
     .mt-2 { margin-top: 16px; }
     .text-muted { color: var(--text-muted); font-size: 0.875rem; }
-
     .contact-section { padding-top: 0; }
-
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 24px;
     }
-
     .contact-info {
       background: var(--bg-elevated);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       padding: 32px;
     }
-
     .contact-info h3 {
       font-size: 1.1rem;
       font-weight: 700;
       margin-bottom: 20px;
       color: var(--text);
     }
-
     .contact-item {
       display: flex;
       gap: 14px;
       margin-bottom: 20px;
     }
-
     .contact-icon {
       width: 40px; height: 40px;
       display: flex;
@@ -631,28 +541,23 @@
       font-size: 1.2rem;
       flex-shrink: 0;
     }
-
     .contact-item h4 {
       font-size: 0.95rem;
       font-weight: 600;
       margin-bottom: 2px;
     }
-
     .contact-item p {
       font-size: 0.85rem;
       color: var(--text-muted);
       margin-bottom: 4px;
     }
-
     .contact-item a {
       color: var(--accent);
       text-decoration: none;
       font-size: 0.9rem;
       font-weight: 500;
     }
-
     .contact-item a:hover { text-decoration: underline; }
-
     .contact-highlight {
       margin-top: 24px;
       padding: 20px;
@@ -660,36 +565,30 @@
       border-radius: var(--radius);
       border-left: 3px solid var(--accent);
     }
-
     .contact-highlight p {
       margin: 0;
       color: var(--text-secondary);
       font-size: 0.9rem;
     }
-
     .contact-highlight strong {
       color: var(--text);
     }
-
     .footer {
       border-top: 1px solid var(--border);
       padding: 60px 0 30px;
     }
-
     .footer-grid {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1fr;
       gap: 40px;
       margin-bottom: 48px;
     }
-
     .footer-brand p {
       color: var(--text-muted);
       font-size: 0.9rem;
       margin-top: 12px;
       line-height: 1.6;
     }
-
     .footer-col h4 {
       font-size: 0.85rem;
       font-weight: 700;
@@ -698,7 +597,6 @@
       color: var(--text);
       margin-bottom: 16px;
     }
-
     .footer-col ul { list-style: none; }
     .footer-col li { margin-bottom: 10px; }
     .footer-col a {
@@ -707,9 +605,7 @@
       font-size: 0.9rem;
       transition: color 0.2s;
     }
-
     .footer-col a:hover { color: var(--text); }
-
     .footer-bottom {
       display: flex;
       justify-content: space-between;
@@ -719,7 +615,6 @@
       font-size: 0.8rem;
       color: var(--text-muted);
     }
-
     .scroll-top {
       position: fixed;
       bottom: 24px;
@@ -738,17 +633,14 @@
       transition: all 0.3s;
       z-index: 999;
     }
-
     .scroll-top.visible {
       opacity: 1;
       visibility: visible;
     }
-
     .scroll-top:hover {
       border-color: var(--accent);
       color: var(--accent);
     }
-
     @media (max-width: 1024px) {
       .hero-inner { grid-template-columns: 1fr; gap: 40px; }
       .hero h1 { font-size: 2.4rem; }
@@ -758,7 +650,6 @@
       .contact-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: repeat(2, 1fr); }
     }
-
     @media (max-width: 640px) {
       .nav { display: none; }
       .nav-toggle { display: block; }
@@ -789,7 +680,7 @@
     </a>
     <nav class="nav">
       <a href="#funcionalidades">Funcionalidades</a>
-      <a href="#precos">Precos</a>
+      <a href="#precos">Preços</a>
       <a href="#download">Download</a>
       <a href="dashboard.html">Dashboard Remoto</a>
       <a href="#contacto">Contacto</a>
@@ -808,11 +699,11 @@
   <div class="container hero-inner">
     <div class="hero-content">
       <div class="hero-badges">
-        <span class="hero-badge"><span class="dot"></span> Disponivel Em Mocambique</span>
-        <span class="hero-badge">7 Dias De Trial Gratis</span>
+        <span class="hero-badge"><span class="dot"></span> Disponível Em Moçambique</span>
+        <span class="hero-badge">7 Dias De Trial Grátis</span>
       </div>
-      <h1>ERP Completo Para <span class="text-gradient">Lojas e Vending Machines</span></h1>
-      <p>POS, Stock, Contabilidade, IRPS, SAF-T, Faturacao e Licenciamento SaaS numa unica plataforma. Desenvolvido para o mercado mocambicano.</p>
+      <h1>ERP Completo Para <span class="text-gradient">Empresas, Lojas, Bancas E Vending Machines</span></h1>
+      <p>POS, Stock, Contabilidade, IRPS, SAF-T, Faturação E Licenciamento SaaS Num Só Lugar. Desenvolvido Para O Mercado Moçambicano Com IVA 16% Integrado.</p>
       <div class="hero-actions">
         <a href="#precos" class="btn btn-primary btn-lg">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
@@ -869,7 +760,7 @@
     <div class="stats-grid">
       <div>
         <div class="stat-number">500+</div>
-        <div class="stat-label">Maquinas Geridas</div>
+        <div class="stat-label">Negócios Geridos</div>
       </div>
       <div>
         <div class="stat-number">99.9%</div>
@@ -877,11 +768,11 @@
       </div>
       <div>
         <div class="stat-number">24h</div>
-        <div class="stat-label">Suporte Tecnico</div>
+        <div class="stat-label">Suporte Técnico</div>
       </div>
       <div>
         <div class="stat-number">7</div>
-        <div class="stat-label">Dias De Trial Gratis</div>
+        <div class="stat-label">Dias De Trial Grátis</div>
       </div>
     </div>
   </div>
@@ -890,39 +781,54 @@
 <section class="section features-section" id="funcionalidades">
   <div class="container">
     <div class="section-header">
-      <h2>Tudo O Que Precisa Num So <span class="text-gradient">ERP</span></h2>
-      <p>Desenvolvido Para O Mercado Mocambicano. IVA 16% Integrado, SAF-T, IRPS, Multi-Armazem, Contabilidade e Faturacao num so lugar.</p>
+      <h2>Tudo O Que Precisa Num Só <span class="text-gradient">Sistema</span></h2>
+      <p>ERP Completo Desenvolvido Para O Mercado Moçambicano. IVA 16% Integrado, Multi-Operador, Impressão Térmica USB E Relatórios Conforme A Legislação Local.</p>
     </div>
     <div class="grid grid-3">
       <div class="card">
         <div class="card-icon">&#128202;</div>
-        <h3>Ponto de Venda (POS)</h3>
-        <p>POS completo com pagamento multi-metodo, recibo termico/PDF, abertura e fecho de caixa, sangria, reforco e bloqueio por inactividade.</p>
+        <h3>POS Completo</h3>
+        <p>Vendas Rápidas Com Atalhos F1-F9, Pagamento Multi-Método, Descontos, Vouchers E Controle De Caixa Com Abertura, Fecho, Sangria E Reforço.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#128179;</div>
         <h3>Pagamentos Integrados</h3>
-        <p>Suporte para M-Pesa, E-Mola, M-Kesh, cartao, transferencia bancaria, cheque e dinheiro. Controle total de cada transaccao.</p>
+        <p>Suporte Para M-Pesa, E-Mola, M-Kesh, Cartão, Transferência Bancária, Cheque E Dinheiro. Automatize A Cobrança E Acompanhe Todos Os Pagamentos.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#128274;</div>
         <h3>Licenciamento SaaS</h3>
-        <p>Trial de 7 dias, activacao remota, feature flags Basic/Pro/Enterprise, validacao online e proteccao anti-tampering.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">&#128241;</div>
-        <h3>Stock e Multi-Armazem</h3>
-        <p>Inventario geral/POS, movimentos IN/OUT, transferencia entre armazens, alertas de stock baixo e contagem fisica com acerto automatico.</p>
+        <p>Ativação Remota, Trial De 7 Dias, Feature Flags Basic/Pro/Enterprise. Validação Online Com Heartbeat Offline De 28 Dias E Proteção Anti-Tampering.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#128200;</div>
-        <h3>Contabilidade e IRPS</h3>
-        <p>Balanco, balancete mensal com codigos contabilisticos, despesas, simulacoes de precos, IVA, IRPS e exportacao SAF-T XML conforme a legislacao mocambicana.</p>
+        <h3>Contabilidade E IRPS</h3>
+        <p>Balanço, Balancete Mensal Com Códigos Contabilísticos, Mapa De IVA, Retenções De IRPS, Simulador De Preços E Ponto De Equilíbrio.</p>
       </div>
       <div class="card">
-        <div class="card-icon">&#128640;</div>
+        <div class="card-icon">&#128203;</div>
+        <h3>SAF-T E Faturação</h3>
+        <p>Exportação De Faturas Em Formato SAF-T XML Conforme A AT. Hash De Documentos, Notas De Crédito, Filtros Por Período E Estado.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128451;</div>
+        <h3>Stock E Multi-Armazém</h3>
+        <p>Inventário Geral E POS, Movimentos IN/OUT, Transferências Entre Armazéns, Contagem Física Com Acerto Automático E Alertas De Stock Baixo.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128100;</div>
+        <h3>Gestão De Clientes</h3>
+        <p>Cadastro Com NUIT, Estatísticas De Compras, Histórico Detalhado, Reimpressão De Recibos E Extrato PDF Por Intervalo De Datas.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128424;</div>
+        <h3>Impressão Térmica USB</h3>
+        <p>Recibos ESC/POS Via Win32 API, Abertura De Gaveta, Corte De Papel E Recibos PDF Com QR Code. Detecção Automática De Impressoras Térmicas.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128241;</div>
         <h3>Dashboard Remoto</h3>
-        <p>Sync de vendas para a cloud, dashboard web filtrado por licenca, fila de retry offline e acesso via License ID + PIN.</p>
+        <p>Sincronização De Vendas Para Backend, Dashboard Web Filtrado Por Licença, Fila De Retry E Acesso Via License ID + PIN Em Qualquer Dispositivo.</p>
       </div>
     </div>
   </div>
@@ -931,25 +837,26 @@
 <section class="section" id="precos">
   <div class="container">
     <div class="section-header">
-      <h2>Planos E <span class="text-gradient">Precos</span></h2>
-      <p>Escolha O Plano Ideal Para O Seu Negocio. Todos Os Planos Incluem Suporte Tecnico E Actualizacoes Automaticas.</p>
+      <h2>Planos E <span class="text-gradient">Preços</span></h2>
+      <p>Escolha O Plano Ideal Para O Seu Negócio. Todos Os Planos Incluem Suporte Técnico E Atualizações Automáticas.</p>
     </div>
     <div class="pricing-grid">
       <div class="pricing-card">
         <h3>Basic</h3>
-        <p class="desc">Ideal Para Pequenos Negocios E Bancas</p>
-        <div class="price">3,500 <span>MZN/Mes</span></div>
+        <p class="desc">Ideal Para Pequenos Negócios E Bancas</p>
+        <div class="price">3,500 <span>MZN/Mês</span></div>
         <p class="price-note">2 Utilizadores &#8226; 500 Produtos</p>
         <ul>
           <li>POS Completo Com Atalhos F1-F9</li>
-          <li>Gestao De Stock E Inventario</li>
-          <li>Caixa Registradora Com Sessoes</li>
-          <li>Relatorios Basicos</li>
-          <li>Z-Report Diario Obrigatorio</li>
-          <li class="missing">Promocoes E Vouchers</li>
-          <li class="missing">Gestao De Clientes</li>
-          <li class="missing">Multi-Armazem</li>
-          <li class="missing">Contabilidade Integrada</li>
+          <li>Gestão De Stock E Inventário</li>
+          <li>Caixa Registradora Com Sessões</li>
+          <li>Relatórios Básicos</li>
+          <li>Z-Report Diário Obrigatório</li>
+          <li>Impressão Térmica USB</li>
+          <li class="missing">Contabilidade E IRPS</li>
+          <li class="missing">SAF-T E Faturação Avançada</li>
+          <li class="missing">Multi-Armazém E Transferências</li>
+          <li class="missing">Dashboard Remoto</li>
         </ul>
         <a href="https://wa.me/258846166104?text=Quero%20o%20plano%20Basic%20do%20VMP%20SaaS" class="btn btn-outline" target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
@@ -960,17 +867,18 @@
         <span class="badge badge-popular">Mais Popular</span>
         <h3>Pro</h3>
         <p class="desc">Para Lojas Em Crescimento</p>
-        <div class="price">7,000 <span>MZN/Mes</span></div>
+        <div class="price">7,000 <span>MZN/Mês</span></div>
         <p class="price-note">5 Utilizadores &#8226; 5.000 Produtos</p>
         <ul>
           <li>Tudo Do Plano Basic</li>
-          <li>Relatorios Avancados</li>
-          <li>Promocoes E Vouchers</li>
-          <li>Gestao De Clientes</li>
-          <li>Multi-Armazem E Transferencias</li>
-          <li>Analytics E Estatisticas</li>
+          <li>Relatórios Avançados</li>
+          <li>Promoções E Vouchers</li>
+          <li>Gestão De Clientes Com NUIT</li>
+          <li>Multi-Armazém E Transferências</li>
+          <li>Contagem Física E Acerto</li>
+          <li>Analytics E Estatísticas</li>
           <li class="missing">Contabilidade Integrada</li>
-          <li class="missing">IRPS e SAF-T</li>
+          <li class="missing">SAF-T E IRPS</li>
           <li class="missing">Dashboard Remoto</li>
         </ul>
         <a href="https://wa.me/258846166104?text=Quero%20o%20plano%20Pro%20do%20VMP%20SaaS" class="btn btn-primary" target="_blank" rel="noopener">
@@ -986,13 +894,14 @@
         <ul>
           <li>Tudo Do Plano Pro</li>
           <li>Contabilidade Integrada</li>
-          <li>IRPS e Exportacao SAF-T XML</li>
-          <li>Dashboard Remoto (Web/Mobile)</li>
-          <li>Suporte Prioritario</li>
-          <li>Acesso A API</li>
+          <li>Balanço E Balancete Mensal</li>
+          <li>Mapa De IVA E IRPS</li>
+          <li>Exportação SAF-T XML</li>
+          <li>Dashboard Remoto Web/Mobile</li>
+          <li>Suporte Prioritário</li>
+          <li>Acesso À API</li>
           <li>Backup Na Cloud</li>
-          <li>Personalizacao De Relatorios</li>
-          <li>Formacao Da Equipa Incluida</li>
+          <li>Formação Da Equipa Incluída</li>
         </ul>
         <a href="https://wa.me/258846166104?text=Quero%20o%20plano%20Enterprise%20do%20VMP%20SaaS" class="btn btn-outline" target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
@@ -1007,12 +916,12 @@
   <div class="container">
     <div class="section-header">
       <h2>Download Do <span class="text-gradient">VMP SaaS</span></h2>
-      <p>Instale O VMP SaaS No Seu Computador Windows E Comece A Gerir O Seu Negocio Em Minutos.</p>
+      <p>Instale O VMP SaaS No Seu Computador Windows E Comece A Gerir O Seu Negócio Em Minutos.</p>
     </div>
     <div class="download-card">
       <div style="font-size: 3rem; margin-bottom: 16px;">&#128187;</div>
       <h3>VMP SaaS <span id="dl-version">v2.3.6</span></h3>
-      <p>Instalador Para Windows 10/11 &#8226; Instalacao Automatica &#8226; Actualizacoes Incluidas</p>
+      <p>Instalador Para Windows 10/11 &#8226; Instalação Automática &#8226; Atualizações Incluídas</p>
       <div class="download-meta">
         <div class="download-meta-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -1034,7 +943,7 @@
         </a>
       </div>
       <p class="mt-2 text-muted" id="dl-note">
-        A buscar versao mais recente...
+        Versão Atual: 2.3.6 | Última Atualização: Agosto 2026
       </p>
     </div>
   </div>
@@ -1048,12 +957,12 @@
     </div>
     <div class="contact-grid">
       <div class="contact-info">
-        <h3>Informacoes De Contacto</h3>
+        <h3>Informações De Contacto</h3>
         <div class="contact-item">
           <div class="contact-icon">&#128241;</div>
           <div>
             <h4>WhatsApp</h4>
-            <p>Resposta Rapida, Todos Os Dias</p>
+            <p>Resposta Rápida, Todos Os Dias</p>
             <a href="https://wa.me/258846166104" target="_blank" rel="noopener">+258 84 616 6104</a>
           </div>
         </div>
@@ -1069,27 +978,27 @@
           <div class="contact-icon">&#9993;</div>
           <div>
             <h4>Email</h4>
-            <p>Respondemos Em Ate 24h</p>
+            <p>Respondemos Em Até 24h</p>
             <a href="mailto:freelancer.adamgy@gmail.com">freelancer.adamgy@gmail.com</a>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">&#128205;</div>
           <div>
-            <h4>Localizacao</h4>
-            <p>Pemba, Mocambique</p>
-            <span style="color: var(--text-muted); font-size: 0.875rem;">Atendimento Remoto Em Todo O Pais</span>
+            <h4>Localização</h4>
+            <p>Pemba, Moçambique</p>
+            <span style="color: var(--text-muted); font-size: 0.875rem;">Atendimento Remoto Em Todo O País</span>
           </div>
         </div>
       </div>
       <div class="contact-info">
-        <h3>Horario De Atendimento</h3>
-        <p style="margin-bottom: 24px; color: var(--text-secondary);">Segunda A Sabado, Das 08:00 As 20:00 (CAT)</p>
+        <h3>Horário De Atendimento</h3>
+        <p style="margin-bottom: 24px; color: var(--text-secondary);">Segunda A Sábado, Das 08:00 Às 20:00 (CAT)</p>
         <h3>Resposta Garantida</h3>
-        <p style="color: var(--text-secondary);">WhatsApp: Em Minutos<br>Email: Em Ate 24h<br>Chamada: Durante Horario Comercial</p>
+        <p style="color: var(--text-secondary);">WhatsApp: Em Minutos<br>Email: Em Até 24h<br>Chamada: Durante Horário Comercial</p>
         <div class="contact-highlight">
           <p><strong>Prefere Falar Diretamente?</strong></p>
-          <p style="margin-top: 8px;">Clique No Botao Do WhatsApp E Envie-Nos Uma Mensagem. Respondemos De Imediato.</p>
+          <p style="margin-top: 8px;">Clique No Botão Do WhatsApp E Envie-Nos Uma Mensagem. Respondemos De Imediato.</p>
           <a href="https://wa.me/258846166104" class="btn btn-accent" style="margin-top: 16px;" target="_blank" rel="noopener">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
             Abrir WhatsApp
@@ -1108,13 +1017,13 @@
           <img src="assets/images/logo.png" alt="VMP SaaS" onerror="this.style.display='none'" style="width: 32px; height: 32px;">
           <span>VMP SaaS</span>
         </a>
-        <p>ERP Completo Para Lojas, Bancas e Vending Machines em Mocambique. POS, Stock, Contabilidade, IRPS, SAF-T e Faturacao numa unica plataforma.</p>
+        <p>ERP Completo Para Empresas, Lojas, Bancas E Vending Machines Em Moçambique. POS, Stock, Contabilidade, IRPS, SAF-T, Faturação E Licenciamento SaaS Numa Única Plataforma.</p>
       </div>
       <div class="footer-col">
         <h4>Produto</h4>
         <ul>
           <li><a href="#funcionalidades">Funcionalidades</a></li>
-          <li><a href="#precos">Precos</a></li>
+          <li><a href="#precos">Preços</a></li>
           <li><a href="#download">Download</a></li>
           <li><a href="dashboard.html">Dashboard Remoto</a></li>
           <li><a href="#contacto">Contacto</a></li>
@@ -1124,7 +1033,7 @@
         <h4>Legal</h4>
         <ul>
           <li><a href="termos.html">Termos De Uso</a></li>
-          <li><a href="privacidade.html">Politica De Privacidade</a></li>
+          <li><a href="privacidade.html">Política De Privacidade</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1160,30 +1069,16 @@
       const data = await res.json();
       const tag = data.tag_name || 'v2.3.6';
       const version = tag.startsWith('v') ? tag : 'v' + tag;
-      const assets = data.assets || [];
-      let assetUrl = '';
-      for (const asset of assets) {
-        if (asset.name && asset.name.toLowerCase().endsWith('.exe')) {
-          assetUrl = asset.browser_download_url;
-          break;
-        }
-      }
 
       dlVersion.textContent = version;
-      if (assetUrl) {
-        dlLink.href = assetUrl;
-        dlText.textContent = 'Download ' + version;
-        dlNote.textContent = 'Versao Atual: ' + version.replace('v','') + ' | Publicado: ' + new Date(data.published_at).toLocaleDateString('pt-MZ');
-      } else {
-        dlLink.href = data.html_url || 'https://github.com/rozaytech/vmp/releases/latest';
-        dlText.textContent = 'Ver Releases';
-        dlNote.textContent = 'Clique para aceder a pagina de downloads.';
-      }
+      dlLink.href = 'https://github.com/rozaytech/vmp/releases/latest';
+      dlText.textContent = 'Download ' + version;
+      dlNote.textContent = 'Versão Atual: ' + version.replace('v','') + ' | Publicado: ' + new Date(data.published_at).toLocaleDateString('pt-MZ');
     } catch (e) {
       dlVersion.textContent = 'v2.3.6';
       dlLink.href = 'https://github.com/rozaytech/vmp/releases/latest';
       dlText.textContent = 'Download VMP SaaS';
-      dlNote.textContent = 'Versao Atual: 2.3.6 | Ultima Actualizacao: Agosto 2026';
+      dlNote.textContent = 'Versão Atual: 2.3.6 | Última Atualização: Agosto 2026';
     }
   })();
 
