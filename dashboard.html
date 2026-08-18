@@ -148,6 +148,15 @@
       align-items: center;
       gap: 8px;
     }
+    .dash-site-link {
+      margin-left: auto;
+      margin-right: 12px;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .dash-site-link:hover { color: var(--text-secondary); }
     .status-dot {
       width: 8px;
       height: 8px;
@@ -419,6 +428,7 @@
   <div class="dash-header">
     <div class="container dash-header-inner">
       <h2><span class="status-dot"></span> <span id="businessName">VMP Dashboard</span></h2>
+      <a href="https://vmp-landing.vercel.app" class="dash-site-link">⬅ Site Oficial</a>
       <button class="logout-btn" onclick="doLogout()">Sair</button>
     </div>
   </div>

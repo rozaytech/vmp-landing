@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="VMP SaaS v2.4.0 — ERP Completo Para Empresas, Lojas, Bancas E Vending Machines Em Moçambique. POS, Stock, Contabilidade, IRPS, SAF-T, Faturação E Licenciamento SaaS. Trial de 7 dias.">
+  <meta name="description" content="VMP SaaS v2.4.0 — ERP Completo Offline-First Para Empresas, Lojas, Bancas E Vending Machines Em Moçambique. POS, Stock, Contabilidade, IRPS, SAF-T, Faturação E Licenciamento SaaS. Trial de 7 dias.">
   <meta name="keywords" content="ERP Moçambique, POS Moçambique, software gestão stock, contabilidade Moçambique, SAF-T, IRPS, faturação electrónica, VMP SaaS, sistema POS, gestão de lojas, vending machine software, M-Pesa integração, software banca Moçambique">
   <meta name="author" content="Adamgy Adamo Tembe">
   <meta name="theme-color" content="#0B1120">
@@ -40,7 +40,7 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://vmp-landing.vercel.app">
 
-  <title>VMP SaaS v2.4.0 — ERP Completo Para Empresas, Lojas, Bancas e Vending Machines em Moçambique</title>
+  <title>VMP SaaS v2.4.0 — ERP Completo Para Empresas, Lojas e Bancas em Moçambique</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,7 +105,7 @@
     },
     "description": "ERP Completo Para Empresas, Lojas, Bancas E Vending Machines Em Moçambique. POS, Stock, Contabilidade, IRPS, SAF-T, Faturação E Licenciamento SaaS.",
     "featureList": "POS Completo, Gestão de Stock, Contabilidade, IRPS, SAF-T, Faturação, Dashboard Remoto, Impressão Térmica USB, Multi-Armazém, Gestão de Clientes",
-    "downloadUrl": "https://github.com/rozaytech/vmp/releases/latest",
+    "downloadUrl": "https://github.com/rozaytech/vmp/releases/download/V2.4.0/VMP-2.4.0-setup.exe",
     "screenshot": "https://vmp-landing.vercel.app/assets/images/logo.png",
     "inLanguage": "pt-MZ",
     "countriesSupported": "MZ",
@@ -325,6 +325,7 @@
     }
     .nav {
       display: flex;
+      align-items: center;
       gap: 28px;
     }
     .nav a {
@@ -348,6 +349,22 @@
     }
     .nav a:hover { color: var(--text); }
     .nav a:hover::after { width: 100%; }
+    /* Botão Discreto do Admin */
+    .nav .btn-admin {
+      color: var(--accent);
+      font-weight: 600;
+      padding: 4px 12px;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 20px;
+      background: rgba(59, 130, 246, 0.05);
+      transition: all 0.3s;
+    }
+    .nav .btn-admin:hover {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .nav .btn-admin::after { display: none; }
     .nav-toggle {
       display: none;
       background: none;
@@ -1143,6 +1160,7 @@
       <a href="#contacto">Contacto</a>
       <a href="termos.html">Termos</a>
       <a href="privacidade.html">Privacidade</a>
+      <a href="https://vmp-admin-panel.vercel.app" target="_blank" class="btn-admin">🔐 Painel Admin</a>
     </nav>
     <button class="nav-toggle" aria-label="Menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1402,12 +1420,12 @@
         </div>
       </div>
       <div class="download-btn-wrap">
-        <a id="dl-link" href="https://github.com/rozaytech/vmp/releases/latest" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+        <a id="dl-link" href="https://github.com/rozaytech/vmp/releases/download/V2.4.0/VMP-2.4.0-setup.exe" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           <span id="dl-text">Download VMP SaaS v2.4.0</span>
         </a>
       </div>
-      <p class="mt-2 text-muted" id="dl-note">Sempre redireciona para a versão mais recente no GitHub.</p>
+      <p class="mt-2 text-muted" id="dl-note">Download direto do instalador. Versão 2.4.0 estável.</p>
     </div>
   </div>
 </section>
@@ -1554,15 +1572,15 @@
       } else {
         dlVersion.textContent = 'v2.4.0';
         dlText.textContent = 'Download VMP SaaS v2.4.0';
-        dlNote.textContent = 'Obtenha sempre a versão mais recente diretamente do GitHub.';
+        dlNote.textContent = 'Download direto do instalador. Versão 2.4.0 estável.';
       }
-      // SEMPRE aponta para latest, mesmo se a API falhar
-      dlLink.href = 'https://github.com/rozaytech/vmp/releases/latest';
+      // SEMPRE aponta direto para o .exe
+      dlLink.href = 'https://github.com/rozaytech/vmp/releases/download/V2.4.0/VMP-2.4.0-setup.exe';
     } catch (e) {
       dlVersion.textContent = 'v2.4.0';
       dlText.textContent = 'Download VMP SaaS v2.4.0';
-      dlNote.textContent = 'Obtenha sempre a versão mais recente diretamente do GitHub.';
-      dlLink.href = 'https://github.com/rozaytech/vmp/releases/latest';
+      dlNote.textContent = 'Download direto do instalador. Versão 2.4.0 estável.';
+      dlLink.href = 'https://github.com/rozaytech/vmp/releases/download/V2.4.0/VMP-2.4.0-setup.exe';
     }
   })();
 
