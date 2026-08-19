@@ -105,7 +105,7 @@
     },
     "description": "ERP Completo Para Empresas, Lojas, Bancas E Vending Machines Em Moçambique. POS, Stock, Contabilidade, IRPS, SAF-T, Faturação E Licenciamento SaaS.",
     "featureList": "POS Completo, Gestão de Stock, Contabilidade, IRPS, SAF-T, Faturação, Dashboard Remoto, Impressão Térmica USB, Multi-Armazém, Gestão de Clientes",
-    "downloadUrl": "https://github.com/rozaytech/vmp/releases/download/V2.4.1/VMP-2.4.1-setup.exe",
+    "downloadUrl": "https://github.com/rozaytech/vmp/releases/download/v2.4.1/VMP-2.4.1-setup.exe",
     "screenshot": "https://vmp-landing.vercel.app/assets/images/logo.png",
     "inLanguage": "pt-MZ",
     "countriesSupported": "MZ",
@@ -1449,12 +1449,12 @@
         </div>
       </div>
       <div class="download-btn-wrap">
-        <a id="dl-link" href="https://github.com/rozaytech/vmp/releases/download/V2.4.1/VMP-2.4.1-setup.exe" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+        <a id="dl-link" href="https://github.com/rozaytech/vmp/releases/download/v2.4.1/VMP-2.4.1-setup.exe" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           <span id="dl-text">Download v2.4.1</span>
         </a>
       </div>
-      <p class="mt-2 text-muted" id="dl-note">Download direto do instalador. Versão estável.</p>
+      <p class="mt-2 text-muted" id="dl-note">Download direto do instalador. Versão 2.4.1 estável.</p>
     </div>
   </div>
 </section>
@@ -1580,54 +1580,39 @@
 <script>
   // ===== LOADER =====
   window.addEventListener('load', function() {
+    // Reduzido o tempo de espera do loader para 400ms
     setTimeout(function() {
       document.getElementById('page-loader').classList.add('done');
-    }, 900);
+    }, 400);
   });
-
-  // ===== GITHUB RELEASE =====
-  (async function fetchLatestRelease() {
-    const dlLink = document.getElementById('dl-link');
-    const dlText = document.getElementById('dl-text');
-    const dlVersion = document.getElementById('dl-version');
-    const dlNote = document.getElementById('dl-note');
-
-    try {
-      const res = await fetch('https://api.github.com/repos/rozaytech/vmp/releases/latest');
-      if (!res.ok) throw new Error('API error');
-      const data = await res.json();
-      const tag = data.tag_name || '';
-      const version = tag.startsWith('v') ? tag : (tag ? 'v' + tag : '');
-
-      if (version) {
-        dlVersion.textContent = version;
-        dlText.textContent = 'Download ' + version;
-        dlNote.textContent = 'Versão Atual: ' + version.replace('v','') + ' | Publicado: ' + new Date(data.published_at).toLocaleDateString('pt-MZ');
-      } else {
-        dlVersion.textContent = 'v2.4.1';
-        dlText.textContent = 'Download v2.4.1';
-        dlNote.textContent = 'Download direto do instalador. Versão 2.4.1 estável.';
-      }
-      dlLink.href = 'https://github.com/rozaytech/vmp/releases/download/V2.4.1/VMP-2.4.1-setup.exe';
-    } catch (e) {
-      dlVersion.textContent = 'v2.4.1';
-      dlText.textContent = 'Download v2.4.1';
-      dlNote.textContent = 'Download direto do instalador. Versão 2.4.1 estável.';
-      dlLink.href = 'https://github.com/rozaytech/vmp/releases/download/V2.4.1/VMP-2.4.1-setup.exe';
-    }
-  })();
 
   // ===== SCROLL TO TOP =====
+  // Declarado UMA ÚNICA VEZ, fora de qualquer escopo de função
   const scrollBtn = document.querySelector('.scroll-top');
-  window.addEventListener('scroll', () => {
-    scrollBtn.classList.toggle('visible', window.scrollY > 400);
-  });
-  scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  if (scrollBtn) {
+    window.addEventListener('scroll', () => {
+      scrollBtn.classList.toggle('visible', window.scrollY > 400);
+    });
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
+
+  // ===== GITHUB RELEASE (CORRIGIDO: REMOVIDA A CHAMADA DA API) =====
+  // O link já aponta diretamente para o .exe. Nenhuma requisição externa é necessária.
+  const dlLink = document.getElementById('dl-link');
+  const dlText = document.getElementById('dl-text');
+  const dlVersion = document.getElementById('dl-version');
+  const dlNote = document.getElementById('dl-note');
+
+  // Define tudo manualmente para a v2.4.1 sem fazer fetch à API do GitHub
+  dlVersion.textContent = 'v2.4.1';
+  dlText.textContent = 'Download v2.4.1';
+  dlNote.textContent = 'Download direto do instalador. Versão 2.4.1 estável.';
+  dlLink.href = 'https://github.com/rozaytech/vmp/releases/download/v2.4.1/VMP-2.4.1-setup.exe';
 
   // ===== CURRENT YEAR =====
   document.querySelector('.current-year').textContent = new Date().getFullYear();
 
-  // ===== VISIT COUNTER (localStorage based) =====
+  // ===== VISIT COUNTER =====
   (function visitCounter() {
     const key = 'vmp_visit_count';
     const lastVisitKey = 'vmp_last_visit_date';
@@ -1647,7 +1632,7 @@
     }
   })();
 
-  // ===== INTERSECTION OBSERVER (scroll animations) =====
+  // ===== INTERSECTION OBSERVER =====
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
