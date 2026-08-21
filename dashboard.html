@@ -659,6 +659,8 @@ function renderAlerts(alerts) {
   const items = [];
 
   (alerts.outOfStock || []).forEach(item => {
+    // NOVO: Filtra serviços (is_service = 1) dos alertas de stock
+    if (item.is_service == 1) return;
     items.push({
       icon: '&#128308;',
       iconClass: 'red',
@@ -670,6 +672,8 @@ function renderAlerts(alerts) {
   });
 
   (alerts.lowStock || []).forEach(item => {
+    // NOVO: Filtra serviços (is_service = 1) dos alertas de stock
+    if (item.is_service == 1) return;
     items.push({
       icon: '&#128992;',
       iconClass: 'orange',
