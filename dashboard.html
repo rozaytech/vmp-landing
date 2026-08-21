@@ -658,9 +658,10 @@ function renderAlerts(alerts) {
   const card = document.getElementById('alertsCard');
   const items = [];
 
+  // CORREÇÃO: Serviços são identificados por stock=0 E min_stock=0 (já que não têm stock)
+  // Isto resolve o problema sem depender da coluna is_service no Turso.
   (alerts.outOfStock || []).forEach(item => {
-    // NOVO: Filtra serviços (is_service = 1) dos alertas de stock
-    if (item.is_service == 1) return;
+    if (item.stock === 0 && item.min_stock === 0) return;
     items.push({
       icon: '&#128308;',
       iconClass: 'red',
@@ -672,8 +673,7 @@ function renderAlerts(alerts) {
   });
 
   (alerts.lowStock || []).forEach(item => {
-    // NOVO: Filtra serviços (is_service = 1) dos alertas de stock
-    if (item.is_service == 1) return;
+    if (item.stock === 0 && item.min_stock === 0) return;
     items.push({
       icon: '&#128992;',
       iconClass: 'orange',
@@ -722,6 +722,8 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
+// CORREÇÃO: O botão Sair agora força o recarregamento da página
+// para garantir que o utilizador volta à tela de login.
 async function doLogout() {
   if (refreshTimer) {
     clearInterval(refreshTimer);
@@ -743,6 +745,9 @@ async function doLogout() {
   document.getElementById('loginScreen').style.display = 'flex';
   document.getElementById('licenseId').value = '';
   document.getElementById('pin').value = '';
+
+  // Força o redirecionamento para o início do dashboard
+  window.location.href = '/dashboard.html';
 }
 
 window.addEventListener('DOMContentLoaded', () => {

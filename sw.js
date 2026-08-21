@@ -1,8 +1,9 @@
 /* VMP SaaS — Service Worker */
-const CACHE_NAME = 'vmp-landing-v1';
+const CACHE_NAME = 'vmp-landing-v2';
 const urlsToCache = [
   '/',
   '/index.html',
+  '/dashboard.html',
   '/termos.html',
   '/privacidade.html',
   '/assets/css/style.css',

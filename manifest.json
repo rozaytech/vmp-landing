@@ -1,8 +1,9 @@
 {
-  "name": "VMP SaaS — Sistema de Gestão para Vending Machines",
-  "short_name": "VMP SaaS",
-  "description": "Sistema de Gestão Completo para Vending Machines em Moçambique. POS, Stock, Relatórios e Licenciamento SaaS numa Única Plataforma.",
-  "start_url": "/",
+  "name": "VMP Dashboard — Painel Remoto",
+  "short_name": "VMP Dash",
+  "description": "Painel Remoto para monitorizar vendas e stock do VMP SaaS.",
+  "start_url": "/dashboard.html",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#0a0e1a",
   "theme_color": "#1565C0",
