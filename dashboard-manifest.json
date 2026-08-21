@@ -1,0 +1,19 @@
+{
+  "name": "VMP Dashboard — Painel Remoto",
+  "short_name": "VMP Dash",
+  "description": "Painel Remoto para monitorizar vendas e stock do VMP SaaS.",
+  "start_url": "/dashboard.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0a0e1a",
+  "theme_color": "#1565C0",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

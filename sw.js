@@ -8,7 +8,8 @@ const urlsToCache = [
   '/privacidade.html',
   '/assets/css/style.css',
   '/assets/js/script.js',
-  '/manifest.json'
+  '/manifest.json',
+  '/dashboard-manifest.json'
 ];
 
 self.addEventListener('install', event => {

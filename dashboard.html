@@ -7,6 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>VMP Dashboard — Painel Remoto</title>
+  <link rel="manifest" href="dashboard-manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -642,12 +643,13 @@ function renderTopProducts(products) {
     return;
   }
 
+  // CORREÇÃO DO SINGULAR/PLURAL
   card.innerHTML = products.map((p, i) => `
     <div class="card-item">
       <div class="card-icon blue">${i + 1}</div>
       <div class="card-content">
         <div class="card-title">${escapeHtml(p.name)}</div>
-        <div class="card-subtitle">${p.qty} Unidades Vendidas</div>
+        <div class="card-subtitle">${p.qty} ${p.qty === 1 ? 'Unidade Vendida' : 'Unidades Vendidas'}</div>
       </div>
       <div class="card-badge badge-green">${formatCurrency(p.revenue)}</div>
     </div>
@@ -658,8 +660,6 @@ function renderAlerts(alerts) {
   const card = document.getElementById('alertsCard');
   const items = [];
 
-  // CORREÇÃO: Serviços são identificados por stock=0 E min_stock=0 (já que não têm stock)
-  // Isto resolve o problema sem depender da coluna is_service no Turso.
   (alerts.outOfStock || []).forEach(item => {
     if (item.stock === 0 && item.min_stock === 0) return;
     items.push({
@@ -722,8 +722,6 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
-// CORREÇÃO: O botão Sair agora força o recarregamento da página
-// para garantir que o utilizador volta à tela de login.
 async function doLogout() {
   if (refreshTimer) {
     clearInterval(refreshTimer);
@@ -746,7 +744,6 @@ async function doLogout() {
   document.getElementById('licenseId').value = '';
   document.getElementById('pin').value = '';
 
-  // Força o redirecionamento para o início do dashboard
   window.location.href = '/dashboard.html';
 }
 
