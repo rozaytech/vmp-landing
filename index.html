@@ -22,8 +22,8 @@
   <meta property="og:title" content="VMP SaaS v2.4.1 — ERP Completo Para Empresas, Lojas, Bancas E Vending Machines">
   <meta property="og:description" content="ERP Completo Para Moçambique. POS, Stock, Contabilidade, IRPS, SAF-T, Faturação E Licenciamento SaaS. Trial de 7 dias grátis.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://vmp-landing.vercel.app">
-  <meta property="og:image" content="https://vmp-landing.vercel.app/assets/images/logo.png">
+  <meta property="og:url" content="https://vmpsaas.com">
+  <meta property="og:image" content="https://vmpsaas.com/assets/images/logo.png">
   <meta property="og:image:width" content="512">
   <meta property="og:image:height" content="512">
   <meta property="og:image:alt" content="VMP SaaS Logo">
@@ -34,11 +34,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="VMP SaaS v2.4.1 — ERP Completo Para Moçambique">
   <meta name="twitter:description" content="POS, Stock, Contabilidade, IRPS, SAF-T, Faturação E Licenciamento SaaS. Trial de 7 dias.">
-  <meta name="twitter:image" content="https://vmp-landing.vercel.app/assets/images/logo.png">
+  <meta name="twitter:image" content="https://vmpsaas.com/assets/images/logo.png">
   <meta name="twitter:creator" content="@adamgytembe">
 
   <!-- Canonical -->
-  <link rel="canonical" href="https://vmp-landing.vercel.app">
+  <link rel="canonical" href="https://vmpsaas.com">
 
   <title>VMP SaaS — ERP Completo Para Empresas, Lojas e Bancas em Moçambique</title>
 
@@ -100,13 +100,13 @@
       "name": "VMP SaaS",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://vmp-landing.vercel.app/assets/images/logo.png"
+        "url": "https://vmpsaas.com/assets/images/logo.png"
       }
     },
     "description": "ERP Completo Para Empresas, Lojas, Bancas E Vending Machines Em Moçambique. POS, Stock, Contabilidade, IRPS, SAF-T, Faturação E Licenciamento SaaS.",
     "featureList": "POS Completo, Gestão de Stock, Contabilidade, IRPS, SAF-T, Faturação, Dashboard Remoto, Impressão Térmica USB, Multi-Armazém, Gestão de Clientes",
     "downloadUrl": "https://github.com/rozaytech/vmp/releases/download/v2.4.1/VMP-2.4.1-setup.exe",
-    "screenshot": "https://vmp-landing.vercel.app/assets/images/logo.png",
+    "screenshot": "https://vmpsaas.com/assets/images/logo.png",
     "inLanguage": "pt-MZ",
     "countriesSupported": "MZ",
     "availableOnDevice": "Desktop"
@@ -118,8 +118,8 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "VMP SaaS",
-    "url": "https://vmp-landing.vercel.app",
-    "logo": "https://vmp-landing.vercel.app/assets/images/logo.png",
+    "url": "https://vmpsaas.com",
+    "logo": "https://vmpsaas.com/assets/images/logo.png",
     "sameAs": [
       "https://github.com/rozaytech/vmp"
     ],
@@ -1677,6 +1677,27 @@
       observer.observe(el);
     });
   }
+
+  // ===== TOGGLE NAVBAR MOBILE (CORREÇÃO DO HAMBÚRGUER) =====
+  document.querySelector('.nav-toggle').addEventListener('click', function() {
+    const nav = document.querySelector('.nav');
+    if (nav.style.display === 'flex') {
+      nav.style.display = 'none';
+    } else {
+      nav.style.display = 'flex';
+      // Aplica estilos verticais quando está no mobile
+      if (window.innerWidth <= 640) {
+        nav.style.flexDirection = 'column';
+        nav.style.position = 'absolute';
+        nav.style.top = '64px';
+        nav.style.left = '0';
+        nav.style.right = '0';
+        nav.style.backgroundColor = '#0B1120';
+        nav.style.padding = '20px';
+        nav.style.zIndex = '1000';
+      }
+    }
+  });
 </script>
 
 </body>
