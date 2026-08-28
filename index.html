@@ -738,7 +738,7 @@
       transition: transform 0.3s;
     }
     .card:hover .card-icon { transform: scale(1.15); }
-    .card h3 {
+    .card h4 {
       font-size: 1.05rem;
       font-weight: 700;
       margin-bottom: 8px;
@@ -1012,6 +1012,27 @@
     .contact-highlight strong {
       color: var(--text);
     }
+
+    /* ===== PARTILHA SOCIAL ===== */
+    .social-section { padding: 20px 0 30px; }
+    .social-share-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+    .social-btn {
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .social-btn:hover { transform: translateY(-3px); box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+    .social-btn.wa { background: #25D366; }
+    .social-btn.fb { background: #1877F2; }
+    .social-btn.x { background: #000; }
+    .social-btn.ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .social-btn.tiktok { background: #000; }
+    .social-btn.tg { background: #0088cc; }
+
     .footer {
       border-top: 1px solid var(--border);
       padding: 40px 0 24px;
@@ -1057,6 +1078,10 @@
       color: var(--text-muted);
       flex-wrap: wrap;
       gap: 12px;
+    }
+    .footer-bottom a {
+      color: var(--accent);
+      text-decoration: none;
     }
     .scroll-top {
       position: fixed;
@@ -1162,6 +1187,8 @@
       .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
       .mock-grid { grid-template-columns: 1fr; }
       .loader-track { width: 120px; }
+      .social-share-grid { flex-direction: column; align-items: stretch; }
+      .social-btn { text-align: center; }
     }
   </style>
 </head>
@@ -1294,47 +1321,47 @@
     <div class="grid grid-3">
       <div class="card">
         <div class="card-icon">&#128202;</div>
-        <h3>POS Completo</h3>
+        <h4>POS Completo</h4>
         <p>Vendas Rápidas Com Atalhos F1-F9, Pagamento Multi-Método, Descontos, Vouchers E Controle De Caixa Com Abertura, Fecho, Sangria E Reforço.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#128179;</div>
-        <h3>Pagamentos Integrados</h3>
+        <h4>Pagamentos Integrados</h4>
         <p>Suporte Para M-Pesa, E-Mola, M-Kesh, Cartão, Transferência Bancária, Cheque E Dinheiro. Automatize A Cobrança E Acompanhe Todos Os Pagamentos.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#128274;</div>
-        <h3>Licenciamento SaaS</h3>
+        <h4>Licenciamento SaaS</h4>
         <p>Ativação Remota, Trial De 7 Dias, Feature Flags Basic/Pro/Enterprise. Validação Online Com Heartbeat Offline De 28 Dias E Proteção Anti-Tampering.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#128200;</div>
-        <h3>Contabilidade E IRPS</h3>
+        <h4>Contabilidade E IRPS</h4>
         <p>Balanço, Balancete Mensal Com Códigos Contabilísticos, Mapa De IVA, Retenções De IRPS, Simulador De Preços E Ponto De Equilíbrio.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#128203;</div>
-        <h3>SAF-T E Faturação</h3>
+        <h4>SAF-T E Faturação</h4>
         <p>Exportação De Faturas Em Formato SAF-T XML Conforme A AT. Hash De Documentos, Notas De Crédito, Filtros Por Período E Estado.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#128451;</div>
-        <h3>Stock E Multi-Armazém</h3>
+        <h4>Stock E Multi-Armazém</h4>
         <p>Inventário Geral E POS, Movimentos IN/OUT, Transferências Entre Armazéns, Contagem Física Com Acerto Automático E Alertas De Stock Baixo.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#128100;</div>
-        <h3>Gestão De Clientes</h3>
+        <h4>Gestão De Clientes</h4>
         <p>Cadastro Com NUIT, Estatísticas De Compras, Histórico Detalhado, Reimpressão De Recibos E Extrato PDF Por Intervalo De Datas.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#128424;</div>
-        <h3>Impressão Térmica USB</h3>
+        <h4>Impressão Térmica USB</h4>
         <p>Recibos ESC/POS Via Win32 API, Abertura De Gaveta, Corte De Papel E Recibos PDF Com QR Code. Detecção Automática De Impressoras Térmicas.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#128241;</div>
-        <h3>Dashboard Remoto</h3>
+        <h4>Dashboard Remoto</h4>
         <p>Sincronização De Vendas Para Backend, Dashboard Web Filtrado Por Licença, Fila De Retry E Acesso Via License ID + PIN Em Qualquer Dispositivo.</p>
       </div>
     </div>
@@ -1351,17 +1378,17 @@
     <div class="grid grid-3">
       <div class="card">
         <div class="card-icon">📄</div>
-        <h3>Sistema Só Para Facturas</h3>
+        <h4>Sistema Só Para Facturas</h4>
         <p>Ative apenas o módulo de Faturação e emita as suas facturas comerciais com IVA 16% integrado, sem a complexidade de outros módulos.</p>
       </div>
       <div class="card">
         <div class="card-icon">🛒</div>
-        <h3>POS + Stock</h3>
+        <h4>POS + Stock</h4>
         <p>Ideal para quem só vende no balcão. Combine o Ponto de Venda com a gestão de stock e feche o caixa sem complicações.</p>
       </div>
       <div class="card">
         <div class="card-icon">📊</div>
-        <h3>Controlo Remoto</h3>
+        <h4>Controlo Remoto</h4>
         <p>Adicione o acompanhamento remoto das vendas e receitas, mesmo que esteja no plano mais básico. Controle o negócio à distância.</p>
       </div>
     </div>
@@ -1548,6 +1575,24 @@
   </div>
 </section>
 
+<!-- NOVA SECÇÃO: PARTILHA SOCIAL -->
+<section class="section social-section" id="partilhar">
+  <div class="container">
+    <div class="section-header">
+      <h2>Partilhe o VMP <span class="text-gradient">SaaS</span></h2>
+      <p>Ajuda-nos a crescer partilhando o nosso software com outros empreendedores!</p>
+    </div>
+    <div class="social-share-grid">
+      <a href="https://api.whatsapp.com/send?text=Confira%20o%20VMP%20SaaS!%20https://vmpsaas.com" class="social-btn wa" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://vmpsaas.com" class="social-btn fb" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://twitter.com/intent/tweet?url=https://vmpsaas.com&text=VMP%20SaaS%20-%20ERP%20Completo%20Para%20Mo%C3%A7ambique" class="social-btn x" target="_blank" rel="noopener">X</a>
+      <a href="https://www.instagram.com/rozay_camuflado" class="social-btn ig" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/share?url=https://vmpsaas.com" class="social-btn tiktok" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://t.me/share/url?url=https://vmpsaas.com&text=VMP%20SaaS" class="social-btn tg" target="_blank" rel="noopener">Telegram</a>
+    </div>
+  </div>
+</section>
+
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -1593,7 +1638,7 @@
           <span id="visit-count">—</span> visitas
         </span>
       </span>
-      <span>Desenvolvido Por Adamgy Adamo Tembe</span>
+      <span>Desenvolvido Por <a href="https://www.instagram.com/rozay_camuflado?igsi=MXM5eTZyNHJsaXkx" target="_blank" rel="noopener">Adamgy Adamo Tembe</a> | <a href="https://www.facebook.com/share/1D7jcPzTu9/" target="_blank" rel="noopener">Facebook</a></span>
     </div>
   </div>
 </footer>
