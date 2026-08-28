@@ -1141,6 +1141,26 @@
       fill: currentColor;
     }
 
+    /* ===== NOVO: ESTILOS DO BOTÃO DE TRADUÇÃO ===== */
+    .lang-toggle-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: inherit;
+      margin-left: 8px;
+    }
+    .lang-toggle-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-soft);
+    }
+
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(24px); }
       to { opacity: 1; transform: translateY(0); }
@@ -1212,15 +1232,15 @@
       <span>VMP SaaS</span>
     </a>
     <nav class="nav">
-      <a href="#funcionalidades">Funcionalidades</a>
-      <a href="#personalizado">Personalizado</a>
-      <a href="#precos">Preços</a>
-      <a href="#download">Download</a>
-      <a href="dashboard.html">Dashboard Remoto</a>
-      <a href="#contacto">Contacto</a>
-      <a href="termos.html">Termos</a>
-      <a href="privacidade.html">Privacidade</a>
-      <a href="https://vmp-admin-panel.vercel.app" target="_blank" class="btn-admin">🔐 Painel Admin</a>
+      <a href="#funcionalidades" data-i18n="nav_funcionalidades">Funcionalidades</a>
+      <a href="#personalizado" data-i18n="nav_personalizado">Personalizado</a>
+      <a href="#precos" data-i18n="nav_precos">Preços</a>
+      <a href="#download" data-i18n="nav_download">Download</a>
+      <a href="dashboard.html" data-i18n="nav_dashboard">Dashboard Remoto</a>
+      <a href="#contacto" data-i18n="nav_contacto">Contacto</a>
+      <a href="termos.html" data-i18n="nav_termos">Termos</a>
+      <a href="privacidade.html" data-i18n="nav_privacidade">Privacidade</a>
+      <a href="https://vmp-admin-panel.vercel.app" target="_blank" class="btn-admin" data-i18n="nav_admin">🔐 Painel Admin</a>
     </nav>
     <button class="nav-toggle" aria-label="Menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1234,18 +1254,18 @@
   <div class="container hero-inner">
     <div class="hero-content">
       <div class="hero-badges">
-        <span class="hero-badge"><span class="dot"></span> Disponível Em Moçambique</span>
-        <span class="hero-badge">7 Dias De Trial Grátis</span>
+        <span class="hero-badge" data-i18n="hero_badge_1"><span class="dot"></span> Disponível Em Moçambique</span>
+        <span class="hero-badge" data-i18n="hero_badge_2">7 Dias De Trial Grátis</span>
         <span class="hero-badge">v2.4.1</span>
       </div>
-      <h1>ERP Completo Para <span class="text-gradient">Empresas, Lojas, Bancas E Vending Machines</span></h1>
-      <p>POS, Stock, Contabilidade, IRPS, SAF-T, Faturação E Licenciamento SaaS Num Só Lugar. Desenvolvido Para O Mercado Moçambicano Com IVA 16% Integrado.</p>
+      <h1><span data-i18n="hero_title_1">ERP Completo Para</span> <span class="text-gradient" data-i18n="hero_title_2">Empresas, Lojas, Bancas E Vending Machines</span></h1>
+      <p data-i18n="hero_subtitle">POS, Stock, Contabilidade, IRPS, SAF-T, Faturação E Licenciamento SaaS Num Só Lugar. Desenvolvido Para O Mercado Moçambicano Com IVA 16% Integrado.</p>
       <div class="hero-actions">
-        <a href="#precos" class="btn btn-primary btn-lg">
+        <a href="#precos" class="btn btn-primary btn-lg" data-i18n="hero_btn_planos">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
           Ver Planos
         </a>
-        <a href="https://wa.me/258846166104?text=Ola!%20Tenho%20interesse%20no%20VMP%20SaaS" class="btn btn-accent btn-lg" target="_blank" rel="noopener">
+        <a href="https://wa.me/258846166104?text=Ola!%20Tenho%20interesse%20no%20VMP%20SaaS" class="btn btn-accent btn-lg" target="_blank" rel="noopener" data-i18n="hero_btn_whatsapp">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
           Falar No WhatsApp
         </a>
@@ -1296,19 +1316,19 @@
     <div class="stats-grid">
       <div>
         <div class="stat-number">500+</div>
-        <div class="stat-label">Negócios Geridos</div>
+        <div class="stat-label" data-i18n="stat_1">Negócios Geridos</div>
       </div>
       <div>
         <div class="stat-number">99.9%</div>
-        <div class="stat-label">Uptime Garantido</div>
+        <div class="stat-label" data-i18n="stat_2">Uptime Garantido</div>
       </div>
       <div>
         <div class="stat-number">24h</div>
-        <div class="stat-label">Suporte Técnico</div>
+        <div class="stat-label" data-i18n="stat_3">Suporte Técnico</div>
       </div>
       <div>
         <div class="stat-number">7</div>
-        <div class="stat-label">Dias De Trial Grátis</div>
+        <div class="stat-label" data-i18n="stat_4">Dias De Trial Grátis</div>
       </div>
     </div>
   </div>
@@ -1317,8 +1337,8 @@
 <section class="section features-section" id="funcionalidades">
   <div class="container">
     <div class="section-header">
-      <h2>Tudo O Que Precisa Num Só <span class="text-gradient">Sistema</span></h2>
-      <p>ERP Completo Desenvolvido Para O Mercado Moçambicano. IVA 16% Integrado, Multi-Operador, Impressão Térmica USB E Relatórios Conforme A Legislação Local.</p>
+      <h2><span data-i18n="feat_title">Tudo O Que Precisa Num Só</span> <span class="text-gradient" data-i18n="feat_title_2">Sistema</span></h2>
+      <p data-i18n="feat_sub">ERP Completo Desenvolvido Para O Mercado Moçambicano. IVA 16% Integrado, Multi-Operador, Impressão Térmica USB E Relatórios Conforme A Legislação Local.</p>
     </div>
     <div class="grid grid-3">
       <div class="card">
@@ -1374,8 +1394,8 @@
 <section class="section" id="personalizado">
   <div class="container">
     <div class="section-header">
-      <h2>Escolha Apenas O Que Precisa <span class="text-gradient">Sem Pagar O Resto</span></h2>
-      <p>Com o VMP SaaS, você pode ativar apenas os módulos essenciais para o seu negócio. Quer apenas emitir facturas e controlar o stock? É possível. Pague apenas pelo que realmente usa.</p>
+      <h2><span data-i18n="custom_title">Escolha Apenas O Que Precisa</span> <span class="text-gradient" data-i18n="custom_title_2">Sem Pagar O Resto</span></h2>
+      <p data-i18n="custom_sub">Com o VMP SaaS, você pode ativar apenas os módulos essenciais para o seu negócio. Quer apenas emitir facturas e controlar o stock? É possível. Pague apenas pelo que realmente usa.</p>
     </div>
     <div class="grid grid-3">
       <div class="card">
@@ -1400,8 +1420,8 @@
 <section class="section" id="precos">
   <div class="container">
     <div class="section-header">
-      <h2>Planos E <span class="text-gradient">Preços</span></h2>
-      <p>Escolha O Plano Ideal Para O Seu Negócio. Todos Os Planos Incluem Suporte Técnico, Atualizações Automáticas E Acesso A Funcionalidades Essenciais.</p>
+      <h2><span data-i18n="pricing_title">Planos E</span> <span class="text-gradient" data-i18n="pricing_title_2">Preços</span></h2>
+      <p data-i18n="pricing_sub">Escolha O Plano Ideal Para O Seu Negócio. Todos Os Planos Incluem Suporte Técnico, Atualizações Automáticas E Acesso A Funcionalidades Essenciais.</p>
     </div>
     <div class="pricing-grid">
       <div class="pricing-card">
@@ -1426,7 +1446,7 @@
           <li class="missing">Dashboard Remoto</li>
           <li class="missing">Backup Na Cloud</li>
         </ul>
-        <a href="https://wa.me/258846166104?text=Quero%20o%20plano%20Basic%20do%20VMP%20SaaS" class="btn btn-outline" target="_blank" rel="noopener">
+        <a href="https://wa.me/258846166104?text=Quero%20o%20plano%20Basic%20do%20VMP%20SaaS" class="btn btn-outline" target="_blank" rel="noopener" data-i18n="btn_solicitar">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
           Solicitar Pelo WhatsApp
         </a>
@@ -1451,7 +1471,7 @@
           <li class="missing">Acesso À API</li>
           <li class="missing">Backup Na Cloud</li>
         </ul>
-        <a href="https://wa.me/258846166104?text=Quero%20o%20plano%20Pro%20do%20VMP%20SaaS" class="btn btn-primary" target="_blank" rel="noopener">
+        <a href="https://wa.me/258846166104?text=Quero%20o%20plano%20Pro%20do%20VMP%20SaaS" class="btn btn-primary" target="_blank" rel="noopener" data-i18n="btn_solicitar">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
           Solicitar Pelo WhatsApp
         </a>
@@ -1473,7 +1493,7 @@
           <li>Suporte Prioritário 24/7</li>
           <li>Formação Da Equipa Incluída</li>
         </ul>
-        <a href="https://wa.me/258846166104?text=Quero%20o%20plano%20Enterprise%20do%20VMP%20SaaS" class="btn btn-outline" target="_blank" rel="noopener">
+        <a href="https://wa.me/258846166104?text=Quero%20o%20plano%20Enterprise%20do%20VMP%20SaaS" class="btn btn-outline" target="_blank" rel="noopener" data-i18n="btn_solicitar">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
           Solicitar Pelo WhatsApp
         </a>
@@ -1485,8 +1505,8 @@
 <section class="section download-section" id="download">
   <div class="container">
     <div class="section-header" style="margin-bottom: 20px;">
-      <h2>Download Do <span class="text-gradient">VMP SaaS</span></h2>
-      <p>Instale O VMP SaaS No Seu Computador Windows E Comece A Gerir O Seu Negócio Em Minutos.</p>
+      <h2><span data-i18n="download_title">Download Do</span> <span class="text-gradient" data-i18n="download_title_2">VMP SaaS</span></h2>
+      <p data-i18n="download_sub">Instale O VMP SaaS No Seu Computador Windows E Comece A Gerir O Seu Negócio Em Minutos.</p>
     </div>
     <div class="download-card">
       <div style="font-size: 2rem; margin-bottom: 10px;">&#128187;</div>
@@ -1509,7 +1529,7 @@
       <div class="download-btn-wrap">
         <a id="dl-link" href="https://github.com/rozaytech/vmp/releases/download/v2.4.1/VMP-2.4.1-setup.exe" class="btn btn-primary btn-lg" target="_blank" rel="noopener" style="min-width: 220px; padding: 12px 24px; font-size: 0.9rem;">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          <span id="dl-text">Download v2.4.1</span>
+          <span id="dl-text" data-i18n="download_btn">Download v2.4.1</span>
         </a>
       </div>
       <p class="mt-2 text-muted" id="dl-note" style="margin-top: 8px;">Download direto do instalador. Versão 2.4.1 estável.</p>
@@ -1520,8 +1540,8 @@
 <section class="section contact-section" id="contacto">
   <div class="container">
     <div class="section-header">
-      <h2>Entre Em <span class="text-gradient">Contacto</span></h2>
-      <p>Estamos Prontos Para Ajudar. Escolha O Canal Que Preferir.</p>
+      <h2><span data-i18n="contact_title">Entre Em</span> <span class="text-gradient" data-i18n="contact_title_2">Contacto</span></h2>
+      <p data-i18n="contact_sub">Estamos Prontos Para Ajudar. Escolha O Canal Que Preferir.</p>
     </div>
     <div class="contact-grid">
       <div class="contact-info">
@@ -1606,7 +1626,7 @@
         <p>ERP Completo Para Empresas, Lojas, Bancas E Vending Machines Em Moçambique. POS, Stock, Contabilidade, IRPS, SAF-T, Faturação E Licenciamento SaaS Numa Única Plataforma.</p>
       </div>
       <div class="footer-col">
-        <h4>Produto</h4>
+        <h4 data-i18n="footer_produto">Produto</h4>
         <ul>
           <li><a href="#funcionalidades">Funcionalidades</a></li>
           <li><a href="#personalizado">Personalizado</a></li>
@@ -1617,14 +1637,14 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Legal</h4>
+        <h4 data-i18n="footer_legal">Legal</h4>
         <ul>
           <li><a href="termos.html">Termos De Uso</a></li>
           <li><a href="privacidade.html">Política De Privacidade</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contacto</h4>
+        <h4 data-i18n="footer_contacto">Contacto</h4>
         <ul>
           <li><a href="https://wa.me/258846166104" target="_blank" rel="noopener">WhatsApp</a></li>
           <li><a href="tel:+258870018297">+258 87 001 8297</a></li>
@@ -1747,6 +1767,7 @@
     }
   });
 </script>
-
+<!-- NOVO: Script de Tradução -->
+<script src="assets/js/i18n.js" defer></script>
 </body>
 </html>

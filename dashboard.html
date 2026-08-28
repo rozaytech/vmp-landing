@@ -42,10 +42,104 @@
     .login-screen {
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
+      flex-direction: row; /* Altera para lado a lado */
       justify-content: center;
+      align-items: center;
       padding: 24px;
     }
+    
+    /* NOVO: Container para os bonecos */
+    .login-mascots {
+      flex: 1;
+      max-width: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin-right: 40px;
+    }
+    .mascot {
+      width: 100px;
+      height: 120px;
+      background: var(--bg-elevated);
+      border: 2px solid var(--border);
+      border-radius: 30px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .mascot.eyes-open .eye {
+      height: 8px;
+      transform: scaleY(1);
+    }
+    .mascot.eyes-closed .eye {
+      height: 2px;
+      transform: scaleY(1);
+    }
+    .mascot.eyes-closed .head {
+      transform: rotate(-15deg);
+    }
+    .mascot .head {
+      width: 50px;
+      height: 50px;
+      background: #334155;
+      border-radius: 50%;
+      position: relative;
+      transition: transform 0.5s;
+    }
+    .mascot .eye {
+      position: absolute;
+      width: 10px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      top: 20px;
+      transition: all 0.3s ease;
+    }
+    .mascot .eye.left { left: 10px; }
+    .mascot .eye.right { right: 10px; }
+    .mascot .pupil {
+      width: 6px;
+      height: 6px;
+      background: var(--primary);
+      border-radius: 50%;
+      position: absolute;
+      top: 1px;
+      left: 2px;
+      transition: all 0.2s;
+    }
+    .mascot .mouth {
+      position: absolute;
+      bottom: 10px;
+      width: 20px;
+      height: 5px;
+      background: #64748b;
+      border-radius: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .mascot .body {
+      position: absolute;
+      bottom: 10px;
+      width: 40px;
+      height: 30px;
+      background: var(--primary);
+      border-radius: 10px 10px 0 0;
+    }
+    
+    /* Adaptação Mobile */
+    @media (max-width: 768px) {
+      .login-screen { flex-direction: column; gap: 20px; }
+      .login-mascots { margin-right: 0; margin-bottom: 20px; gap: 15px; }
+      .mascot { width: 70px; height: 90px; }
+      .mascot .head { width: 35px; height: 35px; }
+      .mascot .eye { width: 7px; height: 5px; top: 14px; }
+      .mascot .pupil { width: 4px; height: 4px; }
+      .mascot .mouth { width: 15px; bottom: 5px; }
+    }
+
     .login-logo {
       text-align: center;
       margin-bottom: 40px;
@@ -388,6 +482,26 @@
       0% { transform: translateX(-100%); }
       100% { transform: translateX(100%); }
     }
+    
+    /* NOVO: Estilos do botão de tradução */
+    .lang-toggle-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: inherit;
+      margin-left: 8px;
+    }
+    .lang-toggle-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: rgba(21,101,192,0.1);
+    }
 
     @media (min-width: 768px) {
       .container { max-width: 600px; }
@@ -400,27 +514,54 @@
 <div class="refreshing" id="refreshIndicator"></div>
 
 <div class="login-screen" id="loginScreen">
+  <div class="login-mascots">
+    <div class="mascot" id="mascot1">
+      <div class="head">
+        <div class="eye left"><div class="pupil"></div></div>
+        <div class="eye right"><div class="pupil"></div></div>
+        <div class="mouth"></div>
+      </div>
+      <div class="body"></div>
+    </div>
+    <div class="mascot" id="mascot2">
+      <div class="head">
+        <div class="eye left"><div class="pupil"></div></div>
+        <div class="eye right"><div class="pupil"></div></div>
+        <div class="mouth"></div>
+      </div>
+      <div class="body"></div>
+    </div>
+    <div class="mascot" id="mascot3">
+      <div class="head">
+        <div class="eye left"><div class="pupil"></div></div>
+        <div class="eye right"><div class="pupil"></div></div>
+        <div class="mouth"></div>
+      </div>
+      <div class="body"></div>
+    </div>
+  </div>
+
   <div class="login-logo">
     <img src="assets/images/logo.png" alt="VMP" onerror="this.style.display='none'; this.nextElementSibling.style.marginTop='0'">
-    <h1>VMP Dashboard</h1>
-    <p>Painel Remoto Para Empresários</p>
+    <h1 data-i18n="login_title">VMP Dashboard</h1>
+    <p data-i18n="login_sub">Painel Remoto Para Empresários</p>
   </div>
   <div class="container">
     <div class="error-msg" id="errorMsg"></div>
     <div class="form-group">
-      <label for="licenseId">License ID</label>
+      <label for="licenseId" data-i18n="login_license">License ID</label>
       <input type="text" id="licenseId" placeholder="Ex: abc123-def456" autocomplete="off">
     </div>
     <div class="form-group">
-      <label for="pin">PIN De Acesso</label>
+      <label for="pin" data-i18n="login_pin">PIN De Acesso</label>
       <input type="password" id="pin" placeholder="4-6 Dígitos" maxlength="6" inputmode="numeric" autocomplete="off">
     </div>
-    <button class="btn btn-primary" id="loginBtn" onclick="doLogin()">
+    <button class="btn btn-primary" id="loginBtn" onclick="doLogin()" data-i18n="login_btn">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
       Entrar
     </button>
-    <p style="text-align: center; margin-top: 20px; font-size: 0.8125rem; color: var(--text-muted);">
-      Não Tem Acesso? <a href="https://wa.me/258846166104" target="_blank" style="color: var(--primary-light);">Fale Connosco No WhatsApp</a>
+    <p style="text-align: center; margin-top: 20px; font-size: 0.8125rem; color: var(--text-muted);" data-i18n="login_no_access">
+      Não Tem Acesso? <a href="https://wa.me/258846166104" target="_blank" style="color: var(--primary-light);" data-i18n="login_whats">Fale Connosco No WhatsApp</a>
     </p>
   </div>
 </div>
@@ -428,39 +569,39 @@
 <div class="dashboard" id="dashboard">
   <div class="dash-header">
     <div class="container dash-header-inner">
-      <h2><span class="status-dot"></span> <span id="businessName">VMP Dashboard</span></h2>
-      <a href="https://vmpsaas.com" class="dash-site-link">⬅ Site Oficial</a>
-      <button class="logout-btn" onclick="doLogout()">Sair</button>
+      <h2><span class="status-dot"></span> <span id="businessName" data-i18n="dash_business">VMP Dashboard</span></h2>
+      <a href="https://vmpsaas.com" class="dash-site-link" data-i18n="dash_site">⬅ Site Oficial</a>
+      <button class="logout-btn" onclick="doLogout()" data-i18n="dash_logout">Sair</button>
     </div>
   </div>
 
   <div class="container">
-    <div class="backup-banner">
+    <div class="backup-banner" data-i18n="dash_backup">
       <span class="backup-dot"></span>
       Backup Automático Ativo — Dados Sincronizados na Nuvem
     </div>
 
-    <div class="section-title">Hoje</div>
+    <div class="section-title" data-i18n="dash_hoje">Hoje</div>
     <div class="kpi-grid">
       <div class="kpi-card blue">
-        <div class="kpi-label">Vendas</div>
+        <div class="kpi-label" data-i18n="dash_vendas">Vendas</div>
         <div class="kpi-value" id="todaySales">—</div>
       </div>
       <div class="kpi-card green">
-        <div class="kpi-label">Receita</div>
+        <div class="kpi-label" data-i18n="dash_receita">Receita</div>
         <div class="kpi-value small" id="todayRevenue">—</div>
       </div>
       <div class="kpi-card purple">
-        <div class="kpi-label">Vendas Mês</div>
+        <div class="kpi-label" data-i18n="dash_mes">Vendas Mês</div>
         <div class="kpi-value" id="monthSales">—</div>
       </div>
       <div class="kpi-card orange">
-        <div class="kpi-label">Receita Mês</div>
+        <div class="kpi-label" data-i18n="dash_receita_mes">Receita Mês</div>
         <div class="kpi-value small" id="monthRevenue">—</div>
       </div>
     </div>
 
-    <div class="section-title">Últimos 7 Dias</div>
+    <div class="section-title" data-i18n="dash_7dias">Últimos 7 Dias</div>
     <div class="chart-container" id="chartContainer">
       <div class="empty-state">
         <div class="icon">&#128202;</div>
@@ -468,7 +609,7 @@
       </div>
     </div>
 
-    <div class="section-title">Produtos Mais Vendidos</div>
+    <div class="section-title" data-i18n="dash_mais_vendidos">Produtos Mais Vendidos</div>
     <div class="card" id="topProductsCard">
       <div class="empty-state">
         <div class="icon">&#128722;</div>
@@ -476,7 +617,7 @@
       </div>
     </div>
 
-    <div class="section-title">Alertas</div>
+    <div class="section-title" data-i18n="dash_alertas">Alertas</div>
     <div class="card" id="alertsCard">
       <div class="empty-state">
         <div class="icon">&#9989;</div>
@@ -495,6 +636,35 @@ const REFRESH_INTERVAL = 5 * 60 * 1000;
 let authToken = localStorage.getItem('vmp_remote_token');
 let refreshTimer = null;
 
+/* ===== FUNCIONALIDADE DOS BONECOS ===== */
+const mascots = document.querySelectorAll('.mascot');
+const licenseInput = document.getElementById('licenseId');
+const pinInput = document.getElementById('pin');
+
+function setMascotState(state) {
+  mascots.forEach(m => {
+    m.classList.remove('eyes-open', 'eyes-closed');
+    if (state === 'open') m.classList.add('eyes-open');
+    if (state === 'closed') m.classList.add('eyes-closed');
+  });
+}
+
+licenseInput.addEventListener('focus', () => setMascotState('open'));
+licenseInput.addEventListener('input', () => setMascotState('open'));
+
+pinInput.addEventListener('focus', () => setMascotState('closed'));
+pinInput.addEventListener('input', () => setMascotState('closed'));
+
+document.addEventListener('click', (e) => {
+  if (!licenseInput.contains(e.target) && !pinInput.contains(e.target)) {
+    mascots.forEach(m => {
+      m.classList.remove('eyes-open');
+      m.classList.add('eyes-closed');
+    });
+  }
+});
+
+/* ===== FUNÇÃO DE LOGIN ===== */
 async function doLogin() {
   const licenseId = document.getElementById('licenseId').value.trim();
   const pin = document.getElementById('pin').value.trim();
@@ -769,6 +939,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('gesturestart', (e) => e.preventDefault());
 </script>
-
+<!-- NOVO: Script de Tradução -->
+<script src="assets/js/i18n.js" defer></script>
 </body>
 </html>
