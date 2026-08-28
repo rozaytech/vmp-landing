@@ -37,8 +37,8 @@
   <meta name="twitter:image" content="https://vmpsaas.com/assets/images/logo.png">
   <meta name="twitter:creator" content="@adamgytembe">
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://vmpsaas.com/">
+  <!-- Canonical CORRIGIDO para www -->
+  <link rel="canonical" href="https://www.vmpsaas.com/">
 
   <title>VMP SaaS — ERP Completo Para Moçambique</title>
 
@@ -738,7 +738,8 @@
       transition: transform 0.3s;
     }
     .card:hover .card-icon { transform: scale(1.15); }
-    .card h4 {
+    /* NOVO: Classe para títulos de cartões (reduz headings sem quebrar visual) */
+    .card-title {
       font-size: 1.05rem;
       font-weight: 700;
       margin-bottom: 8px;
@@ -977,7 +978,8 @@
       transform: scale(1.1);
       background: rgba(59, 130, 246, 0.2);
     }
-    .contact-item h4 {
+    /* NOVO: Classe para títulos de contacto (reduz headings) */
+    .contact-title {
       font-size: 0.9rem;
       font-weight: 600;
       margin-bottom: 2px;
@@ -1321,47 +1323,47 @@
     <div class="grid grid-3">
       <div class="card">
         <div class="card-icon">&#128202;</div>
-        <h4>POS Completo</h4>
+        <div class="card-title">POS Completo</div>
         <p>Vendas Rápidas Com Atalhos F1-F9, Pagamento Multi-Método, Descontos, Vouchers E Controle De Caixa Com Abertura, Fecho, Sangria E Reforço.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#128179;</div>
-        <h4>Pagamentos Integrados</h4>
+        <div class="card-title">Pagamentos Integrados</div>
         <p>Suporte Para M-Pesa, E-Mola, M-Kesh, Cartão, Transferência Bancária, Cheque E Dinheiro. Automatize A Cobrança E Acompanhe Todos Os Pagamentos.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#128274;</div>
-        <h4>Licenciamento SaaS</h4>
+        <div class="card-title">Licenciamento SaaS</div>
         <p>Ativação Remota, Trial De 7 Dias, Feature Flags Basic/Pro/Enterprise. Validação Online Com Heartbeat Offline De 28 Dias E Proteção Anti-Tampering.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#128200;</div>
-        <h4>Contabilidade E IRPS</h4>
+        <div class="card-title">Contabilidade E IRPS</div>
         <p>Balanço, Balancete Mensal Com Códigos Contabilísticos, Mapa De IVA, Retenções De IRPS, Simulador De Preços E Ponto De Equilíbrio.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#128203;</div>
-        <h4>SAF-T E Faturação</h4>
+        <div class="card-title">SAF-T E Faturação</div>
         <p>Exportação De Faturas Em Formato SAF-T XML Conforme A AT. Hash De Documentos, Notas De Crédito, Filtros Por Período E Estado.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#128451;</div>
-        <h4>Stock E Multi-Armazém</h4>
+        <div class="card-title">Stock E Multi-Armazém</div>
         <p>Inventário Geral E POS, Movimentos IN/OUT, Transferências Entre Armazéns, Contagem Física Com Acerto Automático E Alertas De Stock Baixo.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#128100;</div>
-        <h4>Gestão De Clientes</h4>
+        <div class="card-title">Gestão De Clientes</div>
         <p>Cadastro Com NUIT, Estatísticas De Compras, Histórico Detalhado, Reimpressão De Recibos E Extrato PDF Por Intervalo De Datas.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#128424;</div>
-        <h4>Impressão Térmica USB</h4>
+        <div class="card-title">Impressão Térmica USB</div>
         <p>Recibos ESC/POS Via Win32 API, Abertura De Gaveta, Corte De Papel E Recibos PDF Com QR Code. Detecção Automática De Impressoras Térmicas.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#128241;</div>
-        <h4>Dashboard Remoto</h4>
+        <div class="card-title">Dashboard Remoto</div>
         <p>Sincronização De Vendas Para Backend, Dashboard Web Filtrado Por Licença, Fila De Retry E Acesso Via License ID + PIN Em Qualquer Dispositivo.</p>
       </div>
     </div>
@@ -1378,17 +1380,17 @@
     <div class="grid grid-3">
       <div class="card">
         <div class="card-icon">📄</div>
-        <h4>Sistema Só Para Facturas</h4>
+        <div class="card-title">Sistema Só Para Facturas</div>
         <p>Ative apenas o módulo de Faturação e emita as suas facturas comerciais com IVA 16% integrado, sem a complexidade de outros módulos.</p>
       </div>
       <div class="card">
         <div class="card-icon">🛒</div>
-        <h4>POS + Stock</h4>
+        <div class="card-title">POS + Stock</div>
         <p>Ideal para quem só vende no balcão. Combine o Ponto de Venda com a gestão de stock e feche o caixa sem complicações.</p>
       </div>
       <div class="card">
         <div class="card-icon">📊</div>
-        <h4>Controlo Remoto</h4>
+        <div class="card-title">Controlo Remoto</div>
         <p>Adicione o acompanhamento remoto das vendas e receitas, mesmo que esteja no plano mais básico. Controle o negócio à distância.</p>
       </div>
     </div>
@@ -1527,7 +1529,7 @@
         <div class="contact-item">
           <div class="contact-icon">&#128241;</div>
           <div>
-            <h4>WhatsApp</h4>
+            <div class="contact-title">WhatsApp</div>
             <p>Resposta Rápida, Todos Os Dias</p>
             <a href="https://wa.me/258846166104" target="_blank" rel="noopener">+258 84 616 6104</a>
           </div>
@@ -1535,7 +1537,7 @@
         <div class="contact-item">
           <div class="contact-icon">&#128222;</div>
           <div>
-            <h4>Telefone</h4>
+            <div class="contact-title">Telefone</div>
             <p>Chamadas</p>
             <a href="tel:+258870018297">+258 87 001 8297</a>
           </div>
@@ -1543,7 +1545,7 @@
         <div class="contact-item">
           <div class="contact-icon">&#9993;</div>
           <div>
-            <h4>Email</h4>
+            <div class="contact-title">Email</div>
             <p>Respondemos Em Até 24h</p>
             <a href="mailto:contacto@vmpsaas.com">contacto@vmpsaas.com</a>
           </div>
@@ -1551,7 +1553,7 @@
         <div class="contact-item">
           <div class="contact-icon">&#128205;</div>
           <div>
-            <h4>Localização</h4>
+            <div class="contact-title">Localização</div>
             <p>Pemba, Moçambique</p>
             <span style="color: var(--text-muted); font-size: 0.875rem;">Atendimento Remoto Em Todo O País</span>
           </div>
