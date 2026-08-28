@@ -48,7 +48,7 @@
       padding: 24px;
     }
     
-    /* NOVO: Container para os bonecos */
+    /* Container para os bonecos */
     .login-mascots {
       flex: 1;
       max-width: 400px;
@@ -79,21 +79,29 @@
     .mascot:nth-child(3):hover { transform: rotate(-1deg) translateY(-8px) scale(1.05); }
 
     /* Lógica dos Olhos (Olhando para os campos) */
-    .mascot .eye {
-      transform-origin: center;
+    .mascot .eyes {
       transition: all 0.3s ease;
     }
-    .mascot.eyes-closed .eye {
-      transform: scaleY(0.1); /* Vira uma linha */
-    }
-    .mascot.eyes-open .eye {
-      transform: scaleY(1);
-    }
-    /* Pupilas deslocadas para a direita (olhando para os inputs) */
-    .mascot .pupil {
-      transform: translateX(4px);
+    .mascot .hand {
+      opacity: 0;
+      transform: scale(0.8);
+      transform-origin: center;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     
+    /* NOVO: Estado de PIN (Olhos fechados + Mãos na cara) */
+    .mascot.eyes-closed .eyes {
+      opacity: 0;
+      transform: scale(0.6);
+    }
+    .mascot.eyes-closed .hand {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .mascot.eyes-closed {
+      transform: rotate(0deg) translateY(5px);
+    }
+
     /* Adaptação Mobile */
     @media (max-width: 768px) {
       .login-screen { flex-direction: column; gap: 20px; }
@@ -444,7 +452,7 @@
       100% { transform: translateX(100%); }
     }
     
-    /* NOVO: Estilos do botão de tradução */
+    /* Estilos do botão de tradução */
     .lang-toggle-btn {
       background: transparent;
       border: 1px solid var(--border);
@@ -497,16 +505,24 @@
         
         <!-- Eyes (Olhando para a direita) -->
         <g class="eyes">
-          <circle class="eye" cx="45" cy="60" r="10" fill="#ffffff"/>
-          <circle class="eye" cx="75" cy="60" r="10" fill="#ffffff"/>
-          <circle class="pupil" cx="49" cy="60" r="4.5" fill="#1565C0"/>
-          <circle class="pupil" cx="79" cy="60" r="4.5" fill="#1565C0"/>
+          <circle cx="45" cy="60" r="10" fill="#ffffff"/>
+          <circle cx="75" cy="60" r="10" fill="#ffffff"/>
+          <circle cx="49" cy="60" r="4.5" fill="#1565C0"/>
+          <circle cx="79" cy="60" r="4.5" fill="#1565C0"/>
           <circle cx="51" cy="57" r="1.5" fill="#ffffff"/>
           <circle cx="81" cy="57" r="1.5" fill="#ffffff"/>
         </g>
         
         <!-- Mouth -->
         <path d="M 50 85 Q 60 90 70 85" stroke="#0F172A" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+        <!-- Hands (Mãos na cara para PIN) -->
+        <g class="hand">
+           <path d="M 35 60 C 35 45, 50 40, 50 55 L 50 65 Z" fill="#0F172A"/>
+           <path d="M 85 60 C 85 45, 70 40, 70 55 L 70 65 Z" fill="#0F172A"/>
+           <circle cx="42" cy="55" r="3" fill="#60A5FA"/>
+           <circle cx="78" cy="55" r="3" fill="#60A5FA"/>
+        </g>
       </svg>
     </div>
 
@@ -532,14 +548,22 @@
         
         <!-- Eyes (Olhando para a direita) -->
         <g class="eyes">
-          <circle class="eye" cx="45" cy="60" r="8" fill="#ffffff"/>
-          <circle class="eye" cx="75" cy="60" r="8" fill="#ffffff"/>
-          <circle class="pupil" cx="48" cy="60" r="3.5" fill="#6D28D9"/>
-          <circle class="pupil" cx="78" cy="60" r="3.5" fill="#6D28D9"/>
+          <circle cx="45" cy="60" r="8" fill="#ffffff"/>
+          <circle cx="75" cy="60" r="8" fill="#ffffff"/>
+          <circle cx="48" cy="60" r="3.5" fill="#6D28D9"/>
+          <circle cx="78" cy="60" r="3.5" fill="#6D28D9"/>
         </g>
         
         <!-- Mouth -->
         <path d="M 55 85 Q 60 85 65 85" stroke="#0F172A" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+        <!-- Hands (Mãos na cara para PIN) -->
+        <g class="hand">
+           <path d="M 35 60 C 35 45, 50 40, 50 55 L 50 65 Z" fill="#0F172A"/>
+           <path d="M 85 60 C 85 45, 70 40, 70 55 L 70 65 Z" fill="#0F172A"/>
+           <circle cx="42" cy="55" r="3" fill="#A78BFA"/>
+           <circle cx="78" cy="55" r="3" fill="#A78BFA"/>
+        </g>
       </svg>
     </div>
 
@@ -564,16 +588,24 @@
         
         <!-- Eyes (Olhando para a direita) -->
         <g class="eyes">
-          <circle class="eye" cx="45" cy="60" r="10" fill="#ffffff"/>
-          <circle class="eye" cx="75" cy="60" r="10" fill="#ffffff"/>
-          <circle class="pupil" cx="49" cy="60" r="4.5" fill="#059669"/>
-          <circle class="pupil" cx="79" cy="60" r="4.5" fill="#059669"/>
+          <circle cx="45" cy="60" r="10" fill="#ffffff"/>
+          <circle cx="75" cy="60" r="10" fill="#ffffff"/>
+          <circle cx="49" cy="60" r="4.5" fill="#059669"/>
+          <circle cx="79" cy="60" r="4.5" fill="#059669"/>
           <circle cx="51" cy="57" r="1.5" fill="#ffffff"/>
           <circle cx="81" cy="57" r="1.5" fill="#ffffff"/>
         </g>
         
         <!-- Mouth -->
         <path d="M 52 85 Q 60 90 68 85" stroke="#0F172A" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+        <!-- Hands (Mãos na cara para PIN) -->
+        <g class="hand">
+           <path d="M 35 60 C 35 45, 50 40, 50 55 L 50 65 Z" fill="#0F172A"/>
+           <path d="M 85 60 C 85 45, 70 40, 70 55 L 70 65 Z" fill="#0F172A"/>
+           <circle cx="42" cy="55" r="3" fill="#34D399"/>
+           <circle cx="78" cy="55" r="3" fill="#34D399"/>
+        </g>
       </svg>
     </div>
   </div>
@@ -976,7 +1008,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('gesturestart', (e) => e.preventDefault());
 </script>
-<!-- NOVO: Script de Tradução -->
+<!-- Script de Tradução -->
 <script src="assets/js/i18n.js" defer></script>
 </body>
 </html>
