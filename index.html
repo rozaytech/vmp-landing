@@ -670,13 +670,13 @@
       font-weight: 500;
     }
     .section {
-      padding: 50px 0;
+      padding: 30px 0;
       position: relative;
     }
     .section-header {
       text-align: center;
       max-width: 640px;
-      margin: 0 auto 32px;
+      margin: 0 auto 24px;
     }
     .section-header h2 {
       font-size: 1.8rem;
@@ -867,14 +867,14 @@
     .pricing-card ul li.missing::before {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='3'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/svg%3E");
     }
-    .download-section { padding: 40px 0 60px; }
+    .download-section { padding: 20px 0 30px; }
     .download-card {
       background: var(--bg-elevated);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 30px;
+      padding: 24px;
       text-align: center;
-      max-width: 460px;
+      max-width: 420px;
       margin: 0 auto;
       animation: fadeInUp 0.7s ease-out both;
       transition: border-color 0.3s, box-shadow 0.3s;
@@ -1455,15 +1455,15 @@
 
 <section class="section download-section" id="download">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header" style="margin-bottom: 20px;">
       <h2>Download Do <span class="text-gradient">VMP SaaS</span></h2>
       <p>Instale O VMP SaaS No Seu Computador Windows E Comece A Gerir O Seu Negócio Em Minutos.</p>
     </div>
     <div class="download-card">
-      <div style="font-size: 2.5rem; margin-bottom: 14px;">&#128187;</div>
+      <div style="font-size: 2rem; margin-bottom: 10px;">&#128187;</div>
       <h3>VMP SaaS <span id="dl-version">v2.4.1</span></h3>
-      <p>Instalador Para Windows 10/11 &#8226; Instalação Automática</p>
-      <div class="download-meta">
+      <p style="margin-bottom: 12px;">Instalador Para Windows 10/11 &#8226; Instalação Automática</p>
+      <div class="download-meta" style="margin-bottom: 16px;">
         <div class="download-meta-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           <span>~45 MB</span>
@@ -1478,12 +1478,12 @@
         </div>
       </div>
       <div class="download-btn-wrap">
-        <a id="dl-link" href="https://github.com/rozaytech/vmp/releases/download/v2.4.1/VMP-2.4.1-setup.exe" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <a id="dl-link" href="https://github.com/rozaytech/vmp/releases/download/v2.4.1/VMP-2.4.1-setup.exe" class="btn btn-primary btn-lg" target="_blank" rel="noopener" style="min-width: 220px; padding: 12px 24px; font-size: 0.9rem;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           <span id="dl-text">Download v2.4.1</span>
         </a>
       </div>
-      <p class="mt-2 text-muted" id="dl-note">Download direto do instalador. Versão 2.4.1 estável.</p>
+      <p class="mt-2 text-muted" id="dl-note" style="margin-top: 8px;">Download direto do instalador. Versão 2.4.1 estável.</p>
     </div>
   </div>
 </section>
