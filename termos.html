@@ -1,112 +1,116 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-MZ">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Termos de Uso do VMP SaaS — Sistema de gestão para vending machines em Moçambique.">
+  <meta name="description" content="Termos de Uso do VMP SaaS — Sistema de gestão para Moçambique.">
   <meta name="author" content="Adamgy Adamo Tembe">
-  <meta name="theme-color" content="#1565C0">
-  <title>Termos de Uso — VMP SaaS</title>
+  <meta name="theme-color" content="#0B1120">
+  <title>Termos De Uso — VMP SaaS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="assets/images/logo.png">
   <link rel="apple-touch-icon" href="assets/images/logo.png">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .legal-page { padding-top: 120px; padding-bottom: 80px; min-height: 100vh; }
+    .legal-page .container { max-width: 800px; }
+    .legal-header { text-align: center; margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+    .legal-header h1 { font-family: var(--font-title); margin-bottom: 12px; font-size: 2.2rem; }
+    .legal-header .date { color: var(--text-muted); font-size: 0.9375rem; }
+    .legal-content h2 { font-family: var(--font-title); margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); font-size: 1.3rem; }
+    .legal-content h3 { font-family: var(--font-title); margin: 24px 0 12px; color: var(--text-secondary); font-size: 1.05rem; }
+    .legal-content p { margin-bottom: 16px; color: var(--text-secondary); }
+    .legal-content ul, .legal-content ol { margin: 12px 0 16px 24px; color: var(--text-secondary); }
+    .legal-content li { margin-bottom: 8px; }
+    .legal-content a { color: var(--primary-light); font-weight: 500; }
+    .legal-content a:hover { text-decoration: underline; }
+    .legal-highlight {
+      background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(167,139,250,0.04));
+      border-left: 3px solid var(--primary); padding: 20px 24px;
+      border-radius: 0 var(--radius) var(--radius) 0; margin: 24px 0;
+    }
+    .legal-highlight p { margin: 0; color: var(--text); }
+    .legal-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem; }
+    .legal-table th, .legal-table td { padding: 12px 14px; text-align: left; border: 1px solid var(--border); }
+    .legal-table th { background: var(--bg-elevated); font-family: var(--font-title); font-weight: 600; color: var(--text); }
+    .legal-table td { color: var(--text-secondary); }
+    .legal-table tr:nth-child(even) td { background: rgba(30,41,59,0.3); }
+    .contact-grid-legal { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+    .contact-card-legal { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; text-align: center; transition: all 0.3s; }
+    .contact-card-legal:hover { border-color: var(--primary); transform: translateY(-2px); }
+    .contact-card-legal .icon { font-size: 1.5rem; margin-bottom: 12px; }
+    .contact-card-legal h4 { font-family: var(--font-title); font-size: 0.9375rem; margin-bottom: 4px; }
+    .contact-card-legal p { font-size: 0.875rem; margin: 0; }
+    .contact-card-legal a { font-size: 0.875rem; font-weight: 500; }
+    @media (max-width: 640px) { .contact-grid-legal { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
 
-<header class="header">
+<header class="site-header" id="header">
   <div class="container header-inner">
-    <a href="/" class="logo">
-      <img src="assets/images/logo.png" alt="VMP SaaS" onerror="this.style.display='none'">
+    <a href="/" class="brand">
+      <img src="assets/images/logo.png" alt="VMP SaaS">
       <span>VMP SaaS</span>
     </a>
-    <nav class="nav">
-      <a href="/" data-i18n="nav_inicio">Início</a>
-      <a href="/termos.html" data-i18n="nav_termos">Termos</a>
-      <a href="/privacidade.html" data-i18n="nav_privacidade">Privacidade</a>
-      <a href="/#contacto" data-i18n="nav_contacto">Contacto</a>
-      <a href="https://vmp-admin-panel.vercel.app" target="_blank" style="color: var(--accent); font-weight:600; border:1px solid rgba(59,130,246,0.3); padding:4px 12px; border-radius:20px; background:rgba(59,130,246,0.05);" data-i18n="nav_admin">🔐 Admin</a>
+    <nav class="main-nav" id="mainNav">
+      <a href="/">Início</a>
+      <a href="termos.html">Termos</a>
+      <a href="privacidade.html">Privacidade</a>
+      <a href="/#contacto">Contacto</a>
+      <a href="https://admin.vmpsaas.com" target="_blank" style="color: var(--primary); font-weight:600; border:1px solid rgba(59,130,246,0.3); padding:6px 14px; border-radius:20px; background:rgba(59,130,246,0.05);">Admin</a>
     </nav>
-    <button class="nav-toggle" aria-label="Menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
-      </svg>
-    </button>
+    <div class="header-actions">
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </header>
 
 <main class="legal-page">
   <div class="container">
     <div class="legal-header">
-      <h1 data-i18n="nav_termos">Termos de Uso</h1>
-      <p class="date"><strong>Última atualização:</strong> 17 de julho de 2026</p>
+      <h1>Termos De Uso</h1>
+      <p class="date"><strong>Última Actualização:</strong> 17 De Julho De 2026</p>
     </div>
 
     <div class="legal-content">
       <div class="legal-highlight">
-        <p><strong>Resumo:</strong> O VMP SaaS é um sistema de gestão para vending machines licenciado por subscrição. O pagamento é mensal ou anual conforme o plano escolhido. Não oferecemos reembolso após ativação da licença.</p>
+        <p><strong>Resumo:</strong> O VMP SaaS é um sistema de gestão licenciado por subscrição. O pagamento é mensal conforme o plano escolhido. Não oferecemos reembolso após ativação da licença.</p>
       </div>
 
       <h2>1. Definições</h2>
       <ul>
         <li><strong>"VMP SaaS"</strong>, <strong>"nós"</strong>, <strong>"nos"</strong> — refere-se ao sistema de software e serviços prestados por Adamgy Adamo Tembe.</li>
-        <li><strong>"Cliente"</strong>, <strong>"você"</strong>, <strong>"utilizador"</strong> — pessoa singular ou coletiva que utiliza o VMP SaaS.</li>
+        <li><strong>"Cliente"</strong>, <strong>"você"</strong>, <strong>"utilizador"</strong> — pessoa singular ou colectiva que utiliza o VMP SaaS.</li>
         <li><strong>"Licença"</strong> — direito de uso do software VMP por período determinado.</li>
         <li><strong>"Machine ID"</strong> — identificador único do dispositivo onde o software é instalado.</li>
       </ul>
 
-      <h2>2. Objeto do Serviço</h2>
-      <p>O VMP SaaS é um sistema de ponto de venda (POS) e gestão para máquinas de vending, que inclui:</p>
+      <h2>2. Objecto Do Serviço</h2>
+      <p>O VMP SaaS é um sistema de ponto de venda (POS) e gestão, que inclui:</p>
       <ul>
-        <li>Software desktop (Flutter) para operação das máquinas</li>
+        <li>Software desktop (Flutter) para operação</li>
         <li>Painel de administração web para gestão</li>
         <li>Sistema de licenciamento e subscrição</li>
         <li>Relatórios de vendas e stock</li>
         <li>Suporte técnico conforme o plano contratado</li>
       </ul>
 
-      <h2>3. Planos e Pagamento</h2>
-
-      <h3>3.1 Planos disponíveis</h3>
+      <h2>3. Planos E Pagamento</h2>
+      <h3>3.1 Planos Disponíveis</h3>
       <table class="legal-table">
-        <thead>
-          <tr>
-            <th>Plano</th>
-            <th>Preço</th>
-            <th>Utilizadores</th>
-            <th>Produtos</th>
-            <th>Funcionalidades</th>
-          </tr>
-        </thead>
+        <thead><tr><th>Plano</th><th>Preço</th><th>Utilizadores</th><th>Produtos</th><th>Funcionalidades</th></tr></thead>
         <tbody>
-          <tr>
-            <td><strong>Basic</strong></td>
-            <td>3.500 MZN/mês</td>
-            <td>2</td>
-            <td>500</td>
-            <td>POS, stock, caixa, relatórios básicos, Z-report</td>
-          </tr>
-          <tr>
-            <td><strong>Pro</strong></td>
-            <td>7.000 MZN/mês</td>
-            <td>5</td>
-            <td>5.000</td>
-            <td>Tudo do Basic + relatórios avançados, promoções, clientes, multi-armazém, analytics</td>
-          </tr>
-          <tr>
-            <td><strong>Enterprise</strong></td>
-            <td>12.500 MZN/mês</td>
-            <td>999</td>
-            <td>99.999</td>
-            <td>Tudo do Pro + contabilidade, margem de lucro, dashboard remoto, API, backup cloud</td>
-          </tr>
+          <tr><td><strong>Basic</strong></td><td>3.500 MZN/Mês</td><td>10</td><td>500</td><td>POS, stock, caixa, relatórios básicos, Z-report</td></tr>
+          <tr><td><strong>Pro</strong></td><td>7.000 MZN/Mês</td><td>30</td><td>5.000</td><td>Tudo do Basic + relatórios avançados, promoções, clientes, multi-armazém, analytics</td></tr>
+          <tr><td><strong>Enterprise</strong></td><td>12.500 MZN/Mês</td><td>999</td><td>99.999</td><td>Tudo do Pro + contabilidade, margem de lucro, dashboard remoto, API, backup cloud</td></tr>
         </tbody>
       </table>
 
-      <h3>3.2 Formas de pagamento</h3>
+      <h3>3.2 Formas De Pagamento</h3>
       <p>Aceitamos:</p>
       <ul>
         <li><strong>eMola:</strong> 87 001 8297</li>
@@ -115,14 +119,13 @@
         <li><strong>Cartão Visa:</strong> Em breve via Stripe</li>
       </ul>
 
-      <h3>3.3 Ciclo de faturação</h3>
-      <p>O pagamento é <strong>pré-pago</strong>. A licença é ativada após confirmação do pagamento, que pode demorar até 24 horas úteis.</p>
+      <h3>3.3 Ciclo De Facturação</h3>
+      <p>O pagamento é <strong>pré-pago</strong>. A licença é activada após confirmação do pagamento, que pode demorar até 24 horas úteis.</p>
 
-      <h3>3.4 Trial gratuito</h3>
-      <p>Oferecemos <strong>7 dias de trial</strong> para novos clientes. Durante o trial, todas as funcionalidades do plano Enterprise estão disponíveis. Após o trial, é necessário efetuar pagamento para continuar a usar o software.</p>
+      <h3>3.4 Trial Gratuito</h3>
+      <p>Oferecemos <strong>7 dias de trial</strong> para novos clientes. Durante o trial, todas as funcionalidades do plano Enterprise estão disponíveis. Após o trial, é necessário efectuar pagamento para continuar a usar o software.</p>
 
-      <h2>4. Licença de Uso</h2>
-
+      <h2>4. Licença De Uso</h2>
       <h3>4.1 Concessão</h3>
       <p>Após pagamento confirmado, concedemos uma licença <strong>não exclusiva, não transferível e revogável</strong> para usar o VMP SaaS no número de máquinas contratado.</p>
 
@@ -133,59 +136,40 @@
         <li>Usar a licença em mais máquinas do que o permitido pelo plano</li>
         <li>Partilhar credenciais de acesso com terceiros</li>
         <li>Tentar contornar o sistema de licenciamento</li>
-        <li>Usar o software para atividades ilegais</li>
+        <li>Usar o software para actividades ilegais</li>
       </ul>
 
-      <h3>4.3 Ativação e Machine ID</h3>
+      <h3>4.3 Activação E Machine ID</h3>
       <p>Cada licença está vinculada a um <strong>Machine ID</strong> único. Se mudar de computador, contacte o suporte para transferência de licença (sujeito a aprovação).</p>
 
-      <h2>5. Suspensão e Rescisão</h2>
-
-      <h3>5.1 Por incumprimento</h3>
+      <h2>5. Suspensão E Rescisão</h2>
+      <h3>5.1 Por Incumprimento</h3>
       <p>Podemos suspender ou rescindir a licença imediatamente se:</p>
       <ul>
         <li>Houver tentativa de fraude ou contorno do licenciamento</li>
-        <li>O pagamento não for efetuado no prazo de 7 dias após vencimento</li>
+        <li>O pagamento não for efectuado no prazo de 7 dias após vencimento</li>
         <li>Houver uso indevido ou ilegal do software</li>
       </ul>
 
-      <h3>5.2 Por vontade do cliente</h3>
+      <h3>5.2 Por Vontade Do Cliente</h3>
       <p>Pode cancelar a subscrição a qualquer momento, contactando-nos por WhatsApp ou email. <strong>Não há reembolso</strong> de períodos já pagos.</p>
 
       <h2>6. Suporte Técnico</h2>
       <table class="legal-table">
-        <thead>
-          <tr>
-            <th>Plano</th>
-            <th>Canais</th>
-            <th>Prazo de Resposta</th>
-          </tr>
-        </thead>
+        <thead><tr><th>Plano</th><th>Canais</th><th>Prazo De Resposta</th></tr></thead>
         <tbody>
-          <tr>
-            <td>Basic</td>
-            <td>Email</td>
-            <td>48h úteis</td>
-          </tr>
-          <tr>
-            <td>Pro</td>
-            <td>Email + WhatsApp</td>
-            <td>24h úteis</td>
-          </tr>
-          <tr>
-            <td>Enterprise</td>
-            <td>Email + WhatsApp + Chamada</td>
-            <td>4h úteis</td>
-          </tr>
+          <tr><td>Basic</td><td>Email</td><td>48H Úteis</td></tr>
+          <tr><td>Pro</td><td>Email + WhatsApp</td><td>24H Úteis</td></tr>
+          <tr><td>Enterprise</td><td>Email + WhatsApp + Chamada</td><td>4H Úteis</td></tr>
         </tbody>
       </table>
 
-      <h2>7. Limitação de Responsabilidade</h2>
+      <h2>7. Limitação De Responsabilidade</h2>
       <p>O VMP SaaS é fornecido <strong>"tal como está"</strong>. Não nos responsabilizamos por:</p>
       <ul>
         <li>Perda de dados por falha do cliente em fazer backups</li>
         <li>Interrupções de serviço por falhas de internet do cliente</li>
-        <li>Prejuízos comerciais diretos ou indiretos</li>
+        <li>Prejuízos comerciais directos ou indirectos</li>
         <li>Problemas causados por uso indevido do software</li>
       </ul>
       <p>A nossa responsabilidade máxima está limitada ao valor pago pelo cliente nos últimos 3 meses.</p>
@@ -193,15 +177,14 @@
       <h2>8. Propriedade Intelectual</h2>
       <p>Todos os direitos de propriedade intelectual sobre o VMP SaaS pertencem a Adamgy Adamo Tembe. A licença não confere propriedade, apenas direito de uso.</p>
 
-      <h2>9. Alterações aos Termos</h2>
-      <p>Podemos atualizar estes termos a qualquer momento. Alterações significativas serão comunicadas por email com 30 dias de antecedência. O uso continuado após a atualização constitui aceitação.</p>
+      <h2>9. Alterações Aos Termos</h2>
+      <p>Podemos actualizar estes termos a qualquer momento. Alterações significativas serão comunicadas por email com 30 dias de antecedência. O uso continuado após a actualização constitui aceitação.</p>
 
       <h2>10. Lei Aplicável</h2>
       <p>Estes termos são regidos pelas leis da <strong>República de Moçambique</strong>. Qualquer litígio será resolvido pelos tribunais da cidade de Maputo.</p>
 
       <h2>11. Contacto</h2>
       <p>Para questões sobre estes termos, entre em contacto connosco:</p>
-
       <div class="contact-grid-legal">
         <div class="contact-card-legal">
           <div class="icon">📱</div>
@@ -221,29 +204,58 @@
       </div>
 
       <div class="legal-highlight" style="margin-top: 40px;">
-        <p><strong>Ao utilizar o VMP SaaS, você confirma que leu, compreendeu e concorda com estes Termos de Uso.</strong></p>
+        <p><strong>Ao utilizar o VMP SaaS, você confirma que leu, compreendeu e concorda com estes Termos De Uso.</strong></p>
       </div>
     </div>
   </div>
 </main>
 
-<footer class="footer">
+<footer class="site-footer">
   <div class="container">
-    <div class="footer-bottom" style="border-top: none; padding-top: 0;">
-      <span>© <span class="current-year">2026</span> VMP SaaS. Todos os direitos reservados.</span>
-      <span>
-        <a href="/">Início</a> • 
-        <a href="privacidade.html">Privacidade</a>
-      </span>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand">
+          <img src="assets/images/logo.png" alt="VMP SaaS">
+          <span>VMP SaaS</span>
+        </a>
+        <p>ERP completo para empresas, lojas, bancas e vending machines em Moçambique. Desenvolvido em Pemba.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Produto</h4>
+        <ul>
+          <li><a href="/#funcionalidades">Funcionalidades</a></li>
+          <li><a href="/#galeria">Galeria</a></li>
+          <li><a href="/#blog">Blog</a></li>
+          <li><a href="/#precos">Preços</a></li>
+          <li><a href="/#download">Download</a></li>
+          <li><a href="dashboard.html">Dashboard Remoto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="termos.html">Termos De Uso</a></li>
+          <li><a href="privacidade.html">Privacidade</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Redes</h4>
+        <ul>
+          <li><a href="https://wa.me/258846166104" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="https://www.youtube.com/@vmpsaas" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.instagram.com/rozay_camuflado" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/share/1D7jcPzTu9/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://adamgy.vmpsaas.com/" target="_blank" rel="noopener">Portfólio Do Criador</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 VMP SaaS. Todos Os Direitos Reservados.</span>
+      <span>Desenvolvido Por <a href="https://www.instagram.com/rozay_camuflado" target="_blank" rel="noopener">Adamgy Adamo Tembe</a></span>
     </div>
   </div>
 </footer>
 
-<button class="scroll-top" aria-label="Voltar ao topo">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
-</button>
-
 <script src="assets/js/script.js"></script>
-<script src="assets/js/i18n.js" defer></script>
 </body>
 </html>
