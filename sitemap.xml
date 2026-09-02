@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.vmpsaas.com/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.vmpsaas.com/dashboard.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vmpsaas.com/termos.html</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.vmpsaas.com/privacidade.html</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.vmpsaas.com/blog/o-que-e-um-erp.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vmpsaas.com/blog/5-dicas-controlar-stock.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vmpsaas.com/blog/como-emitir-facturas-iva-mocambique.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vmpsaas.com/blog/como-aumentar-vendas-ponto-de-venda.html</loc>
+    <priority>0.7</priority>
+  </url>
+</urlset>

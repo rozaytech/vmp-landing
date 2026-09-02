@@ -10,6 +10,7 @@
   <meta name="robots" content="index, follow">
   <meta name="geo.region" content="MZ">
   <meta name="geo.placename" content="Pemba, Moçambique">
+  <link rel="canonical" href="https://www.vmpsaas.com/">
 
   <meta property="og:title" content="VMP SaaS — ERP Completo Para Moçambique">
   <meta property="og:description" content="ERP Offline-First para Moçambique. POS, Stock, Contabilidade, IRPS, SAF-T. Trial grátis de 7 dias.">
@@ -19,7 +20,7 @@
   <meta property="og:site_name" content="VMP SaaS">
   <meta property="og:locale" content="pt_MZ">
 
-  <title>VMP SaaS — ERP Completo Para Moçambique</title>
+  <title>VMP SaaS — ERP Completo Para Moçambique | POS, Stock, Contabilidade e SAF-T</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +30,7 @@
   <link rel="apple-touch-icon" href="assets/images/logo.png">
   <link rel="stylesheet" href="assets/css/style.css">
 
+  <!-- SoftwareApplication Schema (existente) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -46,6 +48,30 @@
     "author": {"@type": "Person", "name": "Adamgy Adamo Tembe", "email": "contacto@vmpsaas.com", "telephone": "+258846166104"},
     "description": "ERP Completo Para Empresas, Lojas, Bancas E Vending Machines Em Moçambique.",
     "downloadUrl": "https://github.com/rozaytech/vmp/releases/download/v2.4.1/VMP-2.4.1-setup.exe"
+  }
+  </script>
+
+  <!-- Organization Schema (novo) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "VMP SaaS",
+    "url": "https://www.vmpsaas.com",
+    "logo": "https://vmpsaas.com/assets/images/logo.png",
+    "description": "ERP Offline-First para Moçambique. POS, Stock, Contabilidade, IRPS, SAF-T.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+258846166104",
+      "contactType": "sales",
+      "availableLanguage": ["Portuguese"]
+    },
+    "sameAs": [
+      "https://www.youtube.com/@vmpsaas",
+      "https://wa.me/258846166104",
+      "https://www.instagram.com/rozay_camuflado",
+      "https://www.facebook.com/share/1D7jcPzTu9/"
+    ]
   }
   </script>
 </head>
@@ -302,7 +328,7 @@
         <div class="blog-content">
           <h3>O Que É Um ERP E Porque O Teu Negócio Precisa De Um</h3>
           <p>Descobre como um sistema integrado pode eliminar planilhas e reduzir erros no dia a dia da tua loja.</p>
-          <a href="#" class="blog-link" data-blog-id="1">Ler Mais →</a>
+          <a href="/blog/o-que-e-um-erp.html" class="blog-link">Ler Mais →</a>
         </div>
       </article>
       <article class="blog-card">
@@ -312,7 +338,7 @@
         <div class="blog-content">
           <h3>5 Dicas Para Controlar O Stock Da Tua Loja</h3>
           <p>Aprende a evitar rupturas e excessos com um sistema de gestão de inventário simples e eficaz.</p>
-          <a href="#" class="blog-link" data-blog-id="2">Ler Mais →</a>
+          <a href="/blog/5-dicas-controlar-stock.html" class="blog-link">Ler Mais →</a>
         </div>
       </article>
       <article class="blog-card">
@@ -322,7 +348,7 @@
         <div class="blog-content">
           <h3>Como Emitir Facturas Com IVA 16% Em Moçambique</h3>
           <p>Guia prático sobre faturação electrónica, hash de documentos e obrigações perante a AT.</p>
-          <a href="#" class="blog-link" data-blog-id="3">Ler Mais →</a>
+          <a href="/blog/como-emitir-facturas-iva-mocambique.html" class="blog-link">Ler Mais →</a>
         </div>
       </article>
       <article class="blog-card">
@@ -332,7 +358,7 @@
         <div class="blog-content">
           <h3>Como Aumentar As Vendas No Ponto De Venda</h3>
           <p>Estratégias simples de upsell, promoções sazonais e fidelização de clientes no caixa.</p>
-          <a href="#" class="blog-link" data-blog-id="4">Ler Mais →</a>
+          <a href="/blog/como-aumentar-vendas-ponto-de-venda.html" class="blog-link">Ler Mais →</a>
         </div>
       </article>
     </div>
@@ -377,6 +403,7 @@
     </div>
   </div>
 </section>
+
 <section class="section pricing" id="precos">
   <div class="container">
     <div class="section-header">
@@ -484,7 +511,7 @@
       <div class="creator-content">
         <span class="section-tag">Quem Construiu</span>
         <h2>Conhece O Criador Do<br><span class="text-gradient">VMP SaaS.</span></h2>
-        <p>O VMP SaaS foi desenvolvido por <strong>Adamgy Adamo Tembe</strong>, engenheiro de software com foco em soluções para o mercado moçambicano. Cada linha de código foi escrita a pensar em quem gere um negócio no dia a dia.</p>
+        <p>O VMP SaaS foi desenvolvido por <strong>Adamgy Adamo Tembe</strong>, técnico de software com foco em soluções para o mercado moçambicano. Cada linha de código foi escrita a pensar em quem gere um negócio no dia a dia.</p>
         <p>Queres ver mais do meu trabalho?</p>
         <div class="creator-cta">
           <a href="https://adamgy.vmpsaas.com/" class="btn btn-primary" target="_blank" rel="noopener">
@@ -601,14 +628,47 @@
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
 </button>
 
-<div class="blog-modal" id="blogModal">
-  <div class="blog-modal-backdrop"></div>
-  <div class="blog-modal-card">
-    <button class="blog-modal-close" id="blogModalClose" aria-label="Fechar">&times;</button>
-    <h3 id="blogModalTitle"></h3>
-    <div class="blog-modal-body" id="blogModalBody"></div>
-  </div>
-</div>
+<!-- FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quais são os planos disponíveis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Temos três planos: Basic (3.500 MZN/mês), Pro (7.000 MZN/mês) e Enterprise (12.500 MZN/mês). Cada plano inclui diferentes funcionalidades e limites de utilizadores e produtos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso testar o VMP SaaS antes de pagar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, oferecemos 7 dias de trial grátis com todas as funcionalidades do plano Enterprise. Após o trial, pode escolher o plano que melhor se adapta ao seu negócio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O VMP SaaS funciona sem internet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, o VMP SaaS é offline-first. Funciona perfeitamente sem internet, e sincroniza automaticamente os dados quando a conexão é restabelecida. Ideal para zonas com internet instável."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O IVA já está incluído nos preços?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Os preços são apresentados sem IVA. O IVA de 16% é aplicado na faturação, conforme exige a legislação moçambicana."
+      }
+    }
+  ]
+}
+</script>
 
 <script src="assets/js/script.js"></script>
 </body>

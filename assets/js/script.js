@@ -4,164 +4,6 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-  // ---------- Hero Canvas (Gráficos / Dashboards / Progresso) ----------
-  const canvas = document.getElementById('heroCanvas');
-  if (canvas) {
-    const ctx = canvas.getContext('2d');
-    let width, height;
-    let time = 0;
-
-    function resize() {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
-    // Linhas de tendência
-    const trendLines = [
-      { color: '59,130,246', speed: 0.008, amplitude: 60, offset: 0, yBase: 0.35 },
-      { color: '139,92,246', speed: 0.006, amplitude: 45, offset: 2, yBase: 0.55 },
-      { color: '16,185,129', speed: 0.01, amplitude: 35, offset: 4, yBase: 0.75 }
-    ];
-
-    // Barras de progresso
-    const progressBars = [
-      { x: 0.08, y: 0.22, width: 0.12, height: 6, color: '59,130,246', progress: 0, target: 0.85, speed: 0.008 },
-      { x: 0.08, y: 0.26, width: 0.12, height: 6, color: '139,92,246', progress: 0, target: 0.65, speed: 0.006 },
-      { x: 0.08, y: 0.30, width: 0.12, height: 6, color: '16,185,129', progress: 0, target: 0.92, speed: 0.01 },
-      { x: 0.75, y: 0.18, width: 0.10, height: 5, color: '59,130,246', progress: 0, target: 0.72, speed: 0.007 },
-      { x: 0.75, y: 0.21, width: 0.10, height: 5, color: '16,185,129', progress: 0, target: 0.88, speed: 0.009 },
-      { x: 0.75, y: 0.24, width: 0.10, height: 5, color: '139,92,246', progress: 0, target: 0.55, speed: 0.005 }
-    ];
-
-    // Números flutuantes
-    const floatingNumbers = [
-      { text: '12,450 MZN', x: 0.15, y: 0.12, color: '59,130,246', size: 14, opacity: 0, targetOpacity: 0.35, speed: 0.003 },
-      { text: '+23%', x: 0.82, y: 0.10, color: '16,185,129', size: 12, opacity: 0, targetOpacity: 0.30, speed: 0.004 },
-      { text: '847', x: 0.20, y: 0.82, color: '139,92,246', size: 13, opacity: 0, targetOpacity: 0.25, speed: 0.002 },
-      { text: '99.9%', x: 0.78, y: 0.78, color: '16,185,129', size: 11, opacity: 0, targetOpacity: 0.28, speed: 0.003 },
-      { text: 'MZN', x: 0.12, y: 0.45, color: '59,130,246', size: 10, opacity: 0, targetOpacity: 0.20, speed: 0.002 }
-    ];
-
-    // Pontos de dados (scatter)
-    const dataPoints = [];
-    for (let i = 0; i < 30; i++) {
-      dataPoints.push({
-        x: Math.random(),
-        y: Math.random(),
-        r: Math.random() * 2 + 1,
-        color: Math.random() > 0.6 ? '59,130,246' : (Math.random() > 0.5 ? '139,92,246' : '16,185,129'),
-        alpha: Math.random() * 0.15 + 0.05,
-        pulseSpeed: Math.random() * 0.02 + 0.01,
-        pulseOffset: Math.random() * Math.PI * 2
-      });
-    }
-
-    // Grid lines
-    const gridLines = [];
-    for (let i = 1; i < 6; i++) {
-      gridLines.push({ y: i / 6, alpha: 0.04 });
-    }
-    for (let i = 1; i < 8; i++) {
-      gridLines.push({ x: i / 8, alpha: 0.03, isVertical: true });
-    }
-
-    function drawTrendLine(line) {
-      ctx.beginPath();
-      ctx.strokeStyle = `rgba(${line.color}, 0.25)`;
-      ctx.lineWidth = 2;
-      for (let x = 0; x <= width; x += 3) {
-        const nx = x / width;
-        const y = height * line.yBase + Math.sin(nx * 8 + time * line.speed * 100 + line.offset) * line.amplitude * (height / 800);
-        if (x === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
-      }
-      ctx.stroke();
-
-      // Fill area under line
-      ctx.beginPath();
-      ctx.fillStyle = `rgba(${line.color}, 0.03)`;
-      for (let x = 0; x <= width; x += 3) {
-        const nx = x / width;
-        const y = height * line.yBase + Math.sin(nx * 8 + time * line.speed * 100 + line.offset) * line.amplitude * (height / 800);
-        if (x === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
-      }
-      ctx.lineTo(width, height);
-      ctx.lineTo(0, height);
-      ctx.closePath();
-      ctx.fill();
-    }
-
-    function drawProgressBar(bar) {
-      const bx = bar.x * width;
-      const by = bar.y * height;
-      const bw = bar.width * width;
-      const bh = bar.height;
-
-      // Background
-      ctx.fillStyle = 'rgba(30,41,59,0.3)';
-      ctx.beginPath();
-      ctx.roundRect(bx, by, bw, bh, bh / 2);
-      ctx.fill();
-
-      // Progress
-      bar.progress += (bar.target - bar.progress) * bar.speed;
-      ctx.fillStyle = `rgba(${bar.color}, 0.4)`;
-      ctx.beginPath();
-      ctx.roundRect(bx, by, bw * bar.progress, bh, bh / 2);
-      ctx.fill();
-    }
-
-    function drawFloatingNumber(num) {
-      num.opacity += (num.targetOpacity - num.opacity) * num.speed;
-      const floatY = Math.sin(time * 0.5 + num.x * 10) * 8;
-      ctx.font = `600 ${num.size}px 'Space Grotesk', sans-serif`;
-      ctx.fillStyle = `rgba(${num.color}, ${num.opacity})`;
-      ctx.fillText(num.text, num.x * width, num.y * height + floatY);
-    }
-
-    function drawDataPoint(point) {
-      const pulse = Math.sin(time * point.pulseSpeed + point.pulseOffset) * 0.5 + 0.5;
-      const alpha = point.alpha * (0.5 + pulse * 0.5);
-      ctx.beginPath();
-      ctx.arc(point.x * width, point.y * height, point.r * (0.8 + pulse * 0.4), 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${point.color}, ${alpha})`;
-      ctx.fill();
-    }
-
-    function drawGrid() {
-      gridLines.forEach(line => {
-        ctx.strokeStyle = `rgba(148,163,184,${line.alpha})`;
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        if (line.isVertical) {
-          ctx.moveTo(line.x * width, 0);
-          ctx.lineTo(line.x * width, height);
-        } else {
-          ctx.moveTo(0, line.y * height);
-          ctx.lineTo(width, line.y * height);
-        }
-        ctx.stroke();
-      });
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, width, height);
-      time += 0.016;
-
-      drawGrid();
-      trendLines.forEach(drawTrendLine);
-      progressBars.forEach(drawProgressBar);
-      dataPoints.forEach(drawDataPoint);
-      floatingNumbers.forEach(drawFloatingNumber);
-
-      requestAnimationFrame(animate);
-    }
-    animate();
-  }
-
   // ---------- Header scroll ----------
   const header = document.getElementById('header');
   if (header) {
@@ -342,5 +184,165 @@ document.addEventListener('DOMContentLoaded', function() {
     navigator.serviceWorker.register('sw.js')
       .then(reg => console.log('SW registered:', reg.scope))
       .catch(err => console.log('SW registration failed:', err));
+  }
+
+  // ---------- Hero Canvas (adiado para não bloquear LCP) ----------
+  function initHeroCanvas() {
+    const canvas = document.getElementById('heroCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let time = 0;
+
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    // Linhas de tendência (reduzido de 3 para 2 para menor complexidade)
+    const trendLines = [
+      { color: '59,130,246', speed: 0.008, amplitude: 60, offset: 0, yBase: 0.35 },
+      { color: '139,92,246', speed: 0.006, amplitude: 45, offset: 2, yBase: 0.55 }
+    ];
+
+    // Barras de progresso (reduzido de 6 para 4)
+    const progressBars = [
+      { x: 0.08, y: 0.22, width: 0.12, height: 6, color: '59,130,246', progress: 0, target: 0.85, speed: 0.008 },
+      { x: 0.08, y: 0.26, width: 0.12, height: 6, color: '139,92,246', progress: 0, target: 0.65, speed: 0.006 },
+      { x: 0.75, y: 0.18, width: 0.10, height: 5, color: '59,130,246', progress: 0, target: 0.72, speed: 0.007 },
+      { x: 0.75, y: 0.21, width: 0.10, height: 5, color: '16,185,129', progress: 0, target: 0.88, speed: 0.009 }
+    ];
+
+    // Números flutuantes (reduzido de 5 para 3)
+    const floatingNumbers = [
+      { text: '12,450 MZN', x: 0.15, y: 0.12, color: '59,130,246', size: 14, opacity: 0, targetOpacity: 0.35, speed: 0.003 },
+      { text: '+23%', x: 0.82, y: 0.10, color: '16,185,129', size: 12, opacity: 0, targetOpacity: 0.30, speed: 0.004 },
+      { text: '847', x: 0.20, y: 0.82, color: '139,92,246', size: 13, opacity: 0, targetOpacity: 0.25, speed: 0.002 }
+    ];
+
+    // Pontos de dados (reduzido de 30 para 15)
+    const dataPoints = [];
+    for (let i = 0; i < 15; i++) {
+      dataPoints.push({
+        x: Math.random(),
+        y: Math.random(),
+        r: Math.random() * 2 + 1,
+        color: Math.random() > 0.6 ? '59,130,246' : (Math.random() > 0.5 ? '139,92,246' : '16,185,129'),
+        alpha: Math.random() * 0.15 + 0.05,
+        pulseSpeed: Math.random() * 0.02 + 0.01,
+        pulseOffset: Math.random() * Math.PI * 2
+      });
+    }
+
+    // Grid lines (mantido)
+    const gridLines = [];
+    for (let i = 1; i < 6; i++) {
+      gridLines.push({ y: i / 6, alpha: 0.04 });
+    }
+    for (let i = 1; i < 8; i++) {
+      gridLines.push({ x: i / 8, alpha: 0.03, isVertical: true });
+    }
+
+    function drawTrendLine(line) {
+      ctx.beginPath();
+      ctx.strokeStyle = `rgba(${line.color}, 0.25)`;
+      ctx.lineWidth = 2;
+      for (let x = 0; x <= width; x += 3) {
+        const nx = x / width;
+        const y = height * line.yBase + Math.sin(nx * 8 + time * line.speed * 100 + line.offset) * line.amplitude * (height / 800);
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.fillStyle = `rgba(${line.color}, 0.03)`;
+      for (let x = 0; x <= width; x += 3) {
+        const nx = x / width;
+        const y = height * line.yBase + Math.sin(nx * 8 + time * line.speed * 100 + line.offset) * line.amplitude * (height / 800);
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.lineTo(width, height);
+      ctx.lineTo(0, height);
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    function drawProgressBar(bar) {
+      const bx = bar.x * width;
+      const by = bar.y * height;
+      const bw = bar.width * width;
+      const bh = bar.height;
+
+      ctx.fillStyle = 'rgba(30,41,59,0.3)';
+      ctx.beginPath();
+      ctx.roundRect(bx, by, bw, bh, bh / 2);
+      ctx.fill();
+
+      bar.progress += (bar.target - bar.progress) * bar.speed;
+      ctx.fillStyle = `rgba(${bar.color}, 0.4)`;
+      ctx.beginPath();
+      ctx.roundRect(bx, by, bw * bar.progress, bh, bh / 2);
+      ctx.fill();
+    }
+
+    function drawFloatingNumber(num) {
+      num.opacity += (num.targetOpacity - num.opacity) * num.speed;
+      const floatY = Math.sin(time * 0.5 + num.x * 10) * 8;
+      ctx.font = `600 ${num.size}px 'Space Grotesk', sans-serif`;
+      ctx.fillStyle = `rgba(${num.color}, ${num.opacity})`;
+      ctx.fillText(num.text, num.x * width, num.y * height + floatY);
+    }
+
+    function drawDataPoint(point) {
+      const pulse = Math.sin(time * point.pulseSpeed + point.pulseOffset) * 0.5 + 0.5;
+      const alpha = point.alpha * (0.5 + pulse * 0.5);
+      ctx.beginPath();
+      ctx.arc(point.x * width, point.y * height, point.r * (0.8 + pulse * 0.4), 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${point.color}, ${alpha})`;
+      ctx.fill();
+    }
+
+    function drawGrid() {
+      gridLines.forEach(line => {
+        ctx.strokeStyle = `rgba(148,163,184,${line.alpha})`;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        if (line.isVertical) {
+          ctx.moveTo(line.x * width, 0);
+          ctx.lineTo(line.x * width, height);
+        } else {
+          ctx.moveTo(0, line.y * height);
+          ctx.lineTo(width, line.y * height);
+        }
+        ctx.stroke();
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      time += 0.016;
+
+      drawGrid();
+      trendLines.forEach(drawTrendLine);
+      progressBars.forEach(drawProgressBar);
+      dataPoints.forEach(drawDataPoint);
+      floatingNumbers.forEach(drawFloatingNumber);
+
+      requestAnimationFrame(animate);
+    }
+    animate();
+  }
+
+  // Adiar o canvas para após o carregamento completo
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(initHeroCanvas);
+  } else {
+    window.addEventListener('load', () => {
+      setTimeout(initHeroCanvas, 150);
+    });
   }
 });
