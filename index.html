@@ -6,7 +6,7 @@
   <meta name="description" content="VMP SaaS v2.4.1 — ERP Offline-First para Moçambique. POS, Stock, Contabilidade, IRPS, SAF-T. Trial grátis de 7 dias.">
   <meta name="keywords" content="ERP Moçambique, POS, software gestão stock, contabilidade, SAF-T, IRPS, faturação, VMP SaaS">
   <meta name="author" content="Adamgy Adamo Tembe">
-  <meta name="theme-color" content="#0B1120">
+  <meta name="theme-color" content="#ffffff">
   <meta name="robots" content="index, follow">
   <meta name="geo.region" content="MZ">
   <meta name="geo.placename" content="Pemba, Moçambique">
@@ -24,13 +24,24 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="assets/images/logo.png">
   <link rel="apple-touch-icon" href="assets/images/logo.png">
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- SoftwareApplication Schema (existente) -->
+  <!-- Correção Forçada para Planos Lado a Lado -->
+  <style>
+    @media (min-width: 900px) {
+      .pricing-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 24px !important;
+      }
+    }
+  </style>
+
+  <!-- SoftwareApplication Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -50,34 +61,8 @@
     "downloadUrl": "https://github.com/rozaytech/vmp/releases/download/v2.4.1/VMP-2.4.1-setup.exe"
   }
   </script>
-
-  <!-- Organization Schema (novo) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "VMP SaaS",
-    "url": "https://www.vmpsaas.com",
-    "logo": "https://vmpsaas.com/assets/images/logo.png",
-    "description": "ERP Offline-First para Moçambique. POS, Stock, Contabilidade, IRPS, SAF-T.",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+258846166104",
-      "contactType": "sales",
-      "availableLanguage": ["Portuguese"]
-    },
-    "sameAs": [
-      "https://www.youtube.com/@vmpsaas",
-      "https://wa.me/258846166104",
-      "https://www.instagram.com/rozay_camuflado",
-      "https://www.facebook.com/share/1D7jcPzTu9/"
-    ]
-  }
-  </script>
 </head>
 <body>
-
-<canvas id="heroCanvas" class="hero-canvas"></canvas>
 
 <header class="site-header" id="header">
   <div class="container header-inner">
@@ -87,18 +72,15 @@
     </a>
     <nav class="main-nav" id="mainNav">
       <a href="#funcionalidades">Funcionalidades</a>
+      <a href="#como-funciona">Como Funciona</a>
       <a href="#galeria">Galeria</a>
-      <a href="#blog">Blog</a>
-      <a href="#modulos">Módulos</a>
       <a href="#precos">Preços</a>
       <a href="#download">Download</a>
-      <a href="#clientes">Clientes</a>
-      <a href="#criador">Criador</a>
+      <a href="#blog">Blog</a>
       <a href="dashboard.html">Dashboard</a>
-      <a href="#contacto">Contacto</a>
     </nav>
     <div class="header-actions">
-      <a href="https://wa.me/258846166104" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Falar No WhatsApp</a>
+      <a href="https://wa.me/258846166104?text=Ol%C3%A1!%20Gostaria%20de%20come%C3%A7ar%20a%20usar%20o%20VMP%20SaaS.%20Como%20fa%C3%A7o%20para%20obter%20o%20teste%20gr%C3%A1tis%20de%207%20dias%3F" class="btn btn-primary" target="_blank" rel="noopener">Começar Grátis</a>
       <button class="nav-toggle" id="navToggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -106,160 +88,156 @@
   </div>
 </header>
 
-<section class="hero" id="hero">
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  
   <div class="container hero-inner">
     <div class="hero-text">
       <div class="hero-label">
-        <span class="pulse-dot"></span>
-        v2.4.1 — Disponível Em Moçambique
+        <span class="dot"></span>
+        VMP SaaS v2.4.1 Já Disponível
       </div>
       <h1 class="hero-title">
-        <span class="line">Gestão Do Teu</span>
-        <span class="line accent">Negócio,</span>
-        <span class="line">Sem Complicação.</span>
+        O ERP Completo Para<br>
+        O Teu Negócio Em<br>
+        <span class="text-primary">Moçambique.</span>
       </h1>
-      <p class="hero-sub">ERP offline-first com POS, stock, contabilidade e IRPS. Feito para o mercado moçambicano. Começa em minutos.</p>
+      <p class="hero-sub">Vende, gere stock e emite facturas com IVA. Tudo num só sistema, a funcionar mesmo sem internet. Simples, rápido e feito para ti.</p>
       <div class="hero-ctas">
-        <a href="#precos" class="btn btn-lg btn-primary">Ver Planos E Preços</a>
-        <a href="https://wa.me/258846166104?text=Olá!%20Tenho%20interesse%20no%20VMP%20SaaS" class="btn btn-lg btn-outline" target="_blank" rel="noopener">Agendar Demonstração</a>
+        <a href="#precos" class="btn btn-lg btn-primary">Ver Planos</a>
+        <a href="https://wa.me/258846166104?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20VMP%20SaaS%20para%20conhecer%20melhor%20as%20funcionalidades." class="btn btn-lg btn-outline" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          Agendar Demo
+        </a>
       </div>
       <div class="hero-trust">
-        <div class="trust-item">
-          <strong>7 Dias</strong>
-          <span>De Trial Grátis</span>
-        </div>
-        <div class="trust-divider"></div>
-        <div class="trust-item">
-          <strong>Offline</strong>
-          <span>Funciona Sem Internet</span>
-        </div>
-        <div class="trust-divider"></div>
-        <div class="trust-item">
-          <strong>IVA 16%</strong>
-          <span>Integrado E Automático</span>
+        <div class="trust-badges">
+          <span class="badge-outline">✅ Windows 10/11</span>
+          <span class="badge-outline">📶 100% Offline</span>
+          <span class="badge-outline">🔒 Seguro</span>
         </div>
       </div>
     </div>
+    
     <div class="hero-visual">
-      <div class="mockup-frame">
+      <div class="mockup-wrapper">
         <div class="mockup-header">
           <div class="mockup-dots"><span></span><span></span><span></span></div>
-          <div class="mockup-title">VMP SaaS — POS</div>
+          <div class="mockup-url">app.vmpsaas.com</div>
         </div>
         <div class="mockup-body">
           <div class="mockup-sidebar">
-            <div class="mockup-nav-item active"></div>
-            <div class="mockup-nav-item"></div>
-            <div class="mockup-nav-item"></div>
-            <div class="mockup-nav-item"></div>
+            <div class="ms-item active"><div class="ms-icon"></div></div>
+            <div class="ms-item"><div class="ms-icon"></div></div>
+            <div class="ms-item"><div class="ms-icon"></div></div>
+            <div class="ms-item"><div class="ms-icon"></div></div>
           </div>
           <div class="mockup-content">
-            <div class="mockup-kpi-row">
-              <div class="mockup-kpi"><div class="kpi-bar" style="--h:60%"></div><span>Vendas</span></div>
-              <div class="mockup-kpi"><div class="kpi-bar" style="--h:80%"></div><span>Stock</span></div>
-              <div class="mockup-kpi"><div class="kpi-bar" style="--h:45%"></div><span>Clientes</span></div>
+            <div class="mc-header">
+              <div class="mc-title">Resumo de Vendas</div>
+              <div class="mc-user">
+                <span class="mc-user-name">Admin</span>
+                <div class="mc-avatar"></div>
+              </div>
             </div>
-            <div class="mockup-chart">
-              <div class="chart-col" style="--h:30%"></div>
-              <div class="chart-col" style="--h:55%"></div>
-              <div class="chart-col" style="--h:40%"></div>
-              <div class="chart-col" style="--h:70%"></div>
-              <div class="chart-col" style="--h:50%"></div>
-              <div class="chart-col" style="--h:85%"></div>
-              <div class="chart-col" style="--h:65%"></div>
+            
+            <div class="mc-stats-grid">
+              <div class="mc-stat-card">
+                <span class="mc-stat-label">Vendas Hoje</span>
+                <strong class="mc-stat-value">12,450 <small>MZN</small></strong>
+                <span class="mc-stat-trend positive">↑ 12%</span>
+              </div>
+              <div class="mc-stat-card">
+                <span class="mc-stat-label">Produtos Ativos</span>
+                <strong class="mc-stat-value">847</strong>
+                <span class="mc-stat-trend neutral">- 2%</span>
+              </div>
             </div>
-            <div class="mockup-table">
-              <div class="table-row head"><span>Produto</span><span>Qtd</span><span>Total</span></div>
-              <div class="table-row"><span>Água 500ml</span><span>3</span><span>90 MZN</span></div>
-              <div class="table-row"><span>Bolacha Oreo</span><span>2</span><span>120 MZN</span></div>
-              <div class="table-row"><span>Sumo 350ml</span><span>1</span><span>75 MZN</span></div>
+            
+            <div class="mc-chart-container">
+              <div class="mc-chart-header">
+                <span>Fluxo de Caixa</span>
+                <span class="mc-chart-legend">Últimos 7 dias</span>
+              </div>
+              <div class="mc-chart">
+                <div class="mc-bar" style="height: 40%"></div>
+                <div class="mc-bar" style="height: 70%"></div>
+                <div class="mc-bar" style="height: 55%"></div>
+                <div class="mc-bar active" style="height: 90%"></div>
+                <div class="mc-bar" style="height: 65%"></div>
+                <div class="mc-bar" style="height: 80%"></div>
+                <div class="mc-bar" style="height: 50%"></div>
+              </div>
+            </div>
+            
+            <div class="mc-table">
+              <div class="mc-tr head"><span>Últimas Transações</span><span>Total</span></div>
+              <div class="mc-tr">
+                <span><span class="mc-dot green"></span> Água 500ml</span>
+                <span>90 MZN</span>
+              </div>
+              <div class="mc-tr">
+                <span><span class="mc-dot blue"></span> Bolacha Oreo</span>
+                <span>120 MZN</span>
+              </div>
+              <div class="mc-tr">
+                <span><span class="mc-dot purple"></span> Sumo 350ml</span>
+                <span>75 MZN</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="mockup-float-card float-1">
-        <div class="float-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        
+        <div class="mockup-float-card">
+          <div class="float-icon success">✓</div>
+          <div class="float-text">
+            <strong>Venda Concluída</strong>
+            <span>Recibo impresso com sucesso</span>
+          </div>
         </div>
-        <div class="float-text"><strong>+12%</strong><span>Vs Ontem</span></div>
-      </div>
-      <div class="mockup-float-card float-2">
-        <div class="float-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-        </div>
-        <div class="float-text"><strong>Recibo</strong><span>Impresso</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="stats-bar">
-  <div class="container stats-inner">
-    <div class="stat">
-      <div class="stat-num" data-target="500">0</div>
-      <div class="stat-label">Negócios Geridos</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num" data-target="99">0</div>
-      <div class="stat-label">% Uptime Garantido</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num" data-target="24">0</div>
-      <div class="stat-label">H Suporte Técnico</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num" data-target="7">0</div>
-      <div class="stat-label">Dias De Trial</div>
-    </div>
-  </div>
-</section>
-<section class="section features" id="funcionalidades">
+<!-- ================= FEATURES ================= -->
+<section class="section bg-light" id="funcionalidades">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">Funcionalidades</span>
-      <h2>Tudo O Que Precisas,<br><span class="text-gradient">Num Só Sítio.</span></h2>
-      <p>Sem integrações complicadas. Sem planilhas. O VMP SaaS cobre todo o ciclo do teu negócio.</p>
+      <span class="tag">Funcionalidades</span>
+      <h2>Tudo O Que Precisas,<br>Num Só Sítio.</h2>
+      <p>Sem integrações complicadas ou planilhas perdidas. O VMP cobre todo o ciclo do teu negócio.</p>
     </div>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon" style="--bg: rgba(59,130,246,0.12); --color: #60A5FA;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
+    <div class="grid-3">
+      <div class="card feature-card">
+        <div class="icon-box blue">🖥️</div>
         <h3>POS Rápido</h3>
         <p>Vendas com atalhos de teclado, pagamento multi-método e controle de caixa completo.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon" style="--bg: rgba(16,185,129,0.12); --color: #34D399;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-        </div>
+      <div class="card feature-card">
+        <div class="icon-box green">📦</div>
         <h3>Stock Inteligente</h3>
         <p>Multi-armazém, transferências, contagens físicas e alertas automáticos de stock baixo.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon" style="--bg: rgba(139,92,246,0.12); --color: #A78BFA;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        </div>
+      <div class="card feature-card">
+        <div class="icon-box purple">🧾</div>
         <h3>Contabilidade + IRPS</h3>
         <p>Balanço, balancete mensal, mapa de IVA e retenções de IRPS conforme a legislação.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon" style="--bg: rgba(245,158,11,0.12); --color: #FBBF24;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        </div>
+      <div class="card feature-card">
+        <div class="icon-box orange">📄</div>
         <h3>SAF-T E Faturação</h3>
-        <p>Exportação XML conforme a AT, hash de documentos e notas de crédito.</p>
+        <p>Exportação XML conforme a AT, hash de documentos e notas de crédito automáticas.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon" style="--bg: rgba(236,72,153,0.12); --color: #F472B6;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F472B6" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
+      <div class="card feature-card">
+        <div class="icon-box pink">📊</div>
         <h3>Dashboard Remoto</h3>
         <p>Acompanha vendas e stock em tempo real, de qualquer dispositivo, em qualquer lugar.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon" style="--bg: rgba(6,182,212,0.12); --color: #22D3EE;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        </div>
+      <div class="card feature-card">
+        <div class="icon-box cyan">🔒</div>
         <h3>Licenciamento SaaS</h3>
         <p>Ativação remota, trial de 7 dias e heartbeat offline de 28 dias.</p>
       </div>
@@ -267,154 +245,120 @@
   </div>
 </section>
 
-<section class="section gallery" id="galeria">
+<!-- ================= HOW IT WORKS ================= -->
+<section class="section" id="como-funciona">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">Galeria</span>
-      <h2>Vê O Software Por<br><span class="text-gradient">Dentro.</span></h2>
+      <span class="tag">Como Funciona</span>
+      <h2>Começa A Vender Em<br>Minutos.</h2>
+      <p>Sem instalações complexas. O VMP foi desenhado para entrares e começares a facturar.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Escolhe o Plano</h3>
+        <p>Seleciona o plano que melhor se adapta ao tamanho do teu negócio.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Instala o POS</h3>
+        <p>Descarrega o instalador para Windows e ativa a tua licença em segundos.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Adiciona Produtos</h3>
+        <p>Importa os teus produtos via Excel ou adiciona manualmente. Configura o stock.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h3>Começa a Vender</h3>
+        <p>Abre o caixa, regista as vendas e emite facturas válidas em tempo real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="section bg-light" id="galeria">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">Galeria</span>
+      <h2>Vê O Software Por Dentro.</h2>
       <p>Capturas de ecrã das principais telas do VMP SaaS v2.4.1.</p>
     </div>
     <div class="gallery-grid">
       <div class="gallery-item large">
-        <img src="assets/images/gallery/pos-screen.jpg" alt="Tela Do POS VMP SaaS" loading="lazy">
+        <img src="assets/images/gallery/pos-screen.jpg" alt="Tela Do POS" loading="lazy">
         <div class="gallery-overlay"><span>Ponto De Venda</span></div>
       </div>
       <div class="gallery-item">
         <img src="assets/images/gallery/stock-screen.jpg" alt="Gestão De Stock" loading="lazy">
-        <div class="gallery-overlay"><span>Stock E Armazéns</span></div>
+        <div class="gallery-overlay"><span>Stock</span></div>
       </div>
       <div class="gallery-item">
         <img src="assets/images/gallery/accounting-screen.jpg" alt="Contabilidade" loading="lazy">
         <div class="gallery-overlay"><span>Contabilidade</span></div>
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item wide">
         <img src="assets/images/gallery/dashboard-screen.jpg" alt="Dashboard Remoto" loading="lazy">
         <div class="gallery-overlay"><span>Dashboard Remoto</span></div>
       </div>
       <div class="gallery-item">
-        <img src="assets/images/gallery/customers-screen.jpg" alt="Gestão De Clientes" loading="lazy">
-        <div class="gallery-overlay"><span>Clientes</span></div>
-      </div>
-      <div class="gallery-item wide">
-        <img src="assets/images/gallery/reports-screen.jpg" alt="Relatórios" loading="lazy">
-        <div class="gallery-overlay"><span>Relatórios E Analytics</span></div>
-      </div>
-      <div class="gallery-item">
         <img src="assets/images/gallery/login-screen.jpg" alt="Tela De Login" loading="lazy">
-        <div class="gallery-overlay"><span>Login</span></div>
+        <div class="gallery-overlay"><span>Login Seguro</span></div>
       </div>
-      <div class="gallery-item">
-        <img src="assets/images/gallery/lock-screen.jpg" alt="Bloqueio De Segurança" loading="lazy">
-        <div class="gallery-overlay"><span>Bloqueio De Segurança</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="assets/images/gallery/local-dashboard-screen.jpg" alt="Dashboard Local" loading="lazy">
-        <div class="gallery-overlay"><span>Dashboard Local</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section blog" id="blog">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Blog</span>
-      <h2>Aprende A Gerir O Teu<br><span class="text-gradient">Negócio.</span></h2>
-      <p>Dicas, guias e conteúdo para empreendedores moçambicanos.</p>
-    </div>
-    <div class="blog-grid">
-      <article class="blog-card">
-        <div class="blog-image" style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.15));">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
-        <div class="blog-content">
-          <h3>O Que É Um ERP E Porque O Teu Negócio Precisa De Um</h3>
-          <p>Descobre como um sistema integrado pode eliminar planilhas e reduzir erros no dia a dia da tua loja.</p>
-          <a href="/blog/o-que-e-um-erp.html" class="blog-link">Ler Mais →</a>
-        </div>
-      </article>
-      <article class="blog-card">
-        <div class="blog-image" style="background: linear-gradient(135deg, rgba(16,185,129,0.2), rgba(6,182,212,0.15));">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-        </div>
-        <div class="blog-content">
-          <h3>5 Dicas Para Controlar O Stock Da Tua Loja</h3>
-          <p>Aprende a evitar rupturas e excessos com um sistema de gestão de inventário simples e eficaz.</p>
-          <a href="/blog/5-dicas-controlar-stock.html" class="blog-link">Ler Mais →</a>
-        </div>
-      </article>
-      <article class="blog-card">
-        <div class="blog-image" style="background: linear-gradient(135deg, rgba(245,158,11,0.2), rgba(239,68,68,0.15));">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        </div>
-        <div class="blog-content">
-          <h3>Como Emitir Facturas Com IVA 16% Em Moçambique</h3>
-          <p>Guia prático sobre faturação electrónica, hash de documentos e obrigações perante a AT.</p>
-          <a href="/blog/como-emitir-facturas-iva-mocambique.html" class="blog-link">Ler Mais →</a>
-        </div>
-      </article>
-      <article class="blog-card">
-        <div class="blog-image" style="background: linear-gradient(135deg, rgba(236,72,153,0.2), rgba(139,92,246,0.15));">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#F472B6" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        </div>
-        <div class="blog-content">
-          <h3>Como Aumentar As Vendas No Ponto De Venda</h3>
-          <p>Estratégias simples de upsell, promoções sazonais e fidelização de clientes no caixa.</p>
-          <a href="/blog/como-aumentar-vendas-ponto-de-venda.html" class="blog-link">Ler Mais →</a>
-        </div>
-      </article>
     </div>
   </div>
 </section>
 
-<section class="section modules" id="modulos">
+<!-- ================= MODULES ================= -->
+<section class="section" id="modulos">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">Módulos Avulsos</span>
-      <h2>Escolhe Só O Que Precisas.<br><span class="text-gradient">Paga Só Pelo Que Usas.</span></h2>
+      <span class="tag">Módulos Avulsos</span>
+      <h2>Escolhe Só O Que Precisas.</h2>
       <p>Não precisas de pagar pelo pacote inteiro. Adiciona módulos individuais ao teu plano.</p>
     </div>
-    <div class="modules-grid">
-      <div class="module-card">
-        <div class="module-icon" style="--bg: rgba(139,92,246,0.12); --color: #A78BFA;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        </div>
+    <div class="grid-3">
+      <div class="card module-card">
+        <div class="icon-box purple">💼</div>
         <h3>Contabilidade Avançada</h3>
         <p>Facturas proformas e comerciais, IVA 16%, SAF-T XML, balanço e balancete trimestral.</p>
-        <span class="module-note">Adiciona A Qualquer Plano — Sob Consulta</span>
+        <span class="badge-success">Sob Consulta</span>
       </div>
-      <div class="module-card">
-        <div class="module-icon" style="--bg: rgba(236,72,153,0.12); --color: #F472B6;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F472B6" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
+      <div class="card module-card">
+        <div class="icon-box pink">📱</div>
         <h3>Remote Dashboard</h3>
         <p>Acesso web e mobile em tempo real. Acompanha vendas, stock e analytics de qualquer lugar.</p>
-        <span class="module-note">Adiciona A Qualquer Plano — Sob Consulta</span>
+        <span class="badge-success">Sob Consulta</span>
       </div>
-      <div class="module-card">
-        <div class="module-icon" style="--bg: rgba(59,130,246,0.12); --color: #60A5FA;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        </div>
+      <div class="card module-card">
+        <div class="icon-box blue">🔌</div>
         <h3>API E Integrações</h3>
         <p>API completa com documentação. Integra o VMP com o teu site, app ou outro software.</p>
-        <span class="module-note">Adiciona A Qualquer Plano — Sob Consulta</span>
+        <span class="badge-success">Sob Consulta</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section pricing" id="precos">
+<!-- ================= PRICING ================= -->
+<section class="section bg-light" id="precos">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">Preços</span>
-      <h2>Escolhe O Teu Plano.<br><span class="text-gradient">Começa Já.</span></h2>
+      <span class="tag">Preços</span>
+      <h2>Planos Simples E Transparentes.</h2>
       <p>Todos os planos incluem suporte, actualizações automáticas e 7 dias de trial grátis.</p>
     </div>
+    
     <div class="pricing-grid">
-      <div class="pricing-card">
+      
+      <!-- PLANO BASIC -->
+      <div class="card pricing-card">
         <div class="pricing-header">
           <h3>Basic</h3>
-          <p class="pricing-desc">Para Pequenos Negócios E Bancas</p>
-          <div class="pricing-price">1,350 <span>MZN/Mês</span></div>
+          <p>Para Pequenos Negócios</p>
+          <div class="price">1,350 <span>MZN/mês</span></div>
         </div>
         <ul class="pricing-list">
           <li>POS Completo Com Atalhos</li>
@@ -423,20 +367,17 @@
           <li>Caixa Registradora</li>
           <li>Clientes Com NUIT</li>
           <li>Promoções E Vouchers</li>
-          <li>Z-Report Diário</li>
-          <li>Impressão Térmica USB</li>
-          <li class="missing">Relatórios Avançados</li>
-          <li class="missing">Contabilidade E IRPS</li>
-          <li class="missing">Dashboard Remoto</li>
         </ul>
-        <a href="https://wa.me/258846166104?text=Quero%20o%20plano%20Basic" class="btn btn-outline btn-full" target="_blank" rel="noopener">Solicitar Pelo WhatsApp</a>
+        <a href="https://wa.me/258846166104?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Basic%20(1.350%20MZN%2Fm%C3%AAs).%20Poderiam%20enviar-me%20mais%20detalhes%20e%20explicar%20como%20proceder%20para%20a%20ativa%C3%A7%C3%A3o%3F" class="btn btn-outline btn-full" target="_blank">Solicitar Basic</a>
       </div>
-      <div class="pricing-card popular">
+      
+      <!-- PLANO PRO -->
+      <div class="card pricing-card popular">
         <div class="popular-badge">Mais Popular</div>
         <div class="pricing-header">
           <h3>Pro</h3>
-          <p class="pricing-desc">Para Lojas Em Crescimento</p>
-          <div class="pricing-price">2,700 <span>MZN/Mês</span></div>
+          <p>Para Lojas Em Crescimento</p>
+          <div class="price">2,700 <span>MZN/mês</span></div>
         </div>
         <ul class="pricing-list">
           <li>Tudo Do Basic</li>
@@ -444,243 +385,163 @@
           <li>Contagem Física E Acerto</li>
           <li>Margem De Lucro Por Produto</li>
           <li>Analytics Avançado</li>
-          <li class="missing">Contabilidade Integrada</li>
-          <li class="missing">SAF-T XML</li>
-          <li class="missing">Dashboard Remoto</li>
-          <li class="missing">Backup Na Cloud</li>
+          <li>Suporte Prioritário</li>
         </ul>
-        <a href="https://wa.me/258846166104?text=Quero%20o%20plano%20Pro" class="btn btn-primary btn-full" target="_blank" rel="noopener">Solicitar Pelo WhatsApp</a>
+        <a href="https://wa.me/258846166104?text=Ol%C3%A1!%20Quero%20avan%C3%A7ar%20com%20o%20Plano%20Pro%20(2.700%20MZN%2Fm%C3%AAs).%20Gostaria%20de%20saber%20quais%20os%20pr%C3%B3ximos%20passos%20para%20come%C3%A7ar%20a%20usar%20o%20sistema." class="btn btn-primary btn-full" target="_blank">Solicitar Pro</a>
       </div>
-      <div class="pricing-card">
+
+      <!-- PLANO ENTERPRISE -->
+      <div class="card pricing-card">
         <div class="pricing-header">
           <h3>Enterprise</h3>
-          <p class="pricing-desc">Para Cadeias De Lojas</p>
-          <div class="pricing-price">4,900 <span>MZN/Mês</span></div>
+          <p>Para Cadeias De Lojas</p>
+          <div class="price">4,900 <span>MZN/mês</span></div>
         </div>
         <ul class="pricing-list">
           <li>Tudo Do Pro</li>
           <li>Contabilidade Integrada</li>
-          <li>Balanço E Balancete</li>
           <li>Mapa De IVA E IRPS</li>
           <li>Exportação SAF-T XML</li>
           <li>Dashboard Remoto Web/Mobile</li>
-          <li>API Completa</li>
-          <li>Backup Automático Na Cloud</li>
-          <li>Suporte Prioritário 24/7</li>
-          <li>Formação Da Equipa Incluída</li>
+          <li>API Completa E Backups</li>
         </ul>
-        <a href="https://wa.me/258846166104?text=Quero%20o%20plano%20Enterprise" class="btn btn-outline btn-full" target="_blank" rel="noopener">Solicitar Pelo WhatsApp</a>
+        <a href="https://wa.me/258846166104?text=Ol%C3%A1!%20A%20minha%20empresa%20necessita%20do%20Plano%20Enterprise%20(4.900%20MZN%2Fm%C3%AAs).%20Gostaria%20de%20falar%20com%20um%20especialista%20para%20avaliar%20as%20nossas%20necessidades%20espec%C3%ADficas." class="btn btn-outline btn-full" target="_blank">Solicitar Enterprise</a>
       </div>
+
     </div>
   </div>
 </section>
 
-<section class="section download" id="download">
+<!-- ================= DOWNLOAD ================= -->
+<section class="section" id="download">
   <div class="container">
     <div class="download-box">
-      <div class="download-icon">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-      </div>
+      <div class="dl-icon">💻</div>
       <h2>Download VMP SaaS v2.4.1</h2>
-      <p>Instalador para Windows 10/11. ~45 MB. Instalação automática.</p>
-      <div class="download-meta">
-        <span>Windows 10/11</span>
-        <span>~45 MB</span>
-        <span>Auto-Update</span>
-      </div>
-      <a href="https://github.com/rozaytech/vmp/releases/download/v2.4.1/VMP-2.4.1-setup.exe" class="btn btn-lg btn-primary" target="_blank" rel="noopener">
+      <p>Instalador para Windows 10/11. Tamanho: ~45 MB. Instalação automática.</p>
+      <a href="https://github.com/rozaytech/vmp/releases/download/v2.4.1/VMP-2.4.1-setup.exe" class="btn btn-lg btn-primary" target="_blank">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Baixar Instalador
       </a>
-      <p class="download-note">Versão estável. Download directo do GitHub.</p>
+      <p class="dl-note">Download directo e seguro via GitHub Releases.</p>
     </div>
   </div>
 </section>
 
-<section class="section clients" id="clientes">
+<!-- ================= BLOG ================= -->
+<section class="section bg-light" id="blog">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">Clientes</span>
-      <h2>Quem Usa O VMP SaaS<br><span class="text-gradient">Actualmente.</span></h2>
-      <p>Negócios reais em Moçambique que confiam no VMP SaaS para gerir as suas operações diárias.</p>
+      <span class="tag">Blog</span>
+      <h2>Aprende A Gerir O Teu Negócio.</h2>
+      <p>Dicas, guias e conteúdo para empreendedores moçambicanos.</p>
     </div>
-
-    <!-- ============================================================
-         LISTA DE CLIENTES
-         Para adicionar um novo cliente, copie o bloco <div> abaixo
-         e altere apenas: nome, localização e (opcionalmente) o ícone.
-         ============================================================ -->
-    <div class="clients-row">
-
-      <!-- ===== CLIENTE 1 ===== -->
-      <div class="client-chip">
-        <div class="client-chip-icon" style="background: linear-gradient(135deg, #3B82F6, #1D4ED8);">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 17h14v-5H5v5zm-2 0V9a2 2 0 0 1 2-2h1l2-4h10l2 4h1a2 2 0 0 1 2 2v8h-2"/>
-            <circle cx="7.5" cy="17.5" r="2.5"/>
-            <circle cx="16.5" cy="17.5" r="2.5"/>
-          </svg>
+    <div class="grid-4">
+      <article class="card blog-card">
+        <div class="blog-img bg-blue">📊</div>
+        <div class="blog-content">
+          <h3>O Que É Um ERP E Porque O Teu Negócio Precisa De Um</h3>
+          <p>Descobre como um sistema integrado pode eliminar planilhas e reduzir erros.</p>
+          <a href="#" class="blog-link" data-blog-id="1">Ler Mais →</a>
         </div>
-        <div class="client-chip-info">
-          <div class="client-chip-name">Terminal Car Wash</div>
-          <div class="client-chip-location">Chuiba — Rua Da ANE, Pemba</div>
+      </article>
+      <article class="card blog-card">
+        <div class="blog-img bg-green">📦</div>
+        <div class="blog-content">
+          <h3>5 Dicas Para Controlar O Stock Da Tua Loja</h3>
+          <p>Aprende a evitar rupturas e excessos com um sistema de inventário eficaz.</p>
+          <a href="#" class="blog-link" data-blog-id="2">Ler Mais →</a>
         </div>
-      </div>
-
-      <!-- ===== ADICIONE MAIS CLIENTES AQUI =====
-      <div class="client-chip">
-        <div class="client-chip-icon" style="background: linear-gradient(135deg, #10B981, #047857);">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 9l1-5h16l1 5"/>
-            <path d="M4 9v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9"/>
-            <line x1="9" y1="13" x2="9" y2="17"/>
-            <line x1="15" y1="13" x2="15" y2="17"/>
-          </svg>
+      </article>
+      <article class="card blog-card">
+        <div class="blog-img bg-orange">🧾</div>
+        <div class="blog-content">
+          <h3>Como Emitir Facturas Com IVA 16% Em Moçambique</h3>
+          <p>Guia prático sobre faturação electrónica, hash e obrigações perante a AT.</p>
+          <a href="#" class="blog-link" data-blog-id="3">Ler Mais →</a>
         </div>
-        <div class="client-chip-info">
-          <div class="client-chip-name">Nome Do Cliente</div>
-          <div class="client-chip-location">Cidade — Endereço</div>
+      </article>
+      <article class="card blog-card">
+        <div class="blog-img bg-pink">📈</div>
+        <div class="blog-content">
+          <h3>Como Aumentar As Vendas No Ponto De Venda</h3>
+          <p>Estratégias simples de upsell e fidelização de clientes no caixa.</p>
+          <a href="#" class="blog-link" data-blog-id="4">Ler Mais →</a>
         </div>
-      </div>
-      -->
-
+      </article>
     </div>
   </div>
 </section>
 
-<!-- CSS inline exclusivo da secção de clientes (não mexe no style.css) -->
-<style>
-  .clients-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 14px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .client-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: linear-gradient(135deg, rgba(59,130,246,0.06), rgba(139,92,246,0.04));
-    border: 1px solid rgba(59,130,246,0.18);
-    border-radius: 12px;
-    padding: 10px 18px;
-    transition: all 0.3s ease;
-    min-width: 260px;
-    max-width: 320px;
-  }
-  .client-chip:hover {
-    border-color: rgba(59,130,246,0.4);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(59,130,246,0.12);
-  }
-  .client-chip-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    box-shadow: 0 4px 12px rgba(59,130,246,0.25);
-  }
-  .client-chip-info {
-    text-align: left;
-    line-height: 1.3;
-    min-width: 0;
-  }
-  .client-chip-name {
-    font-family: var(--font-title, 'Space Grotesk', sans-serif);
-    font-size: 0.9375rem;
-    font-weight: 700;
-    color: var(--text, #E2E8F0);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .client-chip-location {
-    font-size: 0.75rem;
-    color: var(--text-muted, #94A3B8);
-    margin-top: 2px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  @media (max-width: 480px) {
-    .client-chip { min-width: 100%; max-width: 100%; }
-  }
-</style>
-
-<section class="section creator" id="criador">
-  <div class="container">
-    <div class="creator-inner">
-      <div class="creator-visual">
-        <div class="creator-photo-wrap">
-          <div class="creator-photo-ring"></div>
-          <img src="assets/images/criador.png" alt="Adamgy Adamo Tembe" class="creator-photo">
-        </div>
-      </div>
-      <div class="creator-content">
-        <span class="section-tag">Quem Construiu</span>
-        <h2>Conhece O Criador Do<br><span class="text-gradient">VMP SaaS.</span></h2>
-        <p>O VMP SaaS foi desenvolvido por <strong>Adamgy Adamo Tembe</strong>, técnico de software com foco em soluções para o mercado moçambicano. Cada linha de código foi escrita a pensar em quem gere um negócio no dia a dia.</p>
-        <p>Queres ver mais do meu trabalho?</p>
-        <div class="creator-cta">
-          <a href="https://adamgy.vmpsaas.com/" class="btn btn-primary" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Ver Portfólio Pessoal
-          </a>
-          <a href="https://medium.com/@freelancer.adamgy" class="btn btn-outline" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-            Ler Artigos No Medium
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section contact" id="contacto">
+<!-- ================= CLIENTS ================= -->
+<section class="section" id="clientes">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">Contacto</span>
-      <h2>Fala Connosco.<br><span class="text-gradient">Respondemos Depressa.</span></h2>
-      <p>Escolhe o canal que preferires. Estamos em Pemba, mas atendemos todo o país.</p>
+      <span class="tag">Clientes</span>
+      <h2>Quem Confia No VMP SaaS.</h2>
     </div>
-    <div class="contact-grid">
-      <a href="https://wa.me/258846166104" class="contact-card" target="_blank" rel="noopener">
-        <div class="contact-icon" style="--bg: rgba(37,211,102,0.12); --color: #25D366;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <div class="clients-wrap">
+      <div class="client-box">
+        <div class="client-icon">🚗</div>
+        <div>
+          <h4>Terminal Car Wash</h4>
+          <p>Chuiba — Pemba</p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CREATOR ================= -->
+<section class="section bg-light" id="criador">
+  <div class="container creator-inner">
+    <div class="creator-img-wrap">
+      <img src="assets/images/criador.png" alt="Adamgy Adamo Tembe" class="creator-img">
+    </div>
+    <div class="creator-text">
+      <span class="tag">O Criador</span>
+      <h2>Conhece O Adamgy.</h2>
+      <p>O VMP SaaS foi desenvolvido por <strong>Adamgy Adamo Tembe</strong>, técnico de software com foco em soluções reais para o mercado moçambicano. Cada linha de código foi escrita a pensar em quem gere um negócio no dia a dia.</p>
+      <div class="hero-ctas">
+        <a href="https://adamgy.vmpsaas.com/" class="btn btn-primary" target="_blank">Ver Portfólio</a>
+        <a href="https://medium.com/@freelancer.adamgy" class="btn btn-outline" target="_blank">Ler No Medium</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section" id="contacto">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">Contacto</span>
+      <h2>Fala Connosco.</h2>
+      <p>Estamos em Pemba, mas atendemos todo o país.</p>
+    </div>
+    <div class="grid-4">
+      <a href="https://wa.me/258846166104" class="card contact-card" target="_blank">
+        <div class="icon-box green">💬</div>
         <h3>WhatsApp</h3>
         <p>+258 84 616 6104</p>
-        <span class="contact-note">Resposta Em Minutos</span>
+        <span>Resposta em Minutos</span>
       </a>
-      <a href="tel:+258870018297" class="contact-card">
-        <div class="contact-icon" style="--bg: rgba(59,130,246,0.12); --color: #60A5FA;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </div>
+      <a href="tel:+258870018297" class="card contact-card">
+        <div class="icon-box blue">📞</div>
         <h3>Telefone</h3>
         <p>+258 87 001 8297</p>
-        <span class="contact-note">Chamadas Em Horário Comercial</span>
+        <span>Horário Comercial</span>
       </a>
-      <a href="mailto:contacto@vmpsaas.com" class="contact-card">
-        <div class="contact-icon" style="--bg: rgba(245,158,11,0.12); --color: #FBBF24;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
+      <a href="mailto:contacto@vmpsaas.com" class="card contact-card">
+        <div class="icon-box orange">✉️</div>
         <h3>Email</h3>
         <p>contacto@vmpsaas.com</p>
-        <span class="contact-note">Resposta Em Até 24H</span>
+        <span>Resposta em 24H</span>
       </a>
-      <a href="https://www.youtube.com/@vmpsaas" class="contact-card" target="_blank" rel="noopener">
-        <div class="contact-icon" style="--bg: rgba(239,68,68,0.12); --color: #F87171;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        </div>
+      <a href="https://www.youtube.com/@vmpsaas" class="card contact-card" target="_blank">
+        <div class="icon-box pink">▶️</div>
         <h3>YouTube</h3>
         <p>@vmpsaas</p>
-        <span class="contact-note">Tutoriais E Novidades</span>
+        <span>Tutoriais e Novidades</span>
       </a>
     </div>
   </div>
@@ -694,18 +555,15 @@
           <img src="assets/images/logo.png" alt="VMP SaaS">
           <span>VMP SaaS</span>
         </a>
-        <p>ERP completo para empresas, lojas, bancas e vending machines em Moçambique. Desenvolvido em Pemba.</p>
+        <p>O ERP completo para empresas, lojas e vending machines em Moçambique. Desenvolvido em Pemba.</p>
       </div>
       <div class="footer-col">
         <h4>Produto</h4>
         <ul>
           <li><a href="#funcionalidades">Funcionalidades</a></li>
-          <li><a href="#galeria">Galeria</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#modulos">Módulos</a></li>
+          <li><a href="#como-funciona">Como Funciona</a></li>
           <li><a href="#precos">Preços</a></li>
           <li><a href="#download">Download</a></li>
-          <li><a href="dashboard.html">Dashboard Remoto</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -718,23 +576,21 @@
       <div class="footer-col">
         <h4>Redes</h4>
         <ul>
-          <li><a href="https://wa.me/258846166104" target="_blank" rel="noopener">WhatsApp</a></li>
-          <li><a href="https://www.youtube.com/@vmpsaas" target="_blank" rel="noopener">YouTube</a></li>
-          <li><a href="https://www.instagram.com/rozay_camuflado" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="https://www.facebook.com/share/1D7jcPzTu9/" target="_blank" rel="noopener">Facebook</a></li>
-          <li><a href="https://medium.com/@freelancer.adamgy" target="_blank" rel="noopener">Medium</a></li>
-          <li><a href="https://adamgy.vmpsaas.com/" target="_blank" rel="noopener">Portfólio Do Criador</a></li>
+          <li><a href="https://wa.me/258846166104" target="_blank">WhatsApp</a></li>
+          <li><a href="https://www.youtube.com/@vmpsaas" target="_blank">YouTube</a></li>
+          <li><a href="https://www.instagram.com/rozay_camuflado" target="_blank">Instagram</a></li>
+          <li><a href="https://www.facebook.com/share/1D7jcPzTu9/" target="_blank">Facebook</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 VMP SaaS. Todos Os Direitos Reservados.</span>
-      <span>Desenvolvido Por <a href="https://www.instagram.com/rozay_camuflado" target="_blank" rel="noopener">Adamgy Adamo Tembe</a></span>
+      <span>Feito em Moçambique 🇲🇿</span>
     </div>
   </div>
 </footer>
 
-<a href="https://wa.me/258846166104" class="float-wa" target="_blank" rel="noopener" aria-label="Falar No WhatsApp">
+<a href="https://wa.me/258846166104" class="float-wa" target="_blank" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
@@ -742,47 +598,15 @@
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
 </button>
 
-<!-- FAQPage Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Quais são os planos disponíveis?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Temos três planos: Basic (1.350 MZN/mês), Pro (2.700 MZN/mês) e Enterprise (4.900 MZN/mês). Cada plano inclui diferentes funcionalidades e limites de utilizadores e produtos."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Posso testar o VMP SaaS antes de pagar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sim, oferecemos 7 dias de trial grátis com todas as funcionalidades do plano Enterprise. Após o trial, pode escolher o plano que melhor se adapta ao seu negócio."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O VMP SaaS funciona sem internet?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sim, o VMP SaaS é offline-first. Funciona perfeitamente sem internet, e sincroniza automaticamente os dados quando a conexão é restabelecida. Ideal para zonas com internet instável."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O IVA já está incluído nos preços?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Os preços são apresentados sem IVA. O IVA de 16% é aplicado na faturação, conforme exige a legislação moçambicana."
-      }
-    }
-  ]
-}
-</script>
+<!-- BLOG MODAL -->
+<div class="blog-modal" id="blogModal">
+  <div class="blog-modal-backdrop"></div>
+  <div class="blog-modal-card">
+    <button class="blog-modal-close" id="blogModalClose">&times;</button>
+    <h3 id="blogModalTitle"></h3>
+    <div class="blog-modal-body" id="blogModalBody"></div>
+  </div>
+</div>
 
 <script src="assets/js/script.js"></script>
 </body>
